@@ -1,0 +1,19 @@
+/* =============================================== */
+/* === fit image to div ===*/
+.img-fit-to-div{
+	width: auto;
+	min-width: 100%;
+	height: auto;
+	max-height: 100%;
+}
+/* === center horizontal ===*/
+.img-center-horizontal{
+    display:block;
+    margin:auto;
+}
+/* === center image in div vcerticaly ===*/
+.img-center-vcerticaly{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}

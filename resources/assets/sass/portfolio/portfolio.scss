@@ -1,0 +1,80 @@
+#vilbur-portfolio{
+
+	.portfolio {
+
+		.hero-body{
+			padding-bottom:	0;
+		}
+
+		.portfolio-background{
+			height: 10rem;
+			border:	1px solid grey;
+			background-position: center center;
+			background-size: 100%;
+			transition: all 600ms;
+			position: relative;
+			//border:	1px solid red;
+
+			.title,
+			.subtitle{
+
+				//opacity: 0;
+				position: absolute;
+				bottom: -12px;
+				left: 5%;
+				//height:	100%;
+				color:white;
+				text-transform: uppercase;
+				font-size:	4em;
+				font-weight: bold;
+			}
+		}
+
+		a:hover
+		,a.visible
+		{
+			.portfolio-background{
+				background-size: 150%;
+			}
+		}
+		a.visible .portfolio-background{
+			-webkit-filter: grayscale(100%);
+			height: 5rem;
+			margin-bottom: 3rem;
+		}
+	}
+
+	.portfolio-item{
+		height: auto; 
+		max-height: 80192px;
+		overflow: hidden;
+		*{
+			color:	white;
+		}
+
+		.portfolio-item-about{
+			padding-top: 1em;
+			background-color: #6FA2D6;
+			text-align: right;
+
+			.title
+			{
+				border-bottom:	1px solid white;
+			}
+		}
+
+		.columns{
+			padding: 3em 1em 0 1em;
+
+			.image{
+				height:	20vh;
+				background-size:     cover;                      /* <------ */
+				background-repeat:   no-repeat;
+				background-position: center center;              /* optional, center the image */
+				border:	1px solid white;
+			}
+		}
+	}
+
+
+}

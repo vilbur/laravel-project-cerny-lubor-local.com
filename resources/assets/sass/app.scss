@@ -1,0 +1,37 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+
+/* BULMA - Core */ //https://buefy.github.io/#/documentation/customization
+@import "~bulma/sass/utilities/_all";
+/* BULMA - Variables */
+@import 'bulma/variables/_variables.scss';
+/* BULMA - styles */
+@import "~bulma";
+/* BUEFY - styles */
+@import "~buefy/src/scss/buefy";
+/* BULMA - extensions */
+@import '~bulma-carousel';
+
+/* FONT AWESOME */
+@import "~font-awesome/scss/font-awesome.scss";
+
+
+/* LAYOUT */
+@import "layout/layout.scss";
+@import "layout/components/navbar.scss";
+@import "layout/components/footer.scss";
+
+
+/* EXTENDS */
+@import "extends/extends.scss";
+
+
+/* COMPONENTS */
+
+
+/* PACKAGES */
+@import 'portfolio/portfolio.scss';
+@import 'skills/skills.scss';  
+@import 'biography/biography.scss';  
+ 

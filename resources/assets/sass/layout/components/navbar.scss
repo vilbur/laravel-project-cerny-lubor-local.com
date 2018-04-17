@@ -1,0 +1,96 @@
+/* mannualy import https://github.com/jgthms/bulma/blob/master/sass/components/navbar.sass
+ *
+ * VARIABLE $navbar-breakpoint IS NOT AVAILABLE IN BULMA v0.6.2
+ */
+@import "navbar-breakpoint-hotfix.sass";
+
+/* NAVBAR CUSTOM STYLING
+ *
+ *
+ */
+nav.navbar
+{
+    font-weight: bold;
+	text-transform: uppercase;
+
+	/* Transitions for .navbar-hero-carousel */
+	width: 100%;
+	margin-top:	0%;
+	transition: all .5s ease-out;
+    transition-property: font-size, margin-top, background-color;
+
+	.navbar-item{
+		transition: all .5s ease-out;
+		justify-content: center;
+		//width: 10em;
+		//border:	1px solid green;
+		@media screen and (min-width: $tablet){
+			width: 8em;
+		}
+
+	}
+
+	/* BURGER MENU */
+	.navbar-menu.is-active{
+		padding-top: 0px;
+		//border:	1px solid green;
+	}
+
+	.navbar-burger{
+		color: $navbar-item-color;
+		&:hover {
+			color: $navbar-item-active-color;
+		}
+	}
+
+	// fix burger menu items colors
+	.navbar-item.is-active{
+		color: $navbar-item-active-color;
+		background-color: $navbar-item-active-background-color
+	}
+
+
+}
+
+/* center items horizontally */
+nav.navbar .navbar-start {
+	margin: 0 auto;
+}
+
+
+
+
+/* ====== HERO CAROUSEL ======
+ * 	(used in landing page)
+ *
+ */
+nav.navbar-hero-carousel{
+    //z-index: 19;
+    z-index: +1;
+	margin-top:	20vh !important;
+	background-color: transparent;
+	margin: 0 auto;
+
+
+	a{
+		font-size: 2em;
+	}
+	.navbar-menu{
+		background-color: transparent;
+		-webkit-box-shadow: none;
+	}
+
+
+}
+
+@media screen and (min-width: $tablet){
+
+	nav.navbar-hero-carousel{
+		margin-top:	40vh !important;
+
+		.navbar-menu{
+			display: flex;
+		}
+	}
+
+}

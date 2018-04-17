@@ -1,0 +1,11 @@
+/* Color */
+$tabs-link-active-color: $navbar-item-active-color;
+$tabs-link-hover-color: $navbar-item-hover-color;
+
+/* Border */
+$tabs-link-hover-border-bottom-color: $tabs-link-hover-color;
+
+/* Hotfix - otherwise variable doesn't work */
+.tabs .is-active{
+	color:$tabs-link-active-color
+}

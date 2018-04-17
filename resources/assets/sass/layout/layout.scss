@@ -1,0 +1,37 @@
+body{
+	//background-color: #EDF1F4;
+}
+
+[v-cloak] {display: none !important}
+
+#home {
+	position:	absolute;
+	top: 0;
+	width:100%;
+}
+
+.category-nav
+{
+	text-transform: uppercase;
+	li a:hover
+	{
+		//color:	$navbar-item-hover-color; 	
+	} 
+	
+	.is-active
+	{
+		//color: $navbar-item-active-color;
+	}
+	
+
+	
+}
+.category-filter
+{
+	//border:	1px solid green;
+	
+}
+
+
+
+

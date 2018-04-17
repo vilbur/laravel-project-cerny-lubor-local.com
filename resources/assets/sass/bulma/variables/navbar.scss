@@ -1,0 +1,13 @@
+$navbar-breakpoint: $tablet;
+
+
+$navbar-item-color: white;
+$navbar-background-color: $brand-primary;
+ 
+/* active */
+$navbar-item-active-color: $link-hover;
+$navbar-item-active-background-color: $navbar-background-color;
+
+/* hover */ 
+$navbar-item-hover-color: $navbar-background-color;
+$navbar-item-hover-background-color: $navbar-item-color;

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="fd5b23e4-e677-4326-952f-b00f9d245d5f" kpf_version="5" name="Project-lubor-cerny.komodoproject">
+<file id="462371bd-1a1e-49d8-b63b-2a2a64db559b" idref="4710b611-7885-438c-ba33-6edbc8df5b3c" name="app.php" url="config/app.php">
+</file>
+<file id="7eb5de6b-0402-42d1-8968-32b43fe165b0" idref="4710b611-7885-438c-ba33-6edbc8df5b3c" name=".env" url=".env">
+</file>
+<file id="9a778d6d-f1e5-4e22-a323-c8cc95b47990" idref="4710b611-7885-438c-ba33-6edbc8df5b3c" name="database.php" url="config/database.php">
+</file>
+<livefolder id="1a567890-ad99-40b3-89e1-30a94b4fc5e2" idref="7fd50754-ee11-4387-a486-ceb4fcb7c628" name="sass" url="resources/assets/sass/">
+</livefolder>
+<livefolder id="2e4a45b2-3805-43c7-8f41-52f7a85da303" idref="7fd50754-ee11-4387-a486-ceb4fcb7c628" name="js" url="resources/assets/js/">
+</livefolder>
+<livefolder id="266da75b-a7bf-4307-9c67-2558773b7d00" idref="fd5b23e4-e677-4326-952f-b00f9d245d5f" name="views" url="resources/views/">
+</livefolder>
+<folder id="4710b611-7885-438c-ba33-6edbc8df5b3c" idref="fd5b23e4-e677-4326-952f-b00f9d245d5f" name="~Config">
+</folder>
+<folder id="7fd50754-ee11-4387-a486-ceb4fcb7c628" idref="fd5b23e4-e677-4326-952f-b00f9d245d5f" name="Assets">
+</folder>
+<livefolder id="b8a2aaab-3282-4455-bb7e-ce6bfee88185" idref="fd5b23e4-e677-4326-952f-b00f9d245d5f" name="packages" url="packages">
+</livefolder>
+<preference-set idref="fd5b23e4-e677-4326-952f-b00f9d245d5f" id="project" preftype="project">
+  <long id="prefs_version">1</long>
+</preference-set>
+</project>
