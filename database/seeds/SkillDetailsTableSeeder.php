@@ -21,21 +21,21 @@ class SkillDetailsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'skill_id' => 1,
-                'title' => 'Next-Gen Game CG',
-                'summary' => 'High poly baked textures on low poly models',
+                'title' => 'Game CG',
+                'summary' => 'Next-Gen CG - highpoly to lowpoly baking wotrkflow',
                 'description' => NULL,
-                'created_at' => '2018-02-15 03:39:12',
-                'updated_at' => '2018-02-15 03:39:12',
+                'created_at' => '2018-02-15 03:39:00',
+                'updated_at' => '2018-04-18 08:43:04',
             ),
             1 => 
             array (
                 'id' => 2,
                 'skill_id' => 1,
-                'title' => 'V-Ray render',
-                'summary' => 'Photoreal renders',
+                'title' => 'Render',
+                'summary' => 'V-Ray',
                 'description' => NULL,
                 'created_at' => '2018-02-15 03:40:00',
-                'updated_at' => '2018-02-15 03:40:29',
+                'updated_at' => '2018-04-18 08:41:57',
             ),
             2 => 
             array (
@@ -51,11 +51,11 @@ class SkillDetailsTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'skill_id' => 2,
-                'title' => NULL,
+                'title' => 'Common use',
                 'summary' => 'Modeling, mapping',
                 'description' => NULL,
-                'created_at' => '2018-02-15 03:52:48',
-                'updated_at' => '2018-02-15 03:52:48',
+                'created_at' => '2018-02-15 03:52:00',
+                'updated_at' => '2018-04-18 08:44:24',
             ),
             4 => 
             array (
@@ -71,31 +71,31 @@ class SkillDetailsTableSeeder extends Seeder
             array (
                 'id' => 6,
                 'skill_id' => 3,
-                'title' => NULL,
-                'summary' => 'Common usage',
+                'title' => 'Common use',
+                'summary' => 'Texturing, post processing',
                 'description' => NULL,
-                'created_at' => '2018-02-15 11:22:32',
-                'updated_at' => '2018-02-15 11:22:32',
+                'created_at' => '2018-02-15 11:22:00',
+                'updated_at' => '2018-04-18 08:44:01',
             ),
             6 => 
             array (
                 'id' => 7,
                 'skill_id' => 4,
-                'title' => 'Laravel framework',
-                'summary' => 'TDD',
+                'title' => 'Framework',
+                'summary' => 'Laravel',
                 'description' => NULL,
                 'created_at' => '2018-02-15 11:24:00',
-                'updated_at' => '2018-02-15 11:29:28',
+                'updated_at' => '2018-04-18 08:07:21',
             ),
             7 => 
             array (
                 'id' => 8,
                 'skill_id' => 5,
                 'title' => 'Frameworks',
-                'summary' => 'Vue.js, jQUery',
+                'summary' => 'plain JavaScript, VueJS, jQuery',
                 'description' => NULL,
                 'created_at' => '2018-02-15 11:44:00',
-                'updated_at' => '2018-02-15 11:44:23',
+                'updated_at' => '2018-04-18 08:12:01',
             ),
             8 => 
             array (
@@ -116,6 +116,46 @@ class SkillDetailsTableSeeder extends Seeder
                 'description' => NULL,
                 'created_at' => '2018-02-15 11:52:00',
                 'updated_at' => '2018-02-15 11:53:13',
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'skill_id' => 5,
+                'title' => 'Scripts for',
+                'summary' => 'Web, Komodo IDE, Google Apps',
+                'description' => NULL,
+                'created_at' => '2018-04-18 08:06:27',
+                'updated_at' => '2018-04-18 08:06:27',
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'skill_id' => 4,
+                'title' => 'Workflows',
+                'summary' => 'OOP, TDD, Composer',
+                'description' => NULL,
+                'created_at' => '2018-04-18 08:12:00',
+                'updated_at' => '2018-04-18 08:39:28',
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'skill_id' => 8,
+                'title' => NULL,
+                'summary' => 'Regular expressions',
+                'description' => NULL,
+                'created_at' => '2018-04-18 08:29:00',
+                'updated_at' => '2018-04-18 08:30:08',
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'skill_id' => 7,
+                'title' => NULL,
+                'summary' => 'OOP, Workflow automation tools, Gui',
+                'description' => NULL,
+                'created_at' => '2018-04-18 08:37:00',
+                'updated_at' => '2018-04-18 08:46:34',
             ),
         ));
         

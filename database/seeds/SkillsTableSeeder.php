@@ -94,6 +94,17 @@ class SkillsTableSeeder extends Seeder
                 'created_at' => '2018-02-14 20:29:00',
                 'updated_at' => '2018-02-15 04:24:48',
             ),
+            7 => 
+            array (
+                'id' => 8,
+                'category_id' => 3,
+                'title' => 'RegEx',
+                'summary' => 'Regular expressions',
+                'description' => NULL,
+                'image' => '/storage/skills/regex/logo.svg',
+                'created_at' => '2018-04-18 08:14:00',
+                'updated_at' => '2018-04-18 08:29:41',
+            ),
         ));
         
         

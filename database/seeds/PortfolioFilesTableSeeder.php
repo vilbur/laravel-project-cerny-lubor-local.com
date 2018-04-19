@@ -12,64 +12,64 @@ class PortfolioFilesTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('portfolio_files')->delete();
-
+        
         \DB::table('portfolio_files')->insert(array (
-            0 =>
+            0 => 
             array (
                 'id' => 1,
                 'portfolio_item_id' => 1,
                 'image' => 'portfolio-files/cg-movie/files/ctyrlistek-ve-sluzbach-krale-cihelna-exterier.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Brick factory - exterior',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Final render in movie',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-02-27 00:00:00',
+                'updated_at' => '2018-04-19 07:04:19',
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'portfolio_item_id' => 1,
                 'image' => 'portfolio-files/cg-movie/files/ctyrlistek-ve-sluzbach-krale-cihelna-interier.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Brick factory - interior',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Final render in movie',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-02-27 00:00:00',
+                'updated_at' => '2018-04-19 07:04:32',
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'portfolio_item_id' => 1,
                 'image' => 'portfolio-files/cg-movie/files/ctyrlistek-ve-sluzbach-krale-background-1.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Landscape',
                 'author' => NULL,
-                'summary' => NULL,
-                'description' => NULL,
+                'summary' => 'Test summary',
+                'description' => 'Final render in movie',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-02-27 00:00:00',
+                'updated_at' => '2018-04-19 07:07:20',
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 4,
                 'portfolio_item_id' => 1,
                 'image' => 'portfolio-files/cg-movie/files/ctyrlistek-ve-sluzbach-krale-background-2.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Landscape',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Final render in movie',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-02-27 00:00:00',
+                'updated_at' => '2018-04-19 07:04:58',
             ),
-            4 =>
+            4 => 
             array (
                 'id' => 5,
                 'portfolio_item_id' => 17,
@@ -78,11 +78,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => ' ',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => '2018-03-02 15:44:01',
             ),
-            5 =>
+            5 => 
             array (
                 'id' => 6,
                 'portfolio_item_id' => 2,
@@ -91,11 +91,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => '2018-02-27 00:00:00',
             ),
-            6 =>
+            6 => 
             array (
                 'id' => 7,
                 'portfolio_item_id' => 5,
@@ -104,11 +104,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            7 =>
+            7 => 
             array (
                 'id' => 8,
                 'portfolio_item_id' => 5,
@@ -117,11 +117,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            8 =>
+            8 => 
             array (
                 'id' => 9,
                 'portfolio_item_id' => 5,
@@ -130,11 +130,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            9 =>
+            9 => 
             array (
                 'id' => 10,
                 'portfolio_item_id' => 4,
@@ -143,11 +143,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            10 =>
+            10 => 
             array (
                 'id' => 11,
                 'portfolio_item_id' => 4,
@@ -156,11 +156,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            11 =>
+            11 => 
             array (
                 'id' => 12,
                 'portfolio_item_id' => 4,
@@ -169,11 +169,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            12 =>
+            12 => 
             array (
                 'id' => 13,
                 'portfolio_item_id' => 4,
@@ -182,11 +182,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            13 =>
+            13 => 
             array (
                 'id' => 14,
                 'portfolio_item_id' => 3,
@@ -195,11 +195,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            14 =>
+            14 => 
             array (
                 'id' => 15,
                 'portfolio_item_id' => 3,
@@ -208,11 +208,11 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            15 =>
+            15 => 
             array (
                 'id' => 16,
                 'portfolio_item_id' => 3,
@@ -221,414 +221,414 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => NULL,
             ),
-            16 =>
+            16 => 
             array (
                 'id' => 17,
                 'portfolio_item_id' => 9,
                 'image' => 'portfolio-files/games/dayz/ship-wreck-3.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'DayZ',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Model of shipwreck',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 07:01:37',
+                'updated_at' => '2018-04-19 08:24:44',
             ),
-            17 =>
+            17 => 
             array (
                 'id' => 18,
                 'portfolio_item_id' => 9,
                 'image' => 'portfolio-files/games/dayz/ship-wreck-1.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'DayZ',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Model of shipwreck',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 07:01:45',
+                'updated_at' => '2018-04-19 08:24:49',
             ),
-            18 =>
+            18 => 
             array (
                 'id' => 19,
                 'portfolio_item_id' => 9,
                 'image' => 'portfolio-files/games/dayz/ship-wreck-2.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'DayZ',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Model of shipwreck',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 07:01:50',
+                'updated_at' => '2018-04-19 08:24:55',
             ),
-            19 =>
+            19 => 
             array (
                 'id' => 20,
                 'portfolio_item_id' => 9,
                 'image' => 'portfolio-files/games/dayz/apartment-building-exterior.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'DayZ',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Apartment buildings',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 07:01:58',
+                'updated_at' => '2018-04-19 08:25:29',
             ),
-            20 =>
+            20 => 
             array (
                 'id' => 21,
                 'portfolio_item_id' => 9,
                 'image' => 'portfolio-files/games/dayz/apartment-building-interior.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'DayZ',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Apartment buildings',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 07:02:04',
+                'updated_at' => '2018-04-19 08:25:37',
             ),
-            21 =>
+            21 => 
             array (
                 'id' => 22,
                 'portfolio_item_id' => 8,
                 'image' => 'portfolio-files/games/take-on/space-needle-01.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Take on helicopters',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Model of Space Needle in Seattle',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 07:00:51',
+                'updated_at' => '2018-04-19 08:01:02',
             ),
-            22 =>
+            22 => 
             array (
                 'id' => 23,
                 'portfolio_item_id' => 8,
                 'image' => 'portfolio-files/games/take-on/space-needle-02.jpg',
-                'url' => NULL,
-                'title' => 'VIDEO PLACEHOPLDER',
+                'url' => 'b-tCkSg_f1k',
+                'title' => 'Take on helicopters',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Model of Space Needle in Seattle',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 07:00:59',
+                'updated_at' => '2018-04-19 08:01:17',
             ),
-            23 =>
+            23 => 
             array (
                 'id' => 24,
                 'portfolio_item_id' => 8,
                 'image' => 'portfolio-files/games/take-on/takeon-cover.png',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Cover of game',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'It makes me happy, that Space Needle appears on cover.',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 07:01:06',
+                'updated_at' => '2018-04-19 08:13:15',
             ),
-            24 =>
+            24 => 
             array (
                 'id' => 25,
                 'portfolio_item_id' => 6,
                 'image' => 'portfolio-files/games/mafia-II/uptown-flat-1.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Mafia II',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Flat of main character',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => NULL,
+                'updated_at' => '2018-04-19 08:00:07',
             ),
-            25 =>
+            25 => 
             array (
                 'id' => 26,
                 'portfolio_item_id' => 6,
                 'image' => 'portfolio-files/games/mafia-II/uptown-flat-2.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Mafia II',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Flat of main character',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => NULL,
+                'updated_at' => '2018-04-19 08:00:12',
             ),
-            26 =>
+            26 => 
             array (
                 'id' => 27,
                 'portfolio_item_id' => 6,
                 'image' => 'portfolio-files/games/mafia-II/uptown-flat-3.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Mafia II',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Flat of main character',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => NULL,
+                'updated_at' => '2018-04-19 08:00:16',
             ),
-            27 =>
+            27 => 
             array (
                 'id' => 28,
                 'portfolio_item_id' => 7,
                 'image' => 'portfolio-files/games/mafia-II/balls-&-beans-1.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Mafia II - redesign',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Improvements of textures & lightning',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:06:27',
+                'updated_at' => '2018-04-19 08:37:51',
             ),
-            28 =>
+            28 => 
             array (
                 'id' => 29,
                 'portfolio_item_id' => 6,
                 'image' => 'portfolio-files/games/mafia-II/cossack-car.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Mafia II',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'The Car',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => NULL,
+                'updated_at' => '2018-04-19 07:57:25',
             ),
-            29 =>
+            29 => 
             array (
                 'id' => 30,
                 'portfolio_item_id' => 7,
                 'image' => 'portfolio-files/games/mafia-II/balls-&-beans-2.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Mafia II - redesign',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Improvements of textures & lightning',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:06:39',
+                'updated_at' => '2018-04-19 08:38:23',
             ),
-            30 =>
+            30 => 
             array (
                 'id' => 31,
                 'portfolio_item_id' => 7,
                 'image' => 'portfolio-files/games/mafia-II/greenfield-flat.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Mafia II - redesign',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Improvements of textures & lightning',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:06:51',
+                'updated_at' => '2018-04-19 08:37:39',
             ),
-            31 =>
+            31 => 
             array (
                 'id' => 32,
                 'portfolio_item_id' => 10,
                 'image' => 'portfolio-files/3d-print/files/3D-print-1.gif',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Models for 3D print',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 07:00:44',
+                'updated_at' => '2018-04-19 08:34:59',
             ),
-            32 =>
+            32 => 
             array (
                 'id' => 33,
                 'portfolio_item_id' => 10,
                 'image' => 'portfolio-files/3d-print/files/3D-print-2.gif',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Models for 3D print',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:57:44',
+                'updated_at' => '2018-04-19 08:34:55',
             ),
-            33 =>
+            33 => 
             array (
                 'id' => 34,
                 'portfolio_item_id' => 10,
                 'image' => 'portfolio-files/3d-print/files/3D-print-4.gif',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Models for 3D print',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:57:49',
+                'updated_at' => '2018-04-19 08:35:02',
             ),
-            34 =>
+            34 => 
             array (
                 'id' => 35,
                 'portfolio_item_id' => 10,
                 'image' => 'portfolio-files/3d-print/files/3D-print-3.gif',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Models for 3D print',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:57:54',
+                'updated_at' => '2018-04-19 08:35:06',
             ),
-            35 =>
+            35 => 
             array (
                 'id' => 36,
                 'portfolio_item_id' => 14,
                 'image' => 'portfolio-files/rendering/mpio/mpio-player.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Visualisation of product',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:59:50',
+                'updated_at' => '2018-04-19 07:16:25',
             ),
-            36 =>
+            36 => 
             array (
                 'id' => 37,
                 'portfolio_item_id' => 15,
                 'image' => 'portfolio-files/rendering/shelves/visualization-of-shelves-1.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Visualisation of product design',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:55:31',
+                'updated_at' => '2018-04-19 07:16:11',
             ),
-            37 =>
+            37 => 
             array (
                 'id' => 38,
                 'portfolio_item_id' => 15,
                 'image' => 'portfolio-files/rendering/shelves/visualization-of-shelves-2.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Visualisation of product design',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:55:26',
+                'updated_at' => '2018-04-19 07:16:09',
             ),
-            38 =>
+            38 => 
             array (
                 'id' => 39,
                 'portfolio_item_id' => 13,
                 'image' => 'portfolio-files/rendering/zemeklon/zemeklon.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Clone of Earth made by crazy scientist in laboratory',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Rendered for fun in 2009',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:55:21',
+                'updated_at' => '2018-04-19 07:11:51',
             ),
-            39 =>
+            39 => 
             array (
                 'id' => 40,
                 'portfolio_item_id' => 12,
-                'image' => 'portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-1.jpg',
+                'image' => 'portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-motion.jpg',
                 'url' => NULL,
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => '2018-03-05 06:54:42',
             ),
-            40 =>
+            40 => 
             array (
                 'id' => 41,
                 'portfolio_item_id' => 12,
-                'image' => 'portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-2.jpg',
+                'image' => 'portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-front.jpg',
                 'url' => NULL,
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => '2018-03-05 06:54:47',
             ),
-            41 =>
+            41 => 
             array (
                 'id' => 42,
                 'portfolio_item_id' => 12,
-                'image' => 'portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-3.jpg',
+                'image' => 'portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-back.jpg',
                 'url' => NULL,
                 'title' => NULL,
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-02-27 00:00:00',
                 'updated_at' => '2018-03-05 06:54:52',
             ),
-            42 =>
+            42 => 
             array (
                 'id' => 43,
                 'portfolio_item_id' => 10,
                 'image' => 'portfolio-files/3d-print/files/all_characters_poster.jpg',
                 'url' => NULL,
-                'title' => 'All characters placeholder',
+                'title' => 'Some of final poses',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:59:06',
+                'updated_at' => '2018-04-19 08:06:29',
             ),
-            43 =>
+            43 => 
             array (
                 'id' => 44,
                 'portfolio_item_id' => 11,
                 'image' => 'portfolio-files/3d-print/files/animation.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Process of animation',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Printed characters has been animated by guys from Kreus company',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:58:29',
+                'updated_at' => '2018-04-19 08:08:25',
             ),
-            44 =>
+            44 => 
             array (
                 'id' => 45,
                 'portfolio_item_id' => 11,
                 'image' => 'portfolio-files/3d-print/files/piskoviste_poster.jpg',
-                'url' => NULL,
-                'title' => 'krmitko_poster.jpg',
+                'url' => 'HTJ5l8UVlBs',
+                'title' => 'TV Commercial',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Final result',
                 'created_at' => '2018-02-28 07:54:00',
-                'updated_at' => '2018-03-05 06:58:17',
+                'updated_at' => '2018-04-19 08:10:51',
             ),
-            45 =>
+            45 => 
             array (
                 'id' => 46,
                 'portfolio_item_id' => 11,
                 'image' => 'portfolio-files/3d-print/files/krmitko_poster.jpg',
                 'url' => 'eSL3idbdQ7Y',
-                'title' => 'video',
+                'title' => 'TV Commercial',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => 'Final result',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-03-05 06:59:21',
+                'updated_at' => '2018-04-19 08:10:43',
             ),
-            46 =>
+            46 => 
             array (
                 'id' => 47,
                 'portfolio_item_id' => 1,
                 'image' => 'portfolio-files/cg-movie/files/ctyrlistek-ve-sluzbach-krale-characters.jpg',
                 'url' => NULL,
-                'title' => NULL,
+                'title' => 'Example of characters',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '3D model & cartoon render',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => NULL,
+                'updated_at' => '2018-04-19 07:01:31',
             ),
-            47 =>
+            47 => 
             array (
                 'id' => 48,
                 'portfolio_item_id' => 2,
@@ -637,64 +637,90 @@ class PortfolioFilesTableSeeder extends Seeder
                 'title' => 'Yacht back',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '',
                 'created_at' => '2018-03-04 20:38:00',
                 'updated_at' => '2018-03-04 20:39:06',
             ),
-            48 =>
+            48 => 
             array (
                 'id' => 49,
                 'portfolio_item_id' => 16,
                 'image' => 'portfolio-files/high-poly/ferrari/ferrari-front.jpg',
                 'url' => NULL,
-                'title' => 'ferrari-front',
+                'title' => 'Ferrari 550 Maranello',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
-                'created_at' => '2018-03-04 20:48:25',
-                'updated_at' => '2018-03-04 20:48:25',
+                'description' => 'High poly model',
+                'created_at' => '2018-03-04 20:48:00',
+                'updated_at' => '2018-04-19 08:21:21',
             ),
-            49 =>
+            49 => 
             array (
                 'id' => 50,
                 'portfolio_item_id' => 16,
                 'image' => 'portfolio-files/high-poly/ferrari/ferrari-back.jpg',
                 'url' => NULL,
-                'title' => 'ferrari back',
+                'title' => 'Ferrari 550 Maranello',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
-                'created_at' => '2018-03-04 20:48:47',
-                'updated_at' => '2018-03-04 20:48:47',
+                'description' => 'High poly model',
+                'created_at' => '2018-03-04 20:48:00',
+                'updated_at' => '2018-04-19 08:21:12',
             ),
-            50 =>
+            50 => 
             array (
                 'id' => 51,
                 'portfolio_item_id' => 18,
                 'image' => 'portfolio-files/low-poly/porsche/porsche-front.jpg',
                 'url' => NULL,
-                'title' => 'porsche-front',
+                'title' => 'Low poly model',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => NULL,
+                'description' => '3000 triangles',
                 'created_at' => '2018-03-04 20:55:00',
-                'updated_at' => '2018-03-04 20:55:57',
+                'updated_at' => '2018-04-19 08:23:04',
             ),
-            51 =>
+            51 => 
             array (
                 'id' => 52,
                 'portfolio_item_id' => 18,
                 'image' => 'portfolio-files/low-poly/porsche/porsche-back.jpg',
                 'url' => NULL,
-                'title' => 'porsche-back',
+                'title' => 'Low poly model',
+                'author' => NULL,
+                'summary' => NULL,
+                'description' => '3000 triangles',
+                'created_at' => '2018-03-04 20:55:00',
+                'updated_at' => '2018-04-19 08:23:16',
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'portfolio_item_id' => 1,
+                'image' => 'portfolio-files/cg-movie/files/ctyrlistek-ve-sluzbach-krale-maya.jpg',
+                'url' => NULL,
+                'title' => 'Raw scenes in Maya',
+                'author' => NULL,
+                'summary' => NULL,
+                'description' => 'This is how scenes looks like in Maya',
+                'created_at' => '2018-04-19 06:32:00',
+                'updated_at' => '2018-04-19 07:02:12',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'portfolio_item_id' => 12,
+                'image' => 'portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-interior.jpg',
+                'url' => NULL,
+                'title' => 'Interior',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => NULL,
-                'created_at' => '2018-03-04 20:55:00',
-                'updated_at' => '2018-03-04 20:56:03',
+                'created_at' => '2018-04-19 07:36:46',
+                'updated_at' => '2018-04-19 07:36:46',
             ),
         ));
-
-
+        
+        
     }
 }

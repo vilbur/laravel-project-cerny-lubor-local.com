@@ -25,10 +25,10 @@ class PortfolioItemsTableSeeder extends Seeder
                 'summary' => 'CG movie',
                 'description' => '<p>My contribution for movie was modeling of:</p>
 <p>exteriors, interiors,</p>
-<p>all vegetation in movie,&nbsp;</p>
-<p>chracters.</p>',
+<p>all vegetation in movie</p>
+<p>and some chracters.</p>',
                 'created_at' => '2018-02-27 12:03:00',
-                'updated_at' => '2018-03-12 09:13:40',
+                'updated_at' => '2018-04-17 15:12:58',
             ),
             1 => 
             array (
@@ -88,11 +88,11 @@ class PortfolioItemsTableSeeder extends Seeder
             array (
                 'id' => 7,
                 'portfolio_id' => 3,
-                'title' => 'Environments',
+                'title' => 'Mafia II - Environments',
                 'summary' => 'Improving of graphics',
                 'description' => '<p>Textures, materials &amp; lighting have to be improved, while game has been evolving through development.</p>',
                 'created_at' => '2018-02-28 18:34:00',
-                'updated_at' => '2018-03-02 15:52:05',
+                'updated_at' => '2018-04-17 14:38:24',
             ),
             7 => 
             array (
@@ -113,10 +113,10 @@ class PortfolioItemsTableSeeder extends Seeder
                 'title' => 'DayZ',
                 'summary' => 'Bohemia Interactive',
                 'description' => '<p>Models of ship and apartment building with fully accessible interiors.</p>
-<p>These complex models consists of thousands objects.</p>
-<p>Wrote <strong>custom 3dsMax to engine&nbsp;exporter</strong> was required.</p>',
+<p>These models consists of thousands objects.</p>
+<p>I had&nbsp;to wrote&nbsp;<strong>custom 3dsMax to engine&nbsp;exporter</strong>, for export of these complex models.</p>',
                 'created_at' => '2018-02-27 12:07:00',
-                'updated_at' => '2018-03-02 23:50:59',
+                'updated_at' => '2018-04-19 08:04:20',
             ),
             9 => 
             array (
@@ -124,13 +124,12 @@ class PortfolioItemsTableSeeder extends Seeder
                 'portfolio_id' => 4,
                 'title' => 'Models of characeters',
                 'summary' => NULL,
-                'description' => '<p><strong>16 models</strong> of characters</p>
-<p><strong>16 rigs</strong></p>
-<p><strong>160 poses</strong> for 3D print - models are 4 cm height</p>
+                'description' => '<p><strong>16 rigged models</strong> of characters</p>
+<p><strong>160 poses</strong> for 3D print</p>
 <p><strong>2 months</strong>&nbsp;<strong>deadline&nbsp;</strong>-&nbsp;really deadly</p>
 <p>... it was very interesting task</p>',
                 'created_at' => '2018-02-27 12:08:00',
-                'updated_at' => '2018-03-02 15:49:42',
+                'updated_at' => '2018-04-19 08:29:40',
             ),
             10 => 
             array (
