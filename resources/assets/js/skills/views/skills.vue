@@ -1,17 +1,17 @@
 <template>
 	<div id="vilbur-skills">
-		
-		<div class="tabs is-centered">
+
+		<div v-sticky="{ stickyTop: 52, zIndex:9 }" class="tabs is-centered">
 	
 			<ul class="category-nav">
-				<a :class="{'is-active': filtered==''}" @click.prevent="filtered=''">All</a>
+				<li><a :class="{'is-active': filtered==''}" @click.prevent="filtered=''">All</a></li>
 				<li v-for="category in categories" class="category-filter">
 					<a :class="{'is-active': filtered==category.slug}" @click.prevent="filtered=category.slug">{{ category.slug }}</a>
 				</li>
 			</ul>
-			
+			 
 		</div>
-		
+
 		<transition-group tag="ul" name="show">
 			<li v-for="skill in filteredSkills" class="hero" :key="skill.id" >
 	
@@ -28,13 +28,13 @@
 								is-3-tablet
 								is-2-desktop is-offset-1-desktop
 								is-offset-2-widescreen"
-					>
+					> 
 					</div>
 	
 					<div class="skill-details column border-OFF-b">
 						<div v-for="skill_detail in skill.skill_details">
 							<skills-detail>
-								<span slot="title">{{skill_detail.title}}:</span>
+								<span slot="title">{{skill_detail.title?skill_detail.title+':' : ''}}</span>
 								{{skill_detail.summary }}
 							</skills-detail>
 						</div>
@@ -65,6 +65,7 @@
 <script>
 	import skillsHeader from '../components/skills-header';
 	import skillsDetail from '../components/skills-detail';
+	import VueSticky from 'vue-sticky' // Es6 module
 
 	export default {
 		props: ['category'],
@@ -97,6 +98,12 @@
 		components:{
 			'skills-header':skillsHeader,
 			'skills-detail':skillsDetail,
-		}
+
+		},
+		directives: {
+		  'sticky': VueSticky,
+		},
+
+		
 	};
 </script>

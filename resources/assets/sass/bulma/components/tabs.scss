@@ -1,0 +1,21 @@
+
+
+.tabs
+{
+	background-color: $body-bg;
+	
+	@media screen and (min-width: $tablet)
+	{
+		li a {
+			padding: 0.5em 3em;
+		}
+	}
+
+	
+}
+
+
+/* Hotfix - otherwise variable doesn't work */
+.tabs .is-active{
+	color:$tabs-link-active-color
+}

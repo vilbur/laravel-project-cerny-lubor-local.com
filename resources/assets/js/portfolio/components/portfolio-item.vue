@@ -1,7 +1,14 @@
 <template>
-	<div class="columnsX is-centered is-multiline" >
+	<div class="columnsX is-centeredX is-multiline" >
+		
+		<div  v-html="portfolio_description"></div>
 
-		<vue-gallery :id="'blueimp-gallery-' + portfolio_slug" :images="galleryImages" :index="index" @close="index = null" :options="{youTubeVideoIdProperty: 'video', youTubePlayerVars: {rel:0}, youTubeClickToPlay: false}"></vue-gallery>
+		<vue-gallery :id="'blueimp-gallery-' + portfolio_slug"
+					 :images="galleryImages"
+					 :index="index"
+					 @close="index = null"
+					 :options="this.gallery_options">
+		</vue-gallery>
 
 		<div v-for="item in portfolioItems" class="column is-12" >
 
@@ -17,7 +24,7 @@
 						v-on:imagesPrepared="addGalleryImages"
 						v-on:imageClicked="openGallery"
 						:portfolio_item_id="item.id"
-					></portfolio-file>
+					></portfolio-file> 
 				</div>
 			</div>
 
@@ -29,15 +36,25 @@
 <script>
 	import portfolioFile from './portfolio-file';
 	import VueGallery from 'vue-gallery';
+	import disableScroll from 'disable-scroll';
 
 	export default {
 
-		props: ['portfolio_slug'],
+		props: ['portfolio_slug', 'portfolio_description'],
 		data(){
 			return {
 				portfolioItems:	[],
 				galleryImages:	[],
-				index:	null
+				index:	null,
+				gallery_options: { // reference: https://github.com/blueimp/Gallery#youtube-options
+					closeOnSlideClick:	true,
+					onopen:	this.disableScroll,
+					onclose:	this.enableScroll,									
+
+					youTubeVideoIdProperty: 	'video',	
+					youTubeClickToPlay:	false,
+					youTubePlayerVars:	{rel:0, modestbranding:1, mute:1}, // parameters passed to video link, reference: https://developers.google.com/youtube/player_parameters#Parameters
+				}
 			};
 		},
 		methods:{
@@ -49,14 +66,23 @@
 			},
 			openGallery(index){
 				this.index = index;
-			}
+			},
+			/* Blueimps option disableScroll: true does not work, workaround use 'disable-scroll' npm package: https://www.npmjs.com/package/disable-scroll
+			 * Options reference: https://github.com/blueimp/Gallery#default-options
+			 */
+			disableScroll(){
+				disableScroll.on();
+			}, 
+			enableScroll(){
+				disableScroll.off();
+			}, 
+			
+			
 		},
 		created(){
 			axios.get('/db/portfolio-items/' + this.portfolio_slug).then( response => {
 				this.portfolioItems = response.data;
 			});
-
-
 		},
 		mounted(){
 			this.selected = this.$route.params.portfolio_slug == this.portfolio_slug;

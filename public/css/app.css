@@ -38,11 +38,7 @@
 
 /* Border */
 
-/* Hotfix - otherwise variable doesn't work */
-
-.tabs .is-active {
-  color: #F58A07;
-}
+/* Width */
 
 /* BULMA - styles */
 
@@ -11697,6 +11693,24 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+/* BULMA - components */
+
+.tabs {
+  background-color: #FFFFFF;
+}
+
+@media screen and (min-width: 769px) {
+  .tabs li a {
+    padding: 0.5em 3em;
+  }
+}
+
+/* Hotfix - otherwise variable doesn't work */
+
+.tabs .is-active {
+  color: #F58A07;
+}
+
 /* BUEFY - styles */
 
 .is-noscroll {
@@ -18792,9 +18806,69 @@ nav.navbar-hero-carousel .navbar-menu {
   }
 }
 
+/* Footer height
+ */
+
+/* ---------------------------------------
+ * PUSH FOOTER BOTTOM
+ *
+ * Layout for push footer on bottom
+ *
+ *	<div id="app"> 
+ *		<div id="content">
+ *	
+ *		</div>
+ *		<footer-component v-if="! $root.loading"></footer-component>
+ *	</div>
+ *	
+ * -----------------------------------------
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#app {
+  min-height: 100%;
+  position: relative;
+}
+
+#content {
+  padding-bottom: 10rem;
+  /* ATTENTION! padding-bottom should be equal to the footer height (this keeps the footer from overlapping the content) */
+}
+
+@media screen and (max-width: 769px) {
+  #content {
+    padding-bottom: 22em;
+  }
+}
+
 footer {
-  margin-top: 6em;
-  padding: 2rem 1.5rem 3rem !important;
+  position: absolute;
+  width: 100%;
+  clear: both;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  height: 10rem;
+}
+
+@media screen and (max-width: 769px) {
+  footer {
+    height: 22em;
+  }
+}
+
+/*---------------------------------------
+	CUSTOM FOOTER STYLE
+-----------------------------------------
+*/
+
+footer {
+  padding: 2rem 1.5rem 3rem;
   background-color: #5896D3;
   color: white;
 }
@@ -18804,6 +18878,7 @@ footer .title {
 }
 
 .footer-homepage {
+  position: relative;
   z-index: +1;
   background-color: transparent;
   -webkit-transition: all .3s ease-in-out;
@@ -18927,7 +19002,7 @@ body {
 /* PACKAGES */
 
 #vilbur-portfolio .portfolio .hero-body {
-  padding-bottom: 0;
+  padding-top: 0;
 }
 
 #vilbur-portfolio .portfolio .portfolio-background {
@@ -19005,7 +19080,6 @@ body {
 }
 
 #vilbur-skills .logo img {
-  width: 6em;
   max-height: 100%;
 }
 

@@ -1,7 +1,64 @@
-footer{
+/* Footer height
+ */
+$footer-height:	10rem;
+$footer-height-tablet:	22em;
+/* ---------------------------------------
+ * PUSH FOOTER BOTTOM
+ *
+ * Layout for push footer on bottom
+ *
+ *	<div id="app"> 
+ *		<div id="content">
+ *	
+ *		</div>
+ *		<footer-component v-if="! $root.loading"></footer-component>
+ *	</div>
+ *	
+ * -----------------------------------------
+*/
+body {
+ 	margin: 0;
+ 	padding: 0;
+ 	height: 100%;
+}
+#app {
+    min-height: 100%;
+	position: relative;
+}
+#content {
+    padding-bottom: $footer-height; /* ATTENTION! padding-bottom should be equal to the footer height (this keeps the footer from overlapping the content) */
+	@media screen and (max-width: $tablet)
+	{
+		padding-bottom: $footer-height-tablet;
+	}
+}
 
-	margin-top: 6em;
-    padding: 2rem 1.5rem 3rem !important;
+footer{
+    position: absolute;
+    width: 100%;
+	clear: both;
+    bottom: 0;
+	padding: 0;
+    margin: 0;
+	
+    height: $footer-height;
+	
+	@media screen and (max-width: $tablet)
+	{
+		height: $footer-height-tablet;
+	}
+}
+
+
+/*---------------------------------------
+	CUSTOM FOOTER STYLE
+-----------------------------------------
+*/
+
+footer
+{
+    padding: 2rem 1.5rem 3rem;
+
 	background-color: $brand-primary;
 	color:	white;
 
@@ -9,11 +66,10 @@ footer{
 		color:	white;
 	}
 
-
 }
 
 .footer-homepage{
-	//border:	1px solid green;
+    position: relative;
 	z-index: +1;
 	background-color:	transparent;
 	transition: all .3s ease-in-out;

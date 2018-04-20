@@ -1,7 +1,7 @@
 <template>
 	<div id="vilbur-portfolio">
 		
-		<ul class="tabs is-centered is-fixed-top" style="margin-top:100px">
+		<ul class="tabs is-centered is-fixed-top" >
 			<router-link to="/portfolio/all" tag="li" @click.native="showAllToggle()" v-html="visible.length !== portfolios.length ? 'Expand all' : 'Collapse all'" ></router-link>
 			<li><a @click.prevent="filtered=''">All</a></li>
 			<li v-for="category in categories">
@@ -30,7 +30,8 @@
 								<transition name="show">
 									<keep-alive>
 										<portfolio-item
-											:portfolio_slug="portfolio.slug"
+											:portfolio_slug="portfolio.slug"											
+											:portfolio_description="portfolio.description"
 											v-if="isVisible(portfolio.slug)"
 											v-show="isVisible(portfolio.slug)"
 										></portfolio-item> 
@@ -94,7 +95,7 @@
 				if( portfolio_slug === 'all')
 					 this.showAll(portfolios);
 				else if( portfolio_slug )
-					portfolio_slugthis.show(portfolio_slug);
+					this.show(portfolio_slug);
 			},			
 			show(portfolio_slug)
 			{

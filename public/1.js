@@ -1,12 +1,12 @@
 webpackJsonp([1],{
 
-/***/ 100:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(101);
+var content = __webpack_require__(103);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 101:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -42,15 +42,17 @@ exports.push([module.i, "\n.show-enter,\n.show-leave-to { max-height: 1px; opaci
 
 /***/ }),
 
-/***/ 102:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_skills_header__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_skills_header__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_skills_header___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_skills_header__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_skills_detail__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_skills_detail__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_skills_detail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_skills_detail__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_sticky__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_sticky___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_sticky__);
 //
 //
 //
@@ -118,6 +120,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+ // Es6 module
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['category'],
@@ -155,20 +158,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	components: {
 		'skills-header': __WEBPACK_IMPORTED_MODULE_0__components_skills_header___default.a,
 		'skills-detail': __WEBPACK_IMPORTED_MODULE_1__components_skills_detail___default.a
+
+	},
+	directives: {
+		'sticky': __WEBPACK_IMPORTED_MODULE_2_vue_sticky___default.a
 	}
+
 });
 
 /***/ }),
 
-/***/ 103:
+/***/ 105:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(104)
+var __vue_script__ = __webpack_require__(106)
 /* template */
-var __vue_template__ = __webpack_require__(105)
+var __vue_template__ = __webpack_require__(107)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -208,7 +216,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 104:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -242,7 +250,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 105:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -287,15 +295,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 106:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(107)
+var __vue_script__ = __webpack_require__(109)
 /* template */
-var __vue_template__ = __webpack_require__(108)
+var __vue_template__ = __webpack_require__(110)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -335,7 +343,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 107:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -360,7 +368,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 108:
+/***/ 110:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -405,7 +413,14 @@ if (false) {
 
 /***/ }),
 
-/***/ 109:
+/***/ 111:
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.VueSticky=t():e.VueSticky=t()}(this,function(){return function(e){function t(i){if(n[i])return n[i].exports;var o=n[i]={i:i,l:!1,exports:{}};return e[i].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};return t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,i){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:i})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=0)}([function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i,o,r;t.default={bind:function(e,t){var n=e.style,u=t.value||{};if(o=u.stickyTop||0,r=u.zIndex||1e3,n.position="-webkit-sticky",n.position="sticky",~n.position.indexOf("sticky"))return n.top=o+"px",void(n.zIndex=r);var s=e.firstElementChild.style;s.cssText="left: 0; right: 0; top: "+o+"px; z-index: "+r+"; "+s.cssText;var c=!1,f=function(){c||(n.height||(n.height=e.offsetHeight+"px"),s.position="fixed",c=!0)},d=function(){c&&(s.position="",c=!1)},p=function(){if(e.getBoundingClientRect().top<=o)return void f();d()};i=function(){if(!window.requestAnimationFrame)return setTimeout(p,16);window.requestAnimationFrame(p)},window.addEventListener("scroll",i)},unbind:function(){window.removeEventListener("scroll",i)},update:function(e,t){var n=t.value||{};o=n.stickyTop||0,r=n.zIndex||1e3;var i=e.firstElementChild.style;e.style.top=i.top=o+"px",e.style.zIndex=i.zIndex=r}}}])});
+
+/***/ }),
+
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -416,46 +431,62 @@ var render = function() {
     "div",
     { attrs: { id: "vilbur-skills" } },
     [
-      _c("div", { staticClass: "tabs is-centered" }, [
-        _c(
-          "ul",
-          { staticClass: "category-nav" },
-          [
-            _c(
-              "a",
-              {
-                class: { "is-active": _vm.filtered == "" },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.filtered = ""
-                  }
-                }
-              },
-              [_vm._v("All")]
-            ),
-            _vm._v(" "),
-            _vm._l(_vm.categories, function(category) {
-              return _c("li", { staticClass: "category-filter" }, [
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "sticky",
+              rawName: "v-sticky",
+              value: { stickyTop: 52, zIndex: 9 },
+              expression: "{ stickyTop: 52, zIndex:9 }"
+            }
+          ],
+          staticClass: "tabs is-centered"
+        },
+        [
+          _c(
+            "ul",
+            { staticClass: "category-nav" },
+            [
+              _c("li", [
                 _c(
                   "a",
                   {
-                    class: { "is-active": _vm.filtered == category.slug },
+                    class: { "is-active": _vm.filtered == "" },
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        _vm.filtered = category.slug
+                        _vm.filtered = ""
                       }
                     }
                   },
-                  [_vm._v(_vm._s(category.slug))]
+                  [_vm._v("All")]
                 )
-              ])
-            })
-          ],
-          2
-        )
-      ]),
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.categories, function(category) {
+                return _c("li", { staticClass: "category-filter" }, [
+                  _c(
+                    "a",
+                    {
+                      class: { "is-active": _vm.filtered == category.slug },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.filtered = category.slug
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(category.slug))]
+                  )
+                ])
+              })
+            ],
+            2
+          )
+        ]
+      ),
       _vm._v(" "),
       _c(
         "transition-group",
@@ -495,7 +526,15 @@ var render = function() {
                           _c(
                             "span",
                             { attrs: { slot: "title" }, slot: "title" },
-                            [_vm._v(_vm._s(skill_detail.title) + ":")]
+                            [
+                              _vm._v(
+                                _vm._s(
+                                  skill_detail.title
+                                    ? skill_detail.title + ":"
+                                    : ""
+                                )
+                              )
+                            ]
                           ),
                           _vm._v(
                             "\n\t\t\t\t\t\t\t" +
@@ -536,13 +575,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(100)
+  __webpack_require__(102)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(102)
+var __vue_script__ = __webpack_require__(104)
 /* template */
-var __vue_template__ = __webpack_require__(109)
+var __vue_template__ = __webpack_require__(112)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */

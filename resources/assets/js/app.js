@@ -22,4 +22,3 @@ new Vue({
     router,
 	data: { loading: false },
 });
-

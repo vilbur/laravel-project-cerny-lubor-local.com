@@ -5,9 +5,11 @@
 /* BULMA - Core */ //https://buefy.github.io/#/documentation/customization
 @import "~bulma/sass/utilities/_all";
 /* BULMA - Variables */
-@import 'bulma/variables/_variables.scss';
+@import 'bulma/variables.scss';
 /* BULMA - styles */
 @import "~bulma";
+/* BULMA - components */
+@import 'bulma/components.scss';
 /* BUEFY - styles */
 @import "~buefy/src/scss/buefy";
 /* BULMA - extensions */
@@ -25,7 +27,7 @@
 
 /* EXTENDS */
 @import "extends/extends.scss";
-
+ 
 
 /* COMPONENTS */
 

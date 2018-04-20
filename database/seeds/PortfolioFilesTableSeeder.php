@@ -256,13 +256,13 @@ class PortfolioFilesTableSeeder extends Seeder
                 'id' => 19,
                 'portfolio_item_id' => 9,
                 'image' => 'portfolio-files/games/dayz/ship-wreck-2.jpg',
-                'url' => NULL,
+                'url' => 'U1GYI5RVzT8',
                 'title' => 'DayZ',
                 'author' => NULL,
                 'summary' => NULL,
-                'description' => 'Model of shipwreck',
+                'description' => 'Gameplay walkthrough - played by some fan',
                 'created_at' => '2018-02-27 00:00:00',
-                'updated_at' => '2018-04-19 08:24:55',
+                'updated_at' => '2018-04-19 11:16:50',
             ),
             19 => 
             array (
@@ -718,6 +718,19 @@ class PortfolioFilesTableSeeder extends Seeder
                 'description' => NULL,
                 'created_at' => '2018-04-19 07:36:46',
                 'updated_at' => '2018-04-19 07:36:46',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'portfolio_item_id' => 2,
+                'image' => 'portfolio-files/low-poly/yacht/yach-front-wire.jpg',
+                'url' => NULL,
+                'title' => 'Yach wire',
+                'author' => NULL,
+                'summary' => NULL,
+                'description' => '6000  triangles, 3x 1024 texture',
+                'created_at' => '2018-04-19 15:20:49',
+                'updated_at' => '2018-04-19 15:20:49',
             ),
         ));
         

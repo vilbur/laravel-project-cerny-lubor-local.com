@@ -26,18 +26,19 @@
 		created(){
 			axios.get('/db/portfolio-files/' + this.portfolio_item_id).then( response => {
 				//this.portfolioFiles = response.data;
-				this.files =  response.data.map(function(file){
+				this.files =  response.data.map(function(file)
+				{
 					return {
 						title:	file.title,
-						description:	file.description,
+						description:	file.description ? file.description : ' ',
 						type:	'text/html',
 						href:	file.image_url,
 						video:	file.url,
 					};
 				});
 
-				this.index_start	= this.$parent.galleryImages.length
-				this.$emit('imagesPrepared', this.files)
+				this.index_start	= this.$parent.galleryImages.length;
+				this.$emit('imagesPrepared', this.files);
 
 			});
 		},
