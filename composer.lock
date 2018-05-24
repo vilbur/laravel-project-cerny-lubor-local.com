@@ -5818,12 +5818,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vilbur/laravel-package-biography.git",
-                "reference": "f481d9aa67477aed80bbde4964f9d1f982396724"
+                "reference": "9394fae6dbc5b845756aafecca918ae4a8b34290"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vilbur/laravel-package-biography/zipball/f481d9aa67477aed80bbde4964f9d1f982396724",
-                "reference": "f481d9aa67477aed80bbde4964f9d1f982396724",
+                "url": "https://api.github.com/repos/vilbur/laravel-package-biography/zipball/9394fae6dbc5b845756aafecca918ae4a8b34290",
+                "reference": "9394fae6dbc5b845756aafecca918ae4a8b34290",
                 "shasum": ""
             },
             "type": "library",
@@ -5859,7 +5859,7 @@
                 "Biography",
                 "vilbur"
             ],
-            "time": "2018-04-04T15:36:47+00:00"
+            "time": "2018-04-09T22:31:49+00:00"
         },
         {
             "name": "vilbur/portfolio",
@@ -5867,12 +5867,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vilbur/laravel-package-portfolio.git",
-                "reference": "65387e0841d95f9ca25bc9349b8f6c41b8ce6f3f"
+                "reference": "6f2f1260ffd5df3dc5be687282cc2f4d5aa7570b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vilbur/laravel-package-portfolio/zipball/65387e0841d95f9ca25bc9349b8f6c41b8ce6f3f",
-                "reference": "65387e0841d95f9ca25bc9349b8f6c41b8ce6f3f",
+                "url": "https://api.github.com/repos/vilbur/laravel-package-portfolio/zipball/6f2f1260ffd5df3dc5be687282cc2f4d5aa7570b",
+                "reference": "6f2f1260ffd5df3dc5be687282cc2f4d5aa7570b",
                 "shasum": ""
             },
             "type": "library",
@@ -5907,7 +5907,7 @@
             "keywords": [
                 "vilbur"
             ],
-            "time": "2018-04-09T22:10:43+00:00"
+            "time": "2018-04-17T13:11:33+00:00"
         },
         {
             "name": "vilbur/skills",
@@ -5915,12 +5915,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vilbur/laravel-package-skills.git",
-                "reference": "b9feceea233111eeba62ffdf6b5e57f618477f5a"
+                "reference": "4e4b8a975d9d48cb0db4f2021655eac893e79f0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vilbur/laravel-package-skills/zipball/b9feceea233111eeba62ffdf6b5e57f618477f5a",
-                "reference": "b9feceea233111eeba62ffdf6b5e57f618477f5a",
+                "url": "https://api.github.com/repos/vilbur/laravel-package-skills/zipball/4e4b8a975d9d48cb0db4f2021655eac893e79f0b",
+                "reference": "4e4b8a975d9d48cb0db4f2021655eac893e79f0b",
                 "shasum": ""
             },
             "type": "library",
@@ -5956,7 +5956,7 @@
                 "skills",
                 "vilbur"
             ],
-            "time": "2018-04-04T08:49:37+00:00"
+            "time": "2018-04-17T13:11:07+00:00"
         },
         {
             "name": "vilbur/voyager-seeder",

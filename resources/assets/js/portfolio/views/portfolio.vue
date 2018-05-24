@@ -1,7 +1,8 @@
 <template>
 	<div id="vilbur-portfolio">
 		
-		<ul class="tabs is-centered is-fixed-top" >
+		<!--TEMPORARY DISABLED-->
+		<ul class="tabs is-centered is-fixed-top" v-show="false" >
 			<router-link to="/portfolio/all" tag="li" @click.native="showAllToggle()" v-html="visible.length !== portfolios.length ? 'Expand all' : 'Collapse all'" ></router-link>
 			<li><a @click.prevent="filtered=''">All</a></li>
 			<li v-for="category in categories">

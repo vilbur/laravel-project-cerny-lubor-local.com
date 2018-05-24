@@ -1,13 +1,31 @@
-
-
 .tabs
 {
-	background-color: $body-bg;
+	background-color:	$body-bg;
+	padding-bottom:	1em;
+
+	ul{
+		/* BORDER TOP */
+		border-top-color:	$tabs-border-bottom-color !important;
+		border-top-style:	solid;
+		border-top-width:	$tabs-border-bottom-width;
+		
+		/* BORDER BOTTOM */
+		border-bottom-style:	none;
+	}
+
 	
 	@media screen and (min-width: $tablet)
 	{
 		li a {
 			padding: 0.5em 3em;
+			text-transform: uppercase;
+			font-size:	1.2rem; 
+			
+			border-bottom-color:	transparent;
+			
+			&:hover{
+				border-bottom-style:	solid;
+			}
 		}
 	}
 

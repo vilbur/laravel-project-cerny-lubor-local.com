@@ -11697,11 +11697,28 @@ label.panel-block:hover {
 
 .tabs {
   background-color: #FFFFFF;
+  padding-bottom: 1em;
+}
+
+.tabs ul {
+  /* BORDER TOP */
+  border-top-color: #dbdbdb !important;
+  border-top-style: solid;
+  border-top-width: 1px;
+  /* BORDER BOTTOM */
+  border-bottom-style: none;
 }
 
 @media screen and (min-width: 769px) {
   .tabs li a {
     padding: 0.5em 3em;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border-bottom-color: transparent;
+  }
+
+  .tabs li a:hover {
+    border-bottom-style: solid;
   }
 }
 
@@ -17704,10 +17721,6 @@ label.panel-block:hover {
   width: 100%;
 }
 
-.category-nav {
-  text-transform: uppercase;
-}
-
 /* mannualy import https://github.com/jgthms/bulma/blob/master/sass/components/navbar.sass
  *
  * VARIABLE $navbar-breakpoint IS NOT AVAILABLE IN BULMA v0.6.2
@@ -19000,6 +19013,10 @@ body {
 /* COMPONENTS */
 
 /* PACKAGES */
+
+#vilbur-portfolio {
+  margin-top: 6rem;
+}
 
 #vilbur-portfolio .portfolio .hero-body {
   padding-top: 0;

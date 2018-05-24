@@ -8,18 +8,19 @@
 				</div>
 
 			</div>
-			<div class="carousel-navigation is-overlay">
+			<!--ARROWS TEMPORARY -->
+<!--			<div class="carousel-navigation is-overlay">
 				<div class="carousel-nav-left">
 					<i class="fa fa-chevron-left" aria-hidden="true"></i>
 				</div>
 				<div class="carousel-nav-right">
 					<i class="fa fa-chevron-right" aria-hidden="true"></i>
 				</div>
-			</div>
+			</div>-->
 		</div>
 		<div class="hero-body">
 <!--			<nav class="tabs is-boxedX is-fullwidth">
-			  <div class="container has-text-centered">
+			  <div class="container has-text-centered"> 
 				<ul>
 				  <li v-for="(link, key) in links" ><a :href="link" class="has-text-white">{{key}}</a></li>
 				</ul>

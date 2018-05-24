@@ -1,7 +1,8 @@
 <template>
 	<div class="columnsX is-centeredX is-multiline" >
 		
-		<div  v-html="portfolio_description"></div>
+		<!--DESCRIPTION TEMPORARY DIASBLED-->
+		<!--<div  v-html="portfolio_description"></div>-->
 
 		<vue-gallery :id="'blueimp-gallery-' + portfolio_slug"
 					 :images="galleryImages"
