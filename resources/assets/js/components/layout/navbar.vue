@@ -36,11 +36,13 @@
 			this.ifHomePage();
 		},
 		methods: {
-			toggleMenu() {
+			toggleMenu()
+			{
 				this.navIsActive = !this.navIsActive;
 				this.setNavHeight();
 			},
-			setNavHeight(){
+			setNavHeight()
+			{
 				let _self = this;
 				setTimeout( function(){
 					_self.navHeight = document.getElementsByClassName('navbar')[0].clientHeight + 'px';

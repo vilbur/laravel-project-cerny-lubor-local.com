@@ -61,13 +61,17 @@ footer
 
 	background-color: $brand-primary;
 	color:	white;
-
+	
+	.container{
+		overflow: hidden;
+	}
+	
 	.title{
 		color:	white;
 	}
 
 }
-
+ 
 .footer-homepage{
     position: relative;
 	z-index: +1;

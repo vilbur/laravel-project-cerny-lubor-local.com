@@ -18886,6 +18886,10 @@ footer {
   color: white;
 }
 
+footer .container {
+  overflow: hidden;
+}
+
 footer .title {
   color: white;
 }
