@@ -119,19 +119,20 @@ module.exports = function (css) {
 /* 67 */,
 /* 68 */,
 /* 69 */,
-/* 70 */
+/* 70 */,
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(78)
+  __webpack_require__(80)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(80)
+var __vue_script__ = __webpack_require__(82)
 /* template */
-var __vue_template__ = __webpack_require__(101)
+var __vue_template__ = __webpack_require__(103)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -148,7 +149,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\portfolio\\views\\portfolio.vue"
+Component.options.__file = "resources/assets/js/portfolio/views/portfolio.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -157,9 +158,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-580c1057", Component.options)
+    hotAPI.createRecord("data-v-5f13625e", Component.options)
   } else {
-    hotAPI.reload("data-v-580c1057", Component.options)
+    hotAPI.reload("data-v-5f13625e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -170,7 +171,29 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 71 */
+/* 72 */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
+}
+
+
+/***/ }),
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -529,9 +552,9 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 72 */,
-/* 73 */,
-/* 74 */
+/* 74 */,
+/* 75 */,
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -545,22 +568,36 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
  * https://opensource.org/licenses/MIT
  */
 
-/* global define, window, document */
+/* global define */
+
+/* eslint-disable no-param-reassign */
 
 ;(function () {
   'use strict'
 
-  function extend (obj1, obj2) {
+  /**
+   * Object.assign polyfill
+   *
+   * @param {object} obj1 First object
+   * @param {object} obj2 Second object
+   * @returns {object} Merged object
+   */
+  function extend(obj1, obj2) {
     var prop
     for (prop in obj2) {
-      if (obj2.hasOwnProperty(prop)) {
+      if (Object.prototype.hasOwnProperty.call(obj2, prop)) {
         obj1[prop] = obj2[prop]
       }
     }
     return obj1
   }
-
-  function Helper (query) {
+  /**
+   * Helper constructor
+   *
+   * @class
+   * @param {*} query jQuery type query argument
+   */
+  function Helper(query) {
     if (!this || this.find !== Helper.prototype.find) {
       // Called as function instead of as constructor,
       // so we simply return a new instance:
@@ -728,7 +765,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
 
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -745,13 +782,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  * https://opensource.org/licenses/MIT
  */
 
-/* global define, window, document, DocumentTouch */
+/* global define, DocumentTouch */
+
+/* eslint-disable no-param-reassign */
 
 ;(function (factory) {
   'use strict'
   if (true) {
     // Register as an anonymous AMD module:
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(74)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(76)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
@@ -763,7 +802,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 })(function ($) {
   'use strict'
 
-  function Gallery (list, options) {
+  /**
+   * Gallery constructor
+   *
+   * @class
+   * @param {Array|NodeList} list Gallery content
+   * @param {object} [options] Gallery options
+   * @returns {object} Gallery object
+   */
+  function Gallery(list, options) {
     if (document.body.style.maxHeight === undefined) {
       // document.body.style.maxHeight is undefined on IE6 and lower
       return null
@@ -860,6 +907,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       closeOnSlideClick: true,
       // Close the gallery by swiping up or down:
       closeOnSwipeUpOrDown: true,
+      // Close the gallery when URL changes:
+      closeOnHashChange: true,
       // Emulate touch events on mouse-pointer devices such as desktop browsers:
       emulateTouchEvents: true,
       // Stop touch events from bubbling up to ancestor elements of the Gallery:
@@ -879,17 +928,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       startSlideshow: false,
       // Delay in milliseconds between slides for the automatic slideshow:
       slideshowInterval: 5000,
+      // The direction the slides are moving: ltr=LeftToRight or rtl=RightToLeft
+      slideshowDirection: 'ltr',
       // The starting index as integer.
       // Can also be an object of the given list,
       // or an equal object with the same url property:
       index: 0,
       // The number of elements to load around the current index:
       preloadRange: 2,
-      // The transition speed between slide changes in milliseconds:
-      transitionSpeed: 400,
-      // The transition speed for automatic slide changes, set to an integer
-      // greater 0 to override the default transition speed:
-      slideshowTransitionSpeed: undefined,
+      // The transition duration between slide changes in milliseconds:
+      transitionDuration: 300,
+      // The transition duration for automatic slide changes, set to an integer
+      // greater 0 to override the default transition duration:
+      slideshowTransitionDuration: 500,
       // The event object for which the default action will be canceled
       // on Gallery initialization (e.g. the click event to open the Gallery):
       event: undefined,
@@ -966,7 +1017,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var prop
       for (prop in transitions) {
         if (
-          transitions.hasOwnProperty(prop) &&
+          Object.prototype.hasOwnProperty.call(transitions, prop) &&
           element.style[prop] !== undefined
         ) {
           support.transition = transitions[prop]
@@ -974,7 +1025,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           break
         }
       }
-      function elementTests () {
+      /**
+       * Tests browser support
+       */
+      function elementTests() {
         var transition = support.transition
         var prop
         var translateZ
@@ -1046,7 +1100,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
     },
 
-    slide: function (to, speed) {
+    slide: function (to, duration) {
       window.clearTimeout(this.timeout)
       var index = this.index
       var direction
@@ -1055,8 +1109,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       if (index === to || this.num === 1) {
         return
       }
-      if (!speed) {
-        speed = this.options.transitionSpeed
+      if (!duration) {
+        duration = this.options.transitionDuration
       }
       if (this.support.transform) {
         if (!this.options.continuous) {
@@ -1085,8 +1139,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           )
         }
         to = this.circle(to)
-        this.move(index, this.slideWidth * direction, speed)
-        this.move(to, 0, speed)
+        this.move(index, this.slideWidth * direction, duration)
+        this.move(to, 0, duration)
         if (this.options.continuous) {
           this.move(
             this.circle(to - direction),
@@ -1096,7 +1150,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         }
       } else {
         to = this.circle(to)
-        this.animate(index * -this.slideWidth, to * -this.slideWidth, speed)
+        this.animate(index * -this.slideWidth, to * -this.slideWidth, duration)
       }
       this.onslide(to)
     },
@@ -1123,20 +1177,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
     play: function (time) {
       var that = this
+      var nextIndex =
+        this.index + (this.options.slideshowDirection === 'rtl' ? -1 : 1)
       window.clearTimeout(this.timeout)
       this.interval = time || this.options.slideshowInterval
       if (this.elements[this.index] > 1) {
         this.timeout = this.setTimeout(
           (!this.requestAnimationFrame && this.slide) ||
-            function (to, speed) {
+            function (to, duration) {
               that.animationFrameId = that.requestAnimationFrame.call(
                 window,
                 function () {
-                  that.slide(to, speed)
+                  that.slide(to, duration)
                 }
               )
             },
-          [this.index + 1, this.options.slideshowTransitionSpeed],
+          [nextIndex, this.options.slideshowTransitionDuration],
           this.interval
         )
       }
@@ -1210,7 +1266,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
     close: function () {
       var that = this
-      function closeHandler (event) {
+      /**
+       * Close handler
+       *
+       * @param {event} event Close event
+       */
+      function closeHandler(event) {
         if (event.target === that.container[0]) {
           that.container.off(that.support.transition.end, closeHandler)
           that.handleClose()
@@ -1229,19 +1290,20 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
     circle: function (index) {
       // Always return a number inside of the slides index range:
-      return (this.num + index % this.num) % this.num
+      return (this.num + (index % this.num)) % this.num
     },
 
-    move: function (index, dist, speed) {
-      this.translateX(index, dist, speed)
+    move: function (index, dist, duration) {
+      this.translateX(index, dist, duration)
       this.positions[index] = dist
     },
 
-    translate: function (index, x, y, speed) {
+    translate: function (index, x, y, duration) {
+      if (!this.slides[index]) return
       var style = this.slides[index].style
       var transition = this.support.transition
       var transform = this.support.transform
-      style[transition.name + 'Duration'] = speed + 'ms'
+      style[transition.name + 'Duration'] = duration + 'ms'
       style[transform.name] =
         'translate(' +
         x +
@@ -1251,16 +1313,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         (transform.translateZ ? ' translateZ(0)' : '')
     },
 
-    translateX: function (index, x, speed) {
-      this.translate(index, x, 0, speed)
+    translateX: function (index, x, duration) {
+      this.translate(index, x, 0, duration)
     },
 
-    translateY: function (index, y, speed) {
-      this.translate(index, 0, y, speed)
+    translateY: function (index, y, duration) {
+      this.translate(index, 0, y, duration)
     },
 
-    animate: function (from, to, speed) {
-      if (!speed) {
+    animate: function (from, to, duration) {
+      if (!duration) {
         this.slidesContainer[0].style.left = to + 'px'
         return
       }
@@ -1268,14 +1330,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var start = new Date().getTime()
       var timer = window.setInterval(function () {
         var timeElap = new Date().getTime() - start
-        if (timeElap > speed) {
+        if (timeElap > duration) {
           that.slidesContainer[0].style.left = to + 'px'
           that.ontransitionend()
           window.clearInterval(timer)
           return
         }
         that.slidesContainer[0].style.left =
-          (to - from) * (Math.floor(timeElap / speed * 100) / 100) + from + 'px'
+          (to - from) * (Math.floor((timeElap / duration) * 100) / 100) +
+          from +
+          'px'
       }, 4)
     },
 
@@ -1297,6 +1361,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
     onresize: function () {
       this.initSlides(true)
+    },
+
+    onhashchange: function () {
+      if (this.options.closeOnHashChange) {
+        this.close()
+      }
     },
 
     onmousedown: function (event) {
@@ -1356,11 +1426,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
       // jQuery doesn't copy touch event properties by default,
       // so we have to access the originalEvent object:
-      var touches = (event.originalEvent || event).touches[0]
+      var touch = (event.originalEvent || event).touches[0]
       this.touchStart = {
         // Remember the initial touch coordinates:
-        x: touches.pageX,
-        y: touches.pageY,
+        x: touch.pageX,
+        y: touch.pageY,
         // Store the time to determine touch duration:
         time: Date.now()
       }
@@ -1376,7 +1446,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
       // jQuery doesn't copy touch event properties by default,
       // so we have to access the originalEvent object:
-      var touches = (event.originalEvent || event).touches[0]
+      var touches = (event.originalEvent || event).touches
+      var touch = touches[0]
       var scale = (event.originalEvent || event).scale
       var index = this.index
       var touchDeltaX
@@ -1390,8 +1461,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
       // Measure change in x and y coordinates:
       this.touchDelta = {
-        x: touches.pageX - this.touchStart.x,
-        y: touches.pageY - this.touchStart.y
+        x: touch.pageX - this.touchStart.x,
+        y: touch.pageY - this.touchStart.y
       }
       touchDeltaX = this.touchDelta.x
       // Detect if this is a vertical scroll movement (run only once per touch):
@@ -1428,7 +1499,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           index = indices.pop()
           this.translateX(index, touchDeltaX + this.positions[index], 0)
         }
-      } else {
+      } else if (!this.options.carousel) {
         this.translateY(index, this.touchDelta.y + this.positions[index], 0)
       }
     },
@@ -1438,13 +1509,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         this.stopPropagation(event)
       }
       var index = this.index
-      var speed = this.options.transitionSpeed
+      var absTouchDeltaX = Math.abs(this.touchDelta.x)
       var slideWidth = this.slideWidth
-      var isShortDuration = Number(Date.now() - this.touchStart.time) < 250
+      var duration = Math.ceil(
+        (this.options.transitionDuration * (1 - absTouchDeltaX / slideWidth)) /
+          2
+      )
       // Determine if slide attempt triggers next/prev slide:
-      var isValidSlide =
-        (isShortDuration && Math.abs(this.touchDelta.x) > 20) ||
-        Math.abs(this.touchDelta.x) > slideWidth / 2
+      var isValidSlide = absTouchDeltaX > 20
       // Determine if slide attempt is past start or end:
       var isPastBounds =
         (!index && this.touchDelta.x > 0) ||
@@ -1452,8 +1524,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var isValidClose =
         !isValidSlide &&
         this.options.closeOnSwipeUpOrDown &&
-        ((isShortDuration && Math.abs(this.touchDelta.y) > 20) ||
-          Math.abs(this.touchDelta.y) > this.slideHeight / 2)
+        Math.abs(this.touchDelta.y) > 20
       var direction
       var indexForward
       var indexBackward
@@ -1476,27 +1547,27 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           } else if (indexForward >= 0 && indexForward < this.num) {
             this.move(indexForward, distanceForward, 0)
           }
-          this.move(index, this.positions[index] + distanceForward, speed)
+          this.move(index, this.positions[index] + distanceForward, duration)
           this.move(
             this.circle(indexBackward),
             this.positions[this.circle(indexBackward)] + distanceForward,
-            speed
+            duration
           )
           index = this.circle(indexBackward)
           this.onslide(index)
         } else {
           // Move back into position
           if (this.options.continuous) {
-            this.move(this.circle(index - 1), -slideWidth, speed)
-            this.move(index, 0, speed)
-            this.move(this.circle(index + 1), slideWidth, speed)
+            this.move(this.circle(index - 1), -slideWidth, duration)
+            this.move(index, 0, duration)
+            this.move(this.circle(index + 1), slideWidth, duration)
           } else {
             if (index) {
-              this.move(index - 1, -slideWidth, speed)
+              this.move(index - 1, -slideWidth, duration)
             }
-            this.move(index, 0, speed)
+            this.move(index, 0, duration)
             if (index < this.num - 1) {
-              this.move(index + 1, slideWidth, speed)
+              this.move(index + 1, slideWidth, duration)
             }
           }
         }
@@ -1505,7 +1576,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           this.close()
         } else {
           // Move back into position
-          this.translateY(index, 0, speed)
+          this.translateY(index, 0, duration)
         }
       }
     },
@@ -1600,7 +1671,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var options = this.options
       var target = event.target || event.srcElement
       var parent = target.parentNode
-      function isTarget (className) {
+      /**
+       * Checks if the target from the close has the given class
+       *
+       * @param {string} className Class name
+       * @returns {boolean} Returns true if the target has the class name
+       */
+      function isTarget(className) {
         return $(target).hasClass(className) || $(parent).hasClass(className)
       }
       if (isTarget(options.toggleClass)) {
@@ -1717,7 +1794,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var element
       var title
       var altText
-      function callbackWrapper (event) {
+      /**
+       * Wraps the callback function for the load/error event
+       *
+       * @param {event} event load/error event
+       * @returns {number} timeout ID
+       */
+      function callbackWrapper(event) {
         if (!called) {
           event = {
             type: event.type,
@@ -1830,7 +1913,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     unloadElements: function (index) {
       var i, diff
       for (i in this.elements) {
-        if (this.elements.hasOwnProperty(i)) {
+        if (Object.prototype.hasOwnProperty.call(this.elements, i)) {
           diff = Math.abs(index - i)
           if (
             diff > this.options.preloadRange &&
@@ -1859,7 +1942,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           index,
           this.index > index
             ? -this.slideWidth
-            : this.index < index ? this.slideWidth : 0,
+            : this.index < index
+            ? this.slideWidth
+            : 0,
           0
         )
       }
@@ -1979,7 +2064,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         ) {
           try {
             return $.parseJSON(prop)
-          } catch (ignore) {}
+          } catch (ignore) {
+            // ignore JSON parsing errors
+          }
         }
         return prop
       }
@@ -2020,7 +2107,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     initEventListeners: function () {
       var that = this
       var slidesContainer = this.slidesContainer
-      function proxyListener (event) {
+      /**
+       * Proxy listener
+       *
+       * @param {event} event original event
+       */
+      function proxyListener(event) {
         var type =
           that.support.transition && that.support.transition.end === event.type
             ? 'transitionend'
@@ -2028,6 +2120,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         that['on' + type](event)
       }
       $(window).on('resize', proxyListener)
+      $(window).on('hashchange', proxyListener)
       $(document.body).on('keydown', proxyListener)
       this.container.on('click', proxyListener)
       if (this.support.touch) {
@@ -2077,7 +2170,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
     initWidget: function () {
       var that = this
-      function openHandler (event) {
+      /**
+       * Open handler
+       *
+       * @param {event} event Gallery open event
+       */
+      function openHandler(event) {
         if (event.target === that.container[0]) {
           that.container.off(that.support.transition.end, openHandler)
           that.handleOpen()
@@ -2154,13 +2252,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/vendor/blueimp-gallery/loading.gif?05992d3434d3589b38a3a5431842d38f";
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -2174,13 +2272,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  * https://opensource.org/licenses/MIT
  */
 
-/* global define, window, document */
+/* global define */
 
 ;(function (factory) {
   'use strict'
   if (true) {
     // Register as an anonymous AMD module:
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(74), __webpack_require__(75)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(76), __webpack_require__(77)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
@@ -2191,7 +2289,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 })(function ($, Gallery) {
   'use strict'
 
-  $.extend(Gallery.prototype.options, {
+  var galleryPrototype = Gallery.prototype
+
+  $.extend(galleryPrototype.options, {
     // The class for video content elements:
     videoContentClass: 'video-content',
     // The class for video when it is loading:
@@ -2204,9 +2304,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     videoSourcesProperty: 'sources'
   })
 
-  var handleSlide = Gallery.prototype.handleSlide
+  var handleSlide = galleryPrototype.handleSlide
 
-  $.extend(Gallery.prototype, {
+  $.extend(galleryPrototype, {
     handleSlide: function (index) {
       handleSlide.call(this, index)
       if (this.playingVideo) {
@@ -2338,23 +2438,23 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(79);
+var content = __webpack_require__(81);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("92d8fcf4", content, false);
+var update = __webpack_require__(4)("00031d67", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-580c1057\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./portfolio.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-580c1057\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./portfolio.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5f13625e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./portfolio.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5f13625e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./portfolio.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2364,10 +2464,10 @@ if(false) {
 }
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -2378,14 +2478,14 @@ exports.push([module.i, "\n.show-enter,\n.show-leave-to { max-height: 1px; opaci
 
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_portfolio_item__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_portfolio_item__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_portfolio_item___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_portfolio_item__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_scrollto__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_scrollto__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_scrollto___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_scrollto__);
 //
 //
@@ -2531,15 +2631,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(82)
+var __vue_script__ = __webpack_require__(84)
 /* template */
-var __vue_template__ = __webpack_require__(99)
+var __vue_template__ = __webpack_require__(101)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2556,7 +2656,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\portfolio\\components\\portfolio-item.vue"
+Component.options.__file = "resources/assets/js/portfolio/components/portfolio-item.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -2565,9 +2665,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bb535e8a", Component.options)
+    hotAPI.createRecord("data-v-4572f448", Component.options)
   } else {
-    hotAPI.reload("data-v-bb535e8a", Component.options)
+    hotAPI.reload("data-v-4572f448", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -2578,16 +2678,16 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__portfolio_file__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__portfolio_file__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__portfolio_file___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__portfolio_file__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_gallery__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_gallery__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_gallery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_gallery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_disable_scroll__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_disable_scroll__ = __webpack_require__(99);
 //
 //
 //
@@ -2690,15 +2790,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(84)
+var __vue_script__ = __webpack_require__(86)
 /* template */
-var __vue_template__ = __webpack_require__(85)
+var __vue_template__ = __webpack_require__(87)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2715,7 +2815,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\portfolio\\components\\portfolio-file.vue"
+Component.options.__file = "resources/assets/js/portfolio/components/portfolio-file.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -2724,9 +2824,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-304f6ea4", Component.options)
+    hotAPI.createRecord("data-v-5927db9e", Component.options)
   } else {
-    hotAPI.reload("data-v-304f6ea4", Component.options)
+    hotAPI.reload("data-v-5927db9e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -2737,7 +2837,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 84 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2795,7 +2895,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 85 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2815,12 +2915,13 @@ var render = function() {
           style: { backgroundImage: "url(" + file.href + ")" },
           on: {
             click: function($event) {
-              _vm.$emit("imageClicked", _vm.index_start + index)
+              return _vm.$emit("imageClicked", _vm.index_start + index)
             }
           }
         })
       ])
-    })
+    }),
+    0
   )
 }
 var staticRenderFns = []
@@ -2829,178 +2930,292 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-304f6ea4", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-5927db9e", module.exports)
   }
 }
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
-	 true ? module.exports = factory(__webpack_require__(87), __webpack_require__(95), __webpack_require__(77), __webpack_require__(96), __webpack_require__(75)) :
-	typeof define === 'function' && define.amd ? define(['blueimp-gallery/css/blueimp-gallery.min.css', 'blueimp-gallery/js/blueimp-gallery-fullscreen.js', 'blueimp-gallery/js/blueimp-gallery-video.js', 'blueimp-gallery/js/blueimp-gallery-youtube.js', 'blueimp-gallery/js/blueimp-gallery.js'], factory) :
-	(global.VueGallery = factory(null,null,null,null,global.blueimp));
+   true ? module.exports = factory(__webpack_require__(89), __webpack_require__(97), __webpack_require__(79), __webpack_require__(98), __webpack_require__(77)) :
+  typeof define === 'function' && define.amd ? define(['blueimp-gallery/css/blueimp-gallery.min.css', 'blueimp-gallery/js/blueimp-gallery-fullscreen.js', 'blueimp-gallery/js/blueimp-gallery-video.js', 'blueimp-gallery/js/blueimp-gallery-youtube.js', 'blueimp-gallery/js/blueimp-gallery.js'], factory) :
+  (global.VueGallery = factory(null,null,null,null,global.blueimp));
 }(this, (function (blueimpGallery_min_css,blueimpGalleryFullscreen_js,blueimpGalleryVideo_js,blueimpGalleryYoutube_js,blueimp) { 'use strict';
 
-blueimp = blueimp && blueimp.hasOwnProperty('default') ? blueimp['default'] : blueimp;
+  blueimp = blueimp && blueimp.hasOwnProperty('default') ? blueimp['default'] : blueimp;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-(function () {
-  if (typeof document !== 'undefined') {
-    var head = document.head || document.getElementsByTagName('head')[0],
-        style = document.createElement('style'),
-        css = " .blueimp-gallery > .description { position: absolute; top: 30px; left: 15px; color: #fff; display: none; } .blueimp-gallery-controls > .description { display: block; } ";style.type = 'text/css';if (style.styleSheet) {
-      style.styleSheet.cssText = css;
-    } else {
-      style.appendChild(document.createTextNode(css));
-    }head.appendChild(style);
-  }
-})();
+  var script = {
+    props: {
+      images: {
+        type: Array,
+        default: function _default() {
+          return [];
+        }
+      },
 
-var VueGallery$1 = { render: function render() {
-    var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "blueimp-gallery blueimp-gallery-controls", class: { 'blueimp-gallery-carousel': _vm.carousel }, attrs: { "id": _vm.id } }, [_c('div', { staticClass: "slides" }), _vm._v(" "), _c('h3', { staticClass: "title" }), _vm._v(" "), _c('p', { staticClass: "description" }), _vm._v(" "), _c('a', { staticClass: "prev" }, [_vm._v("‹")]), _vm._v(" "), _c('a', { staticClass: "next" }, [_vm._v("›")]), _vm._v(" "), !_vm.carousel ? _c('a', { staticClass: "close" }, [_vm._v("×")]) : _vm._e(), _vm._v(" "), !_vm.carousel ? _c('ol', { staticClass: "indicator" }) : _vm._e(), _vm._v(" "), _vm.carousel ? _c('a', { staticClass: "play-pause" }) : _vm._e()]);
-  }, staticRenderFns: [],
-  props: {
-    images: {
-      type: Array,
-      default: function _default() {
-        return [];
+      options: {
+        type: Object,
+        default: function _default() {
+          return {};
+        }
+      },
+
+      carousel: {
+        type: Boolean,
+        default: false
+      },
+
+      index: {
+        type: Number
+      },
+
+      id: {
+        type: String,
+        default: 'blueimp-gallery'
       }
     },
 
-    options: {
-      type: Object,
-      default: function _default() {
-        return {};
+    data: function data() {
+      return {
+        instance: null
+      };
+    },
+
+
+    watch: {
+      index: function index(value) {
+        if (this.carousel) {
+          return;
+        }
+
+        if (value !== null) {
+          this.open(value);
+        } else {
+          if (this.instance) {
+            this.instance.close();
+          }
+
+          this.$emit('close');
+        }
       }
     },
 
-    carousel: {
-      type: Boolean,
-      default: false
+    mounted: function mounted() {
+      if (this.carousel) {
+        this.open();
+      }
+    },
+    destroyed: function destroyed() {
+      if (this.instance !== null) {
+        this.instance.close();
+        this.instance = null;
+      }
     },
 
-    index: {
-      type: Number
-    },
 
-    id: {
-      type: String,
-      default: 'blueimp-gallery'
+    methods: {
+      open: function open() {
+        var _this = this;
+
+        var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+        var instance = typeof blueimp.Gallery !== 'undefined' ? blueimp.Gallery : blueimp;
+
+        var options = _extends({
+          toggleControlsOnReturn: false,
+          toggleControlsOnSlideClick: false,
+          closeOnSlideClick: false,
+          carousel: this.carousel,
+          container: '#' + this.id,
+          index: index,
+          onopen: function onopen() {
+            return _this.$emit('onopen');
+          },
+          onopened: function onopened() {
+            return _this.$emit('onopened');
+          },
+          onslide: this.onSlideCustom,
+          onslideend: function onslideend(index, slide) {
+            return _this.$emit('onslideend', { index: index, slide: slide });
+          },
+          onslidecomplete: function onslidecomplete(index, slide) {
+            return _this.$emit('onslidecomplete', { index: index, slide: slide });
+          },
+          onclose: function onclose() {
+            return _this.$emit('close');
+          },
+          onclosed: function onclosed() {
+            return _this.$emit('onclosed');
+          }
+        }, this.options);
+
+        if (this.carousel) {
+          options.container = this.$el;
+        }
+
+        this.instance = instance(this.images, options);
+      },
+      onSlideCustom: function onSlideCustom(index, slide) {
+        this.$emit('onslide', { index: index, slide: slide });
+
+        var image = this.images[index];
+        if (image !== undefined) {
+          var text = image.description;
+          var node = this.instance.container.find('.description');
+          if (text) {
+            node.empty();
+            node[0].appendChild(document.createTextNode(text));
+          }
+        }
+      }
     }
-  },
+  };
 
-  data: function data() {
-    return {
-      instance: null
+  var __vue_script__ = script;
+
+  /* template */
+  var __vue_render__ = function __vue_render__() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("div", {
+      staticClass: "blueimp-gallery blueimp-gallery-controls",
+      class: { "blueimp-gallery-carousel": _vm.carousel },
+      attrs: { id: _vm.id }
+    }, [_c("div", { staticClass: "slides" }), _vm._v(" "), _c("h3", { staticClass: "title" }), _vm._v(" "), _c("p", { staticClass: "description" }), _vm._v(" "), _c("a", { staticClass: "prev" }, [_vm._t("prev", [_vm._v("‹")])], 2), _vm._v(" "), _c("a", { staticClass: "next" }, [_vm._t("next", [_vm._v("›")])], 2), _vm._v(" "), !_vm.carousel ? _c("a", { staticClass: "close" }, [_vm._t("close", [_vm._v("X")])], 2) : _vm._e(), _vm._v(" "), !_vm.carousel ? _c("ol", { staticClass: "indicator" }) : _vm._e(), _vm._v(" "), _vm.carousel ? _c("a", { staticClass: "play-pause" }) : _vm._e()]);
+  };
+  var __vue_staticRenderFns__ = [];
+  __vue_render__._withStripped = true;
+
+  var __vue_template__ = typeof __vue_render__ !== 'undefined' ? { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ } : {};
+  /* style */
+  var __vue_inject_styles__ = function (inject) {
+    if (!inject) return;
+    inject("data-v-32d676c0_0", { source: "\n.blueimp-gallery > .description {\n  position: absolute;\n  top: 30px;\n  left: 15px;\n  color: #fff;\n  display: none;\n}\n.blueimp-gallery-controls > .description {\n  display: block;\n}\n", map: undefined, media: undefined });
+  };
+  /* scoped */
+  var __vue_scope_id__ = undefined;
+  /* module identifier */
+  var __vue_module_identifier__ = undefined;
+  /* functional template */
+  var __vue_is_functional_template__ = false;
+  /* component normalizer */
+  function __vue_normalize__(template, style, script$$1, scope, functional, moduleIdentifier, createInjector, createInjectorSSR) {
+    var component = (typeof script$$1 === 'function' ? script$$1.options : script$$1) || {};
+
+    {
+      component.__file = "/Users/levizitting/git/vue-gallery/src/component/gallery.vue";
+    }
+
+    if (!component.render) {
+      component.render = template.render;
+      component.staticRenderFns = template.staticRenderFns;
+      component._compiled = true;
+
+      if (functional) component.functional = true;
+    }
+
+    component._scopeId = scope;
+
+    {
+      var hook = void 0;
+      if (style) {
+        hook = function hook(context) {
+          style.call(this, createInjector(context));
+        };
+      }
+
+      if (hook !== undefined) {
+        if (component.functional) {
+          // register for functional component in vue file
+          var originalRender = component.render;
+          component.render = function renderWithStyleInjection(h, context) {
+            hook.call(context);
+            return originalRender(h, context);
+          };
+        } else {
+          // inject component registration as beforeCreate hook
+          var existing = component.beforeCreate;
+          component.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+        }
+      }
+    }
+
+    return component;
+  }
+  /* style inject */
+  function __vue_create_injector__() {
+    var head = document.head || document.getElementsByTagName('head')[0];
+    var styles = __vue_create_injector__.styles || (__vue_create_injector__.styles = {});
+    var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
+
+    return function addStyle(id, css) {
+      if (document.querySelector('style[data-vue-ssr-id~="' + id + '"]')) return; // SSR styles are present.
+
+      var group = isOldIE ? css.media || 'default' : id;
+      var style = styles[group] || (styles[group] = { ids: [], parts: [], element: undefined });
+
+      if (!style.ids.includes(id)) {
+        var code = css.source;
+        var index = style.ids.length;
+
+        style.ids.push(id);
+
+        if (isOldIE) {
+          style.element = style.element || document.querySelector('style[data-group=' + group + ']');
+        }
+
+        if (!style.element) {
+          var el = style.element = document.createElement('style');
+          el.type = 'text/css';
+
+          if (css.media) el.setAttribute('media', css.media);
+          if (isOldIE) {
+            el.setAttribute('data-group', group);
+            el.setAttribute('data-next-index', '0');
+          }
+
+          head.appendChild(el);
+        }
+
+        if (isOldIE) {
+          index = parseInt(style.element.getAttribute('data-next-index'));
+          style.element.setAttribute('data-next-index', index + 1);
+        }
+
+        if (style.element.styleSheet) {
+          style.parts.push(code);
+          style.element.styleSheet.cssText = style.parts.filter(Boolean).join('\n');
+        } else {
+          var textNode = document.createTextNode(code);
+          var nodes = style.element.childNodes;
+          if (nodes[index]) style.element.removeChild(nodes[index]);
+          if (nodes.length) style.element.insertBefore(textNode, nodes[index]);else style.element.appendChild(textNode);
+        }
+      }
     };
-  },
-
-
-  watch: {
-    index: function index(value) {
-      if (this.carousel) {
-        return;
-      }
-
-      if (value !== null) {
-        this.open(value);
-      } else {
-        if (this.instance) {
-          this.instance.close();
-        }
-
-        this.$emit('close');
-      }
-    }
-  },
-
-  mounted: function mounted() {
-    if (this.carousel) {
-      this.open();
-    }
-  },
-  destroyed: function destroyed() {
-    if (this.instance !== null) {
-      this.instance.close();
-      this.instance = null;
-    }
-  },
-
-
-  methods: {
-    open: function open() {
-      var _this = this;
-
-      var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-
-      var instance = typeof blueimp.Gallery !== 'undefined' ? blueimp.Gallery : blueimp;
-
-      var options = _extends({
-        toggleControlsOnReturn: false,
-        toggleControlsOnSlideClick: false,
-        closeOnSlideClick: false,
-        carousel: this.carousel,
-        container: '#' + this.id,
-        index: index,
-        onopen: function onopen() {
-          return _this.$emit('onopen');
-        },
-        onopened: function onopened() {
-          return _this.$emit('onopened');
-        },
-        onslide: this.onSlideCustom,
-        onslideend: function onslideend(index, slide) {
-          return _this.$emit('onslideend', { index: index, slide: slide });
-        },
-        onslidecomplete: function onslidecomplete(index, slide) {
-          return _this.$emit('onslidecomplete', { index: index, slide: slide });
-        },
-        onclose: function onclose() {
-          return _this.$emit('close');
-        },
-        onclosed: function onclosed() {
-          return _this.$emit('onclosed');
-        }
-      }, this.options);
-
-      if (this.carousel) {
-        options.container = this.$el;
-      }
-
-      this.instance = instance(this.images, options);
-    },
-    onSlideCustom: function onSlideCustom(index, slide) {
-      this.$emit('onslide', { index: index, slide: slide });
-
-      var image = this.images[index];
-      if (image !== undefined) {
-        var text = image.description;
-        var node = this.instance.container.find('.description');
-        if (text) {
-          node.empty();
-          node[0].appendChild(document.createTextNode(text));
-        }
-      }
-    }
   }
-};
+  /* style inject SSR */
 
-return VueGallery$1;
+  var VueGallery = __vue_normalize__(__vue_template__, __vue_inject_styles__, typeof __vue_script__ === 'undefined' ? {} : __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, typeof __vue_create_injector__ !== 'undefined' ? __vue_create_injector__ : function () {}, typeof __vue_create_injector_ssr__ !== 'undefined' ? __vue_create_injector_ssr__ : function () {});
+
+  return VueGallery;
 
 })));
 
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(88);
+var content = __webpack_require__(90);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -3008,7 +3223,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(71)(content, options);
+var update = __webpack_require__(73)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -3025,57 +3240,58 @@ if(false) {
 }
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
+var escape = __webpack_require__(72);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";.blueimp-gallery,.blueimp-gallery>.slides>.slide>.slide-content{position:absolute;top:0;right:0;bottom:0;left:0;-moz-backface-visibility:hidden}.blueimp-gallery>.slides>.slide>.slide-content{margin:auto;width:auto;height:auto;max-width:100%;max-height:100%;opacity:1}.blueimp-gallery{position:fixed;z-index:999999;overflow:hidden;background:#000;background:rgba(0,0,0,.9);opacity:0;display:none;direction:ltr;-ms-touch-action:none;touch-action:none}.blueimp-gallery-carousel{position:relative;z-index:auto;margin:1em auto;padding-bottom:56.25%;box-shadow:0 0 10px #000;-ms-touch-action:pan-y;touch-action:pan-y}.blueimp-gallery-display{display:block;opacity:1}.blueimp-gallery>.slides{position:relative;height:100%;overflow:hidden}.blueimp-gallery-carousel>.slides{position:absolute}.blueimp-gallery>.slides>.slide{position:relative;float:left;height:100%;text-align:center;-webkit-transition-timing-function:cubic-bezier(.645,.045,.355,1);-moz-transition-timing-function:cubic-bezier(.645,.045,.355,1);-ms-transition-timing-function:cubic-bezier(.645,.045,.355,1);-o-transition-timing-function:cubic-bezier(.645,.045,.355,1);transition-timing-function:cubic-bezier(.645,.045,.355,1)}.blueimp-gallery,.blueimp-gallery>.slides>.slide>.slide-content{-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;-ms-transition:opacity .2s linear;-o-transition:opacity .2s linear;transition:opacity .2s linear}.blueimp-gallery>.slides>.slide-loading{background:url(" + __webpack_require__(76) + ") center no-repeat;background-size:64px 64px}.blueimp-gallery>.slides>.slide-loading>.slide-content{opacity:0}.blueimp-gallery>.slides>.slide-error{background:url(" + __webpack_require__(89) + ") center no-repeat}.blueimp-gallery>.slides>.slide-error>.slide-content{display:none}.blueimp-gallery>.next,.blueimp-gallery>.prev{position:absolute;top:50%;left:15px;width:40px;height:40px;margin-top:-23px;font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;font-size:60px;font-weight:100;line-height:30px;color:#fff;text-decoration:none;text-shadow:0 0 2px #000;text-align:center;background:#222;background:rgba(0,0,0,.5);-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;border:3px solid #fff;-webkit-border-radius:23px;-moz-border-radius:23px;border-radius:23px;opacity:.5;cursor:pointer;display:none}.blueimp-gallery>.next{left:auto;right:15px}.blueimp-gallery>.close,.blueimp-gallery>.title{position:absolute;top:15px;left:15px;margin:0 40px 0 0;font-size:20px;line-height:30px;color:#fff;text-shadow:0 0 2px #000;opacity:.8;display:none}.blueimp-gallery>.close{padding:15px;right:15px;left:auto;margin:-15px;font-size:30px;text-decoration:none;cursor:pointer}.blueimp-gallery>.play-pause{position:absolute;right:15px;bottom:15px;width:15px;height:15px;background:url(" + __webpack_require__(90) + ") 0 0 no-repeat;cursor:pointer;opacity:.5;display:none}.blueimp-gallery-playing>.play-pause{background-position:-15px 0}.blueimp-gallery>.close:hover,.blueimp-gallery>.next:hover,.blueimp-gallery>.play-pause:hover,.blueimp-gallery>.prev:hover,.blueimp-gallery>.title:hover{color:#fff;opacity:1}.blueimp-gallery-controls>.close,.blueimp-gallery-controls>.next,.blueimp-gallery-controls>.play-pause,.blueimp-gallery-controls>.prev,.blueimp-gallery-controls>.title{display:block;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0)}.blueimp-gallery-left>.prev,.blueimp-gallery-right>.next,.blueimp-gallery-single>.next,.blueimp-gallery-single>.play-pause,.blueimp-gallery-single>.prev{display:none}.blueimp-gallery>.close,.blueimp-gallery>.next,.blueimp-gallery>.play-pause,.blueimp-gallery>.prev,.blueimp-gallery>.slides>.slide>.slide-content{-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body:last-child .blueimp-gallery>.slides>.slide-error{background-image:url(" + __webpack_require__(91) + ")}body:last-child .blueimp-gallery>.play-pause{width:20px;height:20px;background-size:40px 20px;background-image:url(" + __webpack_require__(92) + ")}body:last-child .blueimp-gallery-playing>.play-pause{background-position:-20px 0}*+html .blueimp-gallery>.slides>.slide{min-height:300px}*+html .blueimp-gallery>.slides>.slide>.slide-content{position:relative}.blueimp-gallery>.indicator{position:absolute;top:auto;right:15px;bottom:15px;left:15px;margin:0 40px;padding:0;list-style:none;text-align:center;line-height:10px;display:none}.blueimp-gallery>.indicator>li{display:inline-block;width:9px;height:9px;margin:6px 3px 0 3px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;border:1px solid transparent;background:#ccc;background:rgba(255,255,255,.25) center no-repeat;border-radius:5px;box-shadow:0 0 2px #000;opacity:.5;cursor:pointer}.blueimp-gallery>.indicator>.active,.blueimp-gallery>.indicator>li:hover{background-color:#fff;border-color:#fff;opacity:1}.blueimp-gallery>.indicator>li:after{opacity:0;display:block;position:absolute;content:'';top:-5em;width:75px;height:75px;transition:transform .6s ease-out,opacity .4s ease-out;transform:translateX(-50%) translateY(0) translateZ(0);pointer-events:none}.blueimp-gallery>.indicator>li:hover:after{opacity:1;border-radius:50%;background:inherit;transform:translateX(-50%) translateY(-5px) translateZ(0)}.blueimp-gallery>.indicator>.active:after{display:none}.blueimp-gallery-controls>.indicator{display:block;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0)}.blueimp-gallery-single>.indicator{display:none}.blueimp-gallery>.indicator{-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}*+html .blueimp-gallery>.indicator>li{display:inline}.blueimp-gallery>.slides>.slide>.video-content>img{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;width:auto;height:auto;max-width:100%;max-height:100%;-moz-backface-visibility:hidden}.blueimp-gallery>.slides>.slide>.video-content>video{position:absolute;top:0;left:0;width:100%;height:100%}.blueimp-gallery>.slides>.slide>.video-content>iframe{position:absolute;top:100%;left:0;width:100%;height:100%;border:none}.blueimp-gallery>.slides>.slide>.video-playing>iframe{top:0}.blueimp-gallery>.slides>.slide>.video-content>a{position:absolute;top:50%;right:0;left:0;margin:-64px auto 0;width:128px;height:128px;background:url(" + __webpack_require__(93) + ") center no-repeat;opacity:.8;cursor:pointer}.blueimp-gallery>.slides>.slide>.video-content>a:hover{opacity:1}.blueimp-gallery>.slides>.slide>.video-playing>a,.blueimp-gallery>.slides>.slide>.video-playing>img{display:none}.blueimp-gallery>.slides>.slide>.video-content>video{display:none}.blueimp-gallery>.slides>.slide>.video-playing>video{display:block}.blueimp-gallery>.slides>.slide>.video-loading>a{background:url(" + __webpack_require__(76) + ") center no-repeat;background-size:64px 64px}body:last-child .blueimp-gallery>.slides>.slide>.video-content:not(.video-loading)>a{background-image:url(" + __webpack_require__(94) + ")}*+html .blueimp-gallery>.slides>.slide>.video-content{height:100%}*+html .blueimp-gallery>.slides>.slide>.video-content>a{left:50%;margin-left:-64px}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";.blueimp-gallery,.blueimp-gallery>.slides>.slide>.slide-content{position:absolute;top:0;right:0;bottom:0;left:0;-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;-ms-transition:opacity .2s linear;-o-transition:opacity .2s linear;transition:opacity .2s linear;backface-visibility:hidden;-moz-backface-visibility:hidden}.blueimp-gallery>.slides>.slide>.slide-content{margin:auto;width:auto;height:auto;max-width:100%;max-height:100%;opacity:1}.blueimp-gallery{position:fixed;z-index:999999;overflow:hidden;background:#000;opacity:0;display:none;direction:ltr;-ms-touch-action:pinch-zoom;touch-action:pinch-zoom}.blueimp-gallery-carousel{position:relative;z-index:auto;margin:1em auto;padding-bottom:56.25%;box-shadow:0 0 4px rgba(0,0,0,.1);-ms-touch-action:pan-y pinch-zoom;touch-action:pan-y pinch-zoom}.blueimp-gallery-display{display:block;opacity:1}.blueimp-gallery>.slides{position:relative;height:100%;overflow:hidden}.blueimp-gallery-carousel>.slides{position:absolute}.blueimp-gallery>.slides>.slide{position:relative;float:left;height:100%;text-align:center;-webkit-transition-timing-function:cubic-bezier(.645,.045,.355,1);-moz-transition-timing-function:cubic-bezier(.645,.045,.355,1);-ms-transition-timing-function:cubic-bezier(.645,.045,.355,1);-o-transition-timing-function:cubic-bezier(.645,.045,.355,1);transition-timing-function:cubic-bezier(.645,.045,.355,1)}.blueimp-gallery>.slides>.slide-loading{background:url(" + escape(__webpack_require__(78)) + ") center no-repeat;background-size:64px 64px}.blueimp-gallery>.slides>.slide-loading>.slide-content{opacity:0}.blueimp-gallery>.slides>.slide-error{background:url(" + escape(__webpack_require__(91)) + ") center no-repeat}.blueimp-gallery>.slides>.slide-error>.slide-content{display:none}.blueimp-gallery>.next,.blueimp-gallery>.prev{position:absolute;top:50%;left:15px;width:40px;height:40px;margin-top:-23px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:60px;font-weight:100;line-height:30px;color:#fff;text-decoration:none;text-shadow:0 0 2px #000;text-align:center;background:#222;background:rgba(0,0,0,.5);-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;border:3px solid #fff;-webkit-border-radius:23px;-moz-border-radius:23px;border-radius:23px;opacity:.5;cursor:pointer;display:none}.blueimp-gallery>.next{left:auto;right:15px}.blueimp-gallery>.close,.blueimp-gallery>.title{position:absolute;top:15px;left:15px;margin:0 40px 0 0;font-size:20px;line-height:30px;color:#fff;text-shadow:0 0 2px #000;opacity:.8;display:none}.blueimp-gallery>.close{padding:15px;right:15px;left:auto;margin:-15px;font-size:30px;text-decoration:none;cursor:pointer}.blueimp-gallery>.play-pause{position:absolute;right:15px;bottom:15px;width:15px;height:15px;background:url(" + escape(__webpack_require__(92)) + ") 0 0 no-repeat;cursor:pointer;opacity:.5;display:none}.blueimp-gallery-playing>.play-pause{background-position:-15px 0}.blueimp-gallery-controls>.close,.blueimp-gallery-controls>.next,.blueimp-gallery-controls>.play-pause,.blueimp-gallery-controls>.prev,.blueimp-gallery-controls>.title{display:block;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0)}.blueimp-gallery-left>.prev,.blueimp-gallery-right>.next,.blueimp-gallery-single>.next,.blueimp-gallery-single>.play-pause,.blueimp-gallery-single>.prev{display:none}.blueimp-gallery>.close,.blueimp-gallery>.next,.blueimp-gallery>.play-pause,.blueimp-gallery>.prev,.blueimp-gallery>.slides>.slide>.slide-content{-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.blueimp-gallery>.close:hover,.blueimp-gallery>.next:hover,.blueimp-gallery>.play-pause:hover,.blueimp-gallery>.prev:hover,.blueimp-gallery>.title:hover{color:#fff;opacity:1}body:last-child .blueimp-gallery>.slides>.slide-error{background-image:url(" + escape(__webpack_require__(93)) + ")}body:last-child .blueimp-gallery>.play-pause{width:20px;height:20px;background-size:40px 20px;background-image:url(" + escape(__webpack_require__(94)) + ")}body:last-child .blueimp-gallery-playing>.play-pause{background-position:-20px 0}*+html .blueimp-gallery>.slides>.slide{min-height:300px}*+html .blueimp-gallery>.slides>.slide>.slide-content{position:relative}@media (prefers-color-scheme:light){.blueimp-gallery-carousel{background:#fff}}.blueimp-gallery>.indicator{position:absolute;top:auto;right:15px;bottom:15px;left:15px;margin:0 40px;padding:0;list-style:none;text-align:center;line-height:10px;display:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.blueimp-gallery>.indicator>li{display:inline-block;position:relative;width:9px;height:9px;margin:6px 3px 0 3px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;border:1px solid transparent;background:#ccc;background:rgba(255,255,255,.25) center no-repeat;border-radius:5px;box-shadow:0 0 2px #000;opacity:.5;cursor:pointer}*+html .blueimp-gallery>.indicator>li{display:inline}.blueimp-gallery>.indicator>.active,.blueimp-gallery>.indicator>li:hover{background-color:#fff;border-color:#fff;opacity:1}.blueimp-gallery>.indicator>li:after{opacity:0;display:block;position:absolute;content:'';top:-5em;left:4px;width:75px;height:75px;transition:transform .6s ease-out,opacity .4s ease-out;transform:translateX(-50%) translateY(0) translateZ(0);pointer-events:none}.blueimp-gallery>.indicator>li:hover:after{opacity:1;border-radius:50%;background:inherit;transform:translateX(-50%) translateY(-5px) translateZ(0)}.blueimp-gallery>.indicator>.active:after{display:none}.blueimp-gallery-controls>.indicator{display:block;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0)}.blueimp-gallery-single>.indicator{display:none}.blueimp-gallery>.slides>.slide>.video-content>img{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;width:100%;height:auto;max-width:100%;max-height:100%;backface-visibility:hidden;-moz-backface-visibility:hidden}.blueimp-gallery>.slides>.slide>.video-content>video{position:absolute;top:0;left:0;width:100%;height:100%;display:none}.blueimp-gallery>.slides>.slide>.video-content>iframe{position:absolute;top:100%;left:0;width:100%;height:100%;border:none}.blueimp-gallery>.slides>.slide>.video-playing>iframe{top:0}.blueimp-gallery>.slides>.slide>.video-content>a{position:absolute;top:50%;right:0;left:0;margin:-64px auto 0;width:128px;height:128px;background:url(" + escape(__webpack_require__(95)) + ") center no-repeat;opacity:.8;cursor:pointer}.blueimp-gallery>.slides>.slide>.video-playing>a,.blueimp-gallery>.slides>.slide>.video-playing>img{display:none}.blueimp-gallery>.slides>.slide>.video-playing>video{display:block}.blueimp-gallery>.slides>.slide>.video-loading>a{background:url(" + escape(__webpack_require__(78)) + ") center no-repeat;background-size:64px 64px}*+html .blueimp-gallery>.slides>.slide>.video-content{height:100%}*+html .blueimp-gallery>.slides>.slide>.video-content>a{left:50%;margin-left:-64px}.blueimp-gallery>.slides>.slide>.video-content>a:hover{opacity:1}body:last-child .blueimp-gallery>.slides>.slide>.video-content:not(.video-loading)>a{background-image:url(" + escape(__webpack_require__(96)) + ")}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/vendor/blueimp-gallery/error.png?94e5e55ddd44d1cce239326f2761e651";
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/vendor/blueimp-gallery/play-pause.png?a135900b057ca0c2b1073fcd77dbc413";
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/vendor/blueimp-gallery/img/error.svg?19ee6b7e6642d75d6144b0c8209c93d6";
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/vendor/blueimp-gallery/img/play-pause.svg?21dfa3149b274acb9c1819d342a6a169";
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/vendor/blueimp-gallery/video-play.png?e39ea1c9ef17e4620c3c23488178e715";
 
 /***/ }),
-/* 94 */
+/* 96 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/vendor/blueimp-gallery/img/video-play.svg?9b737958b1644b46b23904e53afcac50";
 
 /***/ }),
-/* 95 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -3089,13 +3305,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  * https://opensource.org/licenses/MIT
  */
 
-/* global define, window, document */
+/* global define */
 
 ;(function (factory) {
   'use strict'
   if (true) {
     // Register as an anonymous AMD module:
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(74), __webpack_require__(75)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(76), __webpack_require__(77)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
@@ -3106,15 +3322,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 })(function ($, Gallery) {
   'use strict'
 
-  $.extend(Gallery.prototype.options, {
+  var galleryPrototype = Gallery.prototype
+
+  $.extend(galleryPrototype.options, {
     // Defines if the gallery should open in fullscreen mode:
     fullScreen: false
   })
 
-  var initialize = Gallery.prototype.initialize
-  var close = Gallery.prototype.close
+  var initialize = galleryPrototype.initialize
+  var close = galleryPrototype.close
 
-  $.extend(Gallery.prototype, {
+  $.extend(galleryPrototype, {
     getFullScreenElement: function () {
       return (
         document.fullscreenElement ||
@@ -3168,7 +3386,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -3182,13 +3400,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  * https://opensource.org/licenses/MIT
  */
 
-/* global define, window, document, YT */
+/* global define, YT */
 
 ;(function (factory) {
   'use strict'
   if (true) {
     // Register as an anonymous AMD module:
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(74), __webpack_require__(77)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(76), __webpack_require__(79)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
@@ -3203,7 +3421,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return Gallery
   }
 
-  $.extend(Gallery.prototype.options, {
+  var galleryPrototype = Gallery.prototype
+
+  $.extend(galleryPrototype.options, {
     // The list object property (or data attribute) with the YouTube video id:
     youTubeVideoIdProperty: 'youtube',
     // Optional object with parameters passed to the YouTube video player:
@@ -3216,7 +3436,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   })
 
   var textFactory =
-    Gallery.prototype.textFactory || Gallery.prototype.imageFactory
+    galleryPrototype.textFactory || galleryPrototype.imageFactory
   var YouTubePlayer = function (videoId, playerVars, clickToPlay) {
     this.videoId = videoId
     this.playerVars = playerVars
@@ -3276,7 +3496,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     },
 
     onPause: function () {
-      Gallery.prototype.setTimeout.call(this, this.checkSeek, null, 2000)
+      galleryPrototype.setTimeout.call(this, this.checkSeek, null, 2000)
     },
 
     checkSeek: function () {
@@ -3365,7 +3585,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
   })
 
-  $.extend(Gallery.prototype, {
+  $.extend(galleryPrototype, {
     YouTubePlayer: YouTubePlayer,
 
     textFactory: function (obj, callback) {
@@ -3400,67 +3620,78 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 97 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_scrollingelement__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_scrollingelement__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_scrollingelement___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_scrollingelement__);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
-var DisableScroll = function () {
+var DisableScroll =
+/*#__PURE__*/
+function () {
   function DisableScroll() {
     var _this = this;
 
     _classCallCheck(this, DisableScroll);
 
-    this.handleWheel = function (e) {
+    _defineProperty(this, "handleWheel", function (e) {
       e.preventDefault();
-    };
+    });
 
-    this.handleScroll = function () {
+    _defineProperty(this, "handleScroll", function () {
       var _window;
 
       (_window = window).scrollTo.apply(_window, _toConsumableArray(_this.lockToScrollPos));
-    };
+    });
 
-    this.handleKeydown = function (e) {
-      var keys = [].concat(_toConsumableArray(_this.options.keyboardKeys));
-
+    _defineProperty(this, "handleKeydown", function (e) {
+      var keys = _this.options.keyboardKeys;
       /* istanbul ignore else */
+
       if (['INPUT', 'TEXTAREA'].indexOf(e.target.tagName) !== -1) {
-        keys = keys.slice(1);
+        keys = _this.options.authorizedInInputs;
       }
-
       /* istanbul ignore else */
+
+
       if (keys.indexOf(e.keyCode) !== -1) {
         e.preventDefault();
       }
-    };
+    });
 
     this.options = {
       disableWheel: true,
       disableScroll: true,
       disableKeys: true,
-      keyboardKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40]
-      // space: 32, page up: 33, page down: 34, end: 35, home: 36
+      keyboardKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40],
+      authorizedInInputs: [32, 37, 38, 39, 40] // space: 32, page up: 33, page down: 34, end: 35, home: 36
       // left: 37, up: 38, right: 39, down: 40
-    };
 
+    };
     this.element = canUseDOM ? document.scrollingElement : null;
     this.lockToScrollPos = [0, 0];
   }
-
   /**
    * Disable Page Scroll
    * @external Node
@@ -3471,46 +3702,43 @@ var DisableScroll = function () {
 
 
   _createClass(DisableScroll, [{
-    key: 'on',
+    key: "on",
     value: function on(element, options) {
       if (!canUseDOM) return;
-
       this.element = element || this.element;
-      this.options = _extends({}, this.options, options);
-
-      var _options = this.options,
-          disableKeys = _options.disableKeys,
-          disableScroll = _options.disableScroll,
-          disableWheel = _options.disableWheel;
-
+      this.options = _objectSpread({}, this.options, options);
+      var _this$options = this.options,
+          disableKeys = _this$options.disableKeys,
+          disableScroll = _this$options.disableScroll,
+          disableWheel = _this$options.disableWheel;
       /* istanbul ignore else */
 
       if (disableWheel) {
         document.addEventListener('wheel', this.handleWheel);
         document.addEventListener('touchmove', this.handleWheel);
       }
-
       /* istanbul ignore else */
+
+
       if (disableScroll) {
         this.lockToScrollPos = [this.element.scrollLeft || this.element.scrollX, this.element.scrollTop || this.element.scrollY];
         document.addEventListener('scroll', this.handleScroll);
       }
-
       /* istanbul ignore else */
+
+
       if (disableKeys) {
         document.addEventListener('keydown', this.handleKeydown);
       }
     }
-
     /**
      * Re-enable page scrolls
      */
 
   }, {
-    key: 'off',
+    key: "off",
     value: function off() {
       if (!canUseDOM) return;
-
       document.removeEventListener('wheel', this.handleWheel);
       document.removeEventListener('touchmove', this.handleWheel);
       document.removeEventListener('scroll', this.handleScroll);
@@ -3524,7 +3752,7 @@ var DisableScroll = function () {
 /* harmony default export */ __webpack_exports__["a"] = (new DisableScroll());
 
 /***/ }),
-/* 98 */
+/* 100 */
 /***/ (function(module, exports) {
 
 /*! https://mths.be/scrollingelement v1.5.2 by @diegoperini & @mathias | MIT license */
@@ -3642,7 +3870,7 @@ if (!('scrollingElement' in document)) (function() {
 
 
 /***/ }),
-/* 99 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -3719,492 +3947,571 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-bb535e8a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-4572f448", module.exports)
   }
 }
 
 /***/ }),
-/* 100 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/*!
+  * vue-scrollto v2.20.0
+  * (c) 2019 Randjelovic Igor
+  * @license MIT
+  */
 (function (global, factory) {
-	 true ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global['vue-scrollto'] = factory());
+   true ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global['vue-scrollto'] = factory());
 }(this, (function () { 'use strict';
 
-/**
- * https://github.com/gre/bezier-easing
- * BezierEasing - use bezier curve for transition easing function
- * by Gaëtan Renaudeau 2014 - 2015 – MIT License
- */
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
 
-// These values are established by empiricism with tests (tradeoff: performance VS precision)
-var NEWTON_ITERATIONS = 4;
-var NEWTON_MIN_SLOPE = 0.001;
-var SUBDIVISION_PRECISION = 0.0000001;
-var SUBDIVISION_MAX_ITERATIONS = 10;
-
-var kSplineTableSize = 11;
-var kSampleStepSize = 1.0 / (kSplineTableSize - 1.0);
-
-var float32ArraySupported = typeof Float32Array === 'function';
-
-function A (aA1, aA2) { return 1.0 - 3.0 * aA2 + 3.0 * aA1; }
-function B (aA1, aA2) { return 3.0 * aA2 - 6.0 * aA1; }
-function C (aA1)      { return 3.0 * aA1; }
-
-// Returns x(t) given t, x1, and x2, or y(t) given t, y1, and y2.
-function calcBezier (aT, aA1, aA2) { return ((A(aA1, aA2) * aT + B(aA1, aA2)) * aT + C(aA1)) * aT; }
-
-// Returns dx/dt given t, x1, and x2, or dy/dt given t, y1, and y2.
-function getSlope (aT, aA1, aA2) { return 3.0 * A(aA1, aA2) * aT * aT + 2.0 * B(aA1, aA2) * aT + C(aA1); }
-
-function binarySubdivide (aX, aA, aB, mX1, mX2) {
-  var currentX, currentT, i = 0;
-  do {
-    currentT = aA + (aB - aA) / 2.0;
-    currentX = calcBezier(currentT, mX1, mX2) - aX;
-    if (currentX > 0.0) {
-      aB = currentT;
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
     } else {
-      aA = currentT;
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
     }
-  } while (Math.abs(currentX) > SUBDIVISION_PRECISION && ++i < SUBDIVISION_MAX_ITERATIONS);
-  return currentT;
-}
 
-function newtonRaphsonIterate (aX, aGuessT, mX1, mX2) {
- for (var i = 0; i < NEWTON_ITERATIONS; ++i) {
-   var currentSlope = getSlope(aGuessT, mX1, mX2);
-   if (currentSlope === 0.0) {
-     return aGuessT;
-   }
-   var currentX = calcBezier(aGuessT, mX1, mX2) - aX;
-   aGuessT -= currentX / currentSlope;
- }
- return aGuessT;
-}
-
-var src = function bezier (mX1, mY1, mX2, mY2) {
-  if (!(0 <= mX1 && mX1 <= 1 && 0 <= mX2 && mX2 <= 1)) {
-    throw new Error('bezier x values must be in [0, 1] range');
+    return _typeof(obj);
   }
 
-  // Precompute samples table
-  var sampleValues = float32ArraySupported ? new Float32Array(kSplineTableSize) : new Array(kSplineTableSize);
-  if (mX1 !== mY1 || mX2 !== mY2) {
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
+  }
+
+  /**
+   * https://github.com/gre/bezier-easing
+   * BezierEasing - use bezier curve for transition easing function
+   * by Gaëtan Renaudeau 2014 - 2015 – MIT License
+   */
+
+  // These values are established by empiricism with tests (tradeoff: performance VS precision)
+  var NEWTON_ITERATIONS = 4;
+  var NEWTON_MIN_SLOPE = 0.001;
+  var SUBDIVISION_PRECISION = 0.0000001;
+  var SUBDIVISION_MAX_ITERATIONS = 10;
+
+  var kSplineTableSize = 11;
+  var kSampleStepSize = 1.0 / (kSplineTableSize - 1.0);
+
+  var float32ArraySupported = typeof Float32Array === 'function';
+
+  function A (aA1, aA2) { return 1.0 - 3.0 * aA2 + 3.0 * aA1; }
+  function B (aA1, aA2) { return 3.0 * aA2 - 6.0 * aA1; }
+  function C (aA1)      { return 3.0 * aA1; }
+
+  // Returns x(t) given t, x1, and x2, or y(t) given t, y1, and y2.
+  function calcBezier (aT, aA1, aA2) { return ((A(aA1, aA2) * aT + B(aA1, aA2)) * aT + C(aA1)) * aT; }
+
+  // Returns dx/dt given t, x1, and x2, or dy/dt given t, y1, and y2.
+  function getSlope (aT, aA1, aA2) { return 3.0 * A(aA1, aA2) * aT * aT + 2.0 * B(aA1, aA2) * aT + C(aA1); }
+
+  function binarySubdivide (aX, aA, aB, mX1, mX2) {
+    var currentX, currentT, i = 0;
+    do {
+      currentT = aA + (aB - aA) / 2.0;
+      currentX = calcBezier(currentT, mX1, mX2) - aX;
+      if (currentX > 0.0) {
+        aB = currentT;
+      } else {
+        aA = currentT;
+      }
+    } while (Math.abs(currentX) > SUBDIVISION_PRECISION && ++i < SUBDIVISION_MAX_ITERATIONS);
+    return currentT;
+  }
+
+  function newtonRaphsonIterate (aX, aGuessT, mX1, mX2) {
+   for (var i = 0; i < NEWTON_ITERATIONS; ++i) {
+     var currentSlope = getSlope(aGuessT, mX1, mX2);
+     if (currentSlope === 0.0) {
+       return aGuessT;
+     }
+     var currentX = calcBezier(aGuessT, mX1, mX2) - aX;
+     aGuessT -= currentX / currentSlope;
+   }
+   return aGuessT;
+  }
+
+  function LinearEasing (x) {
+    return x;
+  }
+
+  var src = function bezier (mX1, mY1, mX2, mY2) {
+    if (!(0 <= mX1 && mX1 <= 1 && 0 <= mX2 && mX2 <= 1)) {
+      throw new Error('bezier x values must be in [0, 1] range');
+    }
+
+    if (mX1 === mY1 && mX2 === mY2) {
+      return LinearEasing;
+    }
+
+    // Precompute samples table
+    var sampleValues = float32ArraySupported ? new Float32Array(kSplineTableSize) : new Array(kSplineTableSize);
     for (var i = 0; i < kSplineTableSize; ++i) {
       sampleValues[i] = calcBezier(i * kSampleStepSize, mX1, mX2);
     }
-  }
 
-  function getTForX (aX) {
-    var intervalStart = 0.0;
-    var currentSample = 1;
-    var lastSample = kSplineTableSize - 1;
+    function getTForX (aX) {
+      var intervalStart = 0.0;
+      var currentSample = 1;
+      var lastSample = kSplineTableSize - 1;
 
-    for (; currentSample !== lastSample && sampleValues[currentSample] <= aX; ++currentSample) {
-      intervalStart += kSampleStepSize;
-    }
-    --currentSample;
+      for (; currentSample !== lastSample && sampleValues[currentSample] <= aX; ++currentSample) {
+        intervalStart += kSampleStepSize;
+      }
+      --currentSample;
 
-    // Interpolate to provide an initial guess for t
-    var dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample]);
-    var guessForT = intervalStart + dist * kSampleStepSize;
+      // Interpolate to provide an initial guess for t
+      var dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample]);
+      var guessForT = intervalStart + dist * kSampleStepSize;
 
-    var initialSlope = getSlope(guessForT, mX1, mX2);
-    if (initialSlope >= NEWTON_MIN_SLOPE) {
-      return newtonRaphsonIterate(aX, guessForT, mX1, mX2);
-    } else if (initialSlope === 0.0) {
-      return guessForT;
-    } else {
-      return binarySubdivide(aX, intervalStart, intervalStart + kSampleStepSize, mX1, mX2);
-    }
-  }
-
-  return function BezierEasing (x) {
-    if (mX1 === mY1 && mX2 === mY2) {
-      return x; // linear
-    }
-    // Because JavaScript number are imprecise, we should guarantee the extremes are right.
-    if (x === 0) {
-      return 0;
-    }
-    if (x === 1) {
-      return 1;
-    }
-    return calcBezier(getTForX(x), mY1, mY2);
-  };
-};
-
-var easings = {
-    ease: [0.25, 0.1, 0.25, 1.0],
-    linear: [0.00, 0.0, 1.00, 1.0],
-    "ease-in": [0.42, 0.0, 1.00, 1.0],
-    "ease-out": [0.00, 0.0, 0.58, 1.0],
-    "ease-in-out": [0.42, 0.0, 0.58, 1.0]
-};
-
-// https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
-var supportsPassive = false;
-try {
-    var opts = Object.defineProperty({}, "passive", {
-        get: function get() {
-            supportsPassive = true;
-        }
-    });
-    window.addEventListener("test", null, opts);
-} catch (e) {}
-
-var _ = {
-    $: function $(selector) {
-        if (typeof selector !== "string") {
-            return selector;
-        }
-        return document.querySelector(selector);
-    },
-    on: function on(element, events, handler) {
-        var opts = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : { passive: false };
-
-        if (!(events instanceof Array)) {
-            events = [events];
-        }
-        for (var i = 0; i < events.length; i++) {
-            element.addEventListener(events[i], handler, supportsPassive ? opts : false);
-        }
-    },
-    off: function off(element, events, handler) {
-        if (!(events instanceof Array)) {
-            events = [events];
-        }
-        for (var i = 0; i < events.length; i++) {
-            element.removeEventListener(events[i], handler);
-        }
-    },
-    cumulativeOffset: function cumulativeOffset(element) {
-        var top = 0;
-        var left = 0;
-
-        do {
-            top += element.offsetTop || 0;
-            left += element.offsetLeft || 0;
-            element = element.offsetParent;
-        } while (element);
-
-        return {
-            top: top,
-            left: left
-        };
-    }
-};
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
-  return typeof obj;
-} : function (obj) {
-  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
+      var initialSlope = getSlope(guessForT, mX1, mX2);
+      if (initialSlope >= NEWTON_MIN_SLOPE) {
+        return newtonRaphsonIterate(aX, guessForT, mX1, mX2);
+      } else if (initialSlope === 0.0) {
+        return guessForT;
+      } else {
+        return binarySubdivide(aX, intervalStart, intervalStart + kSampleStepSize, mX1, mX2);
       }
     }
-  }
 
-  return target;
-};
+    return function BezierEasing (x) {
+      // Because JavaScript number are imprecise, we should guarantee the extremes are right.
+      if (x === 0) {
+        return 0;
+      }
+      if (x === 1) {
+        return 1;
+      }
+      return calcBezier(getTForX(x), mY1, mY2);
+    };
+  };
 
-var abortEvents = ["mousedown", "wheel", "DOMMouseScroll", "mousewheel", "keyup", "touchmove"];
+  var easings = {
+    ease: [0.25, 0.1, 0.25, 1.0],
+    linear: [0.0, 0.0, 1.0, 1.0],
+    'ease-in': [0.42, 0.0, 1.0, 1.0],
+    'ease-out': [0.0, 0.0, 0.58, 1.0],
+    'ease-in-out': [0.42, 0.0, 0.58, 1.0]
+  };
 
-var defaults$$1 = {
-    container: "body",
+  // https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
+  var supportsPassive = false;
+
+  try {
+    var opts = Object.defineProperty({}, 'passive', {
+      get: function get() {
+        supportsPassive = true;
+      }
+    });
+    window.addEventListener('test', null, opts);
+  } catch (e) {}
+
+  var _ = {
+    $: function $(selector) {
+      if (typeof selector !== 'string') {
+        return selector;
+      }
+
+      return document.querySelector(selector);
+    },
+    on: function on(element, events, handler) {
+      var opts = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {
+        passive: false
+      };
+
+      if (!(events instanceof Array)) {
+        events = [events];
+      }
+
+      for (var i = 0; i < events.length; i++) {
+        element.addEventListener(events[i], handler, supportsPassive ? opts : false);
+      }
+    },
+    off: function off(element, events, handler) {
+      if (!(events instanceof Array)) {
+        events = [events];
+      }
+
+      for (var i = 0; i < events.length; i++) {
+        element.removeEventListener(events[i], handler);
+      }
+    },
+    cumulativeOffset: function cumulativeOffset(element) {
+      var top = 0;
+      var left = 0;
+
+      do {
+        top += element.offsetTop || 0;
+        left += element.offsetLeft || 0;
+        element = element.offsetParent;
+      } while (element);
+
+      return {
+        top: top,
+        left: left
+      };
+    }
+  };
+
+  var abortEvents = ['mousedown', 'wheel', 'DOMMouseScroll', 'mousewheel', 'keyup', 'touchmove'];
+  var defaults = {
+    container: 'body',
     duration: 500,
-    easing: "ease",
+    lazy: true,
+    easing: 'ease',
     offset: 0,
+    force: true,
     cancelable: true,
     onStart: false,
     onDone: false,
     onCancel: false,
     x: false,
     y: true
-};
+  };
+  function setDefaults(options) {
+    defaults = _extends({}, defaults, options);
+  }
+  var scroller = function scroller() {
+    var element; // element to scroll to
 
-function setDefaults(options) {
-    defaults$$1 = _extends({}, defaults$$1, options);
-}
+    var container; // container to scroll
 
-var scroller = function scroller() {
-    var element = void 0; // element to scroll to
-    var container = void 0; // container to scroll
-    var duration = void 0; // duration of the scrolling
-    var easing = void 0; // easing to be used when scrolling
-    var offset = void 0; // offset to be added (subtracted)
-    var cancelable = void 0; // indicates if user can cancel the scroll or not.
-    var onStart = void 0; // callback when scrolling is started
-    var onDone = void 0; // callback when scrolling is done
-    var onCancel = void 0; // callback when scrolling is canceled / aborted
-    var x = void 0; // scroll on x axis
-    var y = void 0; // scroll on y axis
+    var duration; // duration of the scrolling
 
-    var initialX = void 0; // initial X of container
-    var targetX = void 0; // target X of container
-    var initialY = void 0; // initial Y of container
-    var targetY = void 0; // target Y of container
-    var diffX = void 0; // difference
-    var diffY = void 0; // difference
+    var easing; // easing to be used when scrolling
 
-    var abort = void 0; // is scrolling aborted
+    var lazy; // checks the target position at each step
 
-    var abortEv = void 0; // event that aborted scrolling
+    var offset; // offset to be added (subtracted)
+
+    var force; // force scroll, even if element is visible
+
+    var cancelable; // indicates if user can cancel the scroll or not.
+
+    var onStart; // callback when scrolling is started
+
+    var onDone; // callback when scrolling is done
+
+    var onCancel; // callback when scrolling is canceled / aborted
+
+    var x; // scroll on x axis
+
+    var y; // scroll on y axis
+
+    var initialX; // initial X of container
+
+    var targetX; // target X of container
+
+    var initialY; // initial Y of container
+
+    var targetY; // target Y of container
+
+    var diffX; // difference
+
+    var diffY; // difference
+
+    var abort; // is scrolling aborted
+
+    var cumulativeOffsetContainer;
+    var cumulativeOffsetElement;
+    var abortEv; // event that aborted scrolling
+
     var abortFn = function abortFn(e) {
-        if (!cancelable) return;
-        abortEv = e;
-        abort = true;
+      if (!cancelable) return;
+      abortEv = e;
+      abort = true;
     };
-    var easingFn = void 0;
 
-    var timeStart = void 0; // time when scrolling started
-    var timeElapsed = void 0; // time elapsed since scrolling started
+    var easingFn;
+    var timeStart; // time when scrolling started
 
-    var progress = void 0; // progress
+    var timeElapsed; // time elapsed since scrolling started
+
+    var progress; // progress
 
     function scrollTop(container) {
-        var scrollTop = container.scrollTop;
+      var scrollTop = container.scrollTop;
 
-        if (container.tagName.toLowerCase() === "body") {
-            // in firefox body.scrollTop always returns 0
-            // thus if we are trying to get scrollTop on a body tag
-            // we need to get it from the documentElement
-            scrollTop = scrollTop || document.documentElement.scrollTop;
-        }
+      if (container.tagName.toLowerCase() === 'body') {
+        // in firefox body.scrollTop always returns 0
+        // thus if we are trying to get scrollTop on a body tag
+        // we need to get it from the documentElement
+        scrollTop = scrollTop || document.documentElement.scrollTop;
+      }
 
-        return scrollTop;
+      return scrollTop;
     }
 
     function scrollLeft(container) {
-        var scrollLeft = container.scrollLeft;
+      var scrollLeft = container.scrollLeft;
 
-        if (container.tagName.toLowerCase() === "body") {
-            // in firefox body.scrollLeft always returns 0
-            // thus if we are trying to get scrollLeft on a body tag
-            // we need to get it from the documentElement
-            scrollLeft = scrollLeft || document.documentElement.scrollLeft;
-        }
+      if (container.tagName.toLowerCase() === 'body') {
+        // in firefox body.scrollLeft always returns 0
+        // thus if we are trying to get scrollLeft on a body tag
+        // we need to get it from the documentElement
+        scrollLeft = scrollLeft || document.documentElement.scrollLeft;
+      }
 
-        return scrollLeft;
+      return scrollLeft;
+    }
+
+    function recalculateTargets() {
+      cumulativeOffsetContainer = _.cumulativeOffset(container);
+      cumulativeOffsetElement = _.cumulativeOffset(element);
+
+      if (x) {
+        targetX = cumulativeOffsetElement.left - cumulativeOffsetContainer.left + offset;
+        diffX = targetX - initialX;
+      }
+
+      if (y) {
+        targetY = cumulativeOffsetElement.top - cumulativeOffsetContainer.top + offset;
+        diffY = targetY - initialY;
+      }
     }
 
     function step(timestamp) {
-        if (abort) return done();
-        if (!timeStart) timeStart = timestamp;
+      if (abort) return done();
+      if (!timeStart) timeStart = timestamp; // When a site has a lot of media that can be loaded asynchronously,
+      // the targetY/targetX may end up in the wrong place during scrolling.
+      // So we will check this at each step
 
-        timeElapsed = timestamp - timeStart;
+      if (!lazy) {
+        recalculateTargets();
+      }
 
-        progress = Math.min(timeElapsed / duration, 1);
-        progress = easingFn(progress);
-
-        topLeft(container, initialY + diffY * progress, initialX + diffX * progress);
-
-        timeElapsed < duration ? window.requestAnimationFrame(step) : done();
+      timeElapsed = timestamp - timeStart;
+      progress = Math.min(timeElapsed / duration, 1);
+      progress = easingFn(progress);
+      topLeft(container, initialY + diffY * progress, initialX + diffX * progress);
+      timeElapsed < duration ? window.requestAnimationFrame(step) : done();
     }
 
     function done() {
-        if (!abort) topLeft(container, targetY, targetX);
-        timeStart = false;
+      if (!abort) topLeft(container, targetY, targetX);
+      timeStart = false;
 
-        _.off(container, abortEvents, abortFn);
-        if (abort && onCancel) onCancel(abortEv, element);
-        if (!abort && onDone) onDone(element);
+      _.off(container, abortEvents, abortFn);
+
+      if (abort && onCancel) onCancel(abortEv, element);
+      if (!abort && onDone) onDone(element);
     }
 
     function topLeft(element, top, left) {
-        if (y) element.scrollTop = top;
-        if (x) element.scrollLeft = left;
-        if (element.tagName.toLowerCase() === "body") {
-            // in firefox body.scrollTop doesn't scroll the page
-            // thus if we are trying to scrollTop on a body tag
-            // we need to scroll on the documentElement
-            if (y) document.documentElement.scrollTop = top;
-            if (x) document.documentElement.scrollLeft = left;
-        }
+      if (y) element.scrollTop = top;
+      if (x) element.scrollLeft = left;
+
+      if (element.tagName.toLowerCase() === 'body') {
+        // in firefox body.scrollTop doesn't scroll the page
+        // thus if we are trying to scrollTop on a body tag
+        // we need to scroll on the documentElement
+        if (y) document.documentElement.scrollTop = top;
+        if (x) document.documentElement.scrollLeft = left;
+      }
     }
 
     function scrollTo(target, _duration) {
-        var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
-        if ((typeof _duration === "undefined" ? "undefined" : _typeof(_duration)) === "object") {
-            options = _duration;
-        } else if (typeof _duration === "number") {
-            options.duration = _duration;
+      if (_typeof(_duration) === 'object') {
+        options = _duration;
+      } else if (typeof _duration === 'number') {
+        options.duration = _duration;
+      }
+
+      element = _.$(target);
+
+      if (!element) {
+        return console.warn('[vue-scrollto warn]: Trying to scroll to an element that is not on the page: ' + target);
+      }
+
+      container = _.$(options.container || defaults.container);
+      duration = options.hasOwnProperty('duration') ? options.duration : defaults.duration;
+      lazy = options.hasOwnProperty('lazy') ? options.lazy : defaults.lazy;
+      easing = options.easing || defaults.easing;
+      offset = options.hasOwnProperty('offset') ? options.offset : defaults.offset;
+      force = options.hasOwnProperty('force') ? options.force !== false : defaults.force;
+      cancelable = options.hasOwnProperty('cancelable') ? options.cancelable !== false : defaults.cancelable;
+      onStart = options.onStart || defaults.onStart;
+      onDone = options.onDone || defaults.onDone;
+      onCancel = options.onCancel || defaults.onCancel;
+      x = options.x === undefined ? defaults.x : options.x;
+      y = options.y === undefined ? defaults.y : options.y;
+
+      if (typeof offset === 'function') {
+        offset = offset(element, container);
+      }
+
+      initialX = scrollLeft(container);
+      initialY = scrollTop(container); // calculates cumulative offsets and targetX/Y + diffX/Y
+
+      recalculateTargets();
+      abort = false;
+
+      if (!force) {
+        // When the container is the default (body) we need to use the viewport
+        // height, not the entire body height
+        var containerHeight = container.tagName.toLowerCase() === 'body' ? document.documentElement.clientHeight || window.innerHeight : container.offsetHeight;
+        var containerTop = initialY;
+        var containerBottom = containerTop + containerHeight;
+        var elementTop = targetY - offset;
+        var elementBottom = elementTop + element.offsetHeight;
+
+        if (elementTop >= containerTop && elementBottom <= containerBottom) {
+          // make sure to call the onDone callback even if there is no need to
+          // scroll the container. Fixes #111 (ref #118)
+          if (onDone) onDone(element);
+          return;
         }
+      }
 
-        element = _.$(target);
+      if (onStart) onStart(element);
 
-        if (!element) {
-            return console.warn("[vue-scrollto warn]: Trying to scroll to an element that is not on the page: " + target);
-        }
+      if (!diffY && !diffX) {
+        if (onDone) onDone(element);
+        return;
+      }
 
-        container = _.$(options.container || defaults$$1.container);
-        duration = options.duration || defaults$$1.duration;
-        easing = options.easing || defaults$$1.easing;
-        offset = options.offset || defaults$$1.offset;
-        cancelable = options.hasOwnProperty("cancelable") ? options.cancelable !== false : defaults$$1.cancelable;
-        onStart = options.onStart || defaults$$1.onStart;
-        onDone = options.onDone || defaults$$1.onDone;
-        onCancel = options.onCancel || defaults$$1.onCancel;
-        x = options.x === undefined ? defaults$$1.x : options.x;
-        y = options.y === undefined ? defaults$$1.y : options.y;
+      if (typeof easing === 'string') {
+        easing = easings[easing] || easings['ease'];
+      }
 
-        var cumulativeOffsetContainer = _.cumulativeOffset(container);
-        var cumulativeOffsetElement = _.cumulativeOffset(element);
+      easingFn = src.apply(src, easing);
 
-        if (typeof offset === "function") {
-            offset = offset();
-        }
+      _.on(container, abortEvents, abortFn, {
+        passive: true
+      });
 
-        initialY = scrollTop(container);
-        targetY = cumulativeOffsetElement.top - cumulativeOffsetContainer.top + offset;
-
-        initialX = scrollLeft(container);
-        targetX = cumulativeOffsetElement.left - cumulativeOffsetContainer.left + offset;
-
-        abort = false;
-
-        diffY = targetY - initialY;
-        diffX = targetX - initialX;
-
-        if (typeof easing === "string") {
-            easing = easings[easing] || easings["ease"];
-        }
-
-        easingFn = src.apply(src, easing);
-
-        if (!diffY && !diffX) return;
-        if (onStart) onStart(element);
-
-        _.on(container, abortEvents, abortFn, { passive: true });
-
-        window.requestAnimationFrame(step);
-
-        return function () {
-            abortEv = null;
-            abort = true;
-        };
+      window.requestAnimationFrame(step);
+      return function () {
+        abortEv = null;
+        abort = true;
+      };
     }
 
     return scrollTo;
-};
+  };
 
-var _scroller = scroller();
+  var _scroller = scroller();
 
-var bindings = []; // store binding data
+  var bindings = []; // store binding data
 
-function deleteBinding(el) {
+  function deleteBinding(el) {
     for (var i = 0; i < bindings.length; ++i) {
-        if (bindings[i].el === el) {
-            bindings.splice(i, 1);
-            return true;
-        }
+      if (bindings[i].el === el) {
+        bindings.splice(i, 1);
+        return true;
+      }
     }
+
     return false;
-}
+  }
 
-function findBinding(el) {
+  function findBinding(el) {
     for (var i = 0; i < bindings.length; ++i) {
-        if (bindings[i].el === el) {
-            return bindings[i];
-        }
+      if (bindings[i].el === el) {
+        return bindings[i];
+      }
     }
-}
+  }
 
-function getBinding(el) {
+  function getBinding(el) {
     var binding = findBinding(el);
 
     if (binding) {
-        return binding;
+      return binding;
     }
 
     bindings.push(binding = {
-        el: el,
-        binding: {}
+      el: el,
+      binding: {}
     });
-
     return binding;
-}
+  }
 
-function handleClick(e) {
-    e.preventDefault();
+  function handleClick(e) {
     var ctx = getBinding(this).binding;
+    if (!ctx.value) return;
+    e.preventDefault();
 
-    if (typeof ctx.value === "string") {
-        return _scroller(ctx.value);
+    if (typeof ctx.value === 'string') {
+      return _scroller(ctx.value);
     }
-    _scroller(ctx.value.el || ctx.value.element, ctx.value);
-}
 
-var VueScrollTo$1 = {
+    _scroller(ctx.value.el || ctx.value.element, ctx.value);
+  }
+
+  var directiveHooks = {
     bind: function bind(el, binding) {
-        getBinding(el).binding = binding;
-        _.on(el, "click", handleClick);
+      getBinding(el).binding = binding;
+
+      _.on(el, 'click', handleClick);
     },
     unbind: function unbind(el) {
-        deleteBinding(el);
-        _.off(el, "click", handleClick);
+      deleteBinding(el);
+
+      _.off(el, 'click', handleClick);
     },
     update: function update(el, binding) {
-        getBinding(el).binding = binding;
-    },
-
+      getBinding(el).binding = binding;
+    }
+  };
+  var VueScrollTo = {
+    bind: directiveHooks.bind,
+    unbind: directiveHooks.unbind,
+    update: directiveHooks.update,
+    beforeMount: directiveHooks.bind,
+    unmounted: directiveHooks.unbind,
+    updated: directiveHooks.update,
     scrollTo: _scroller,
     bindings: bindings
-};
+  };
 
-var install = function install(Vue, options) {
+  var install = function install(Vue, options) {
     if (options) setDefaults(options);
-    Vue.directive("scroll-to", VueScrollTo$1);
-    Vue.prototype.$scrollTo = VueScrollTo$1.scrollTo;
-};
+    Vue.directive('scroll-to', VueScrollTo);
+    var properties = Vue.config.globalProperties || Vue.prototype;
+    properties.$scrollTo = VueScrollTo.scrollTo;
+  };
 
-if (typeof window !== "undefined" && window.Vue) {
-    window.VueScrollTo = VueScrollTo$1;
+  if (typeof window !== 'undefined' && window.Vue) {
+    window.VueScrollTo = VueScrollTo;
     window.VueScrollTo.setDefaults = setDefaults;
-    Vue.use(install);
-}
+    window.VueScrollTo.scroller = scroller;
+    if (window.Vue.use) window.Vue.use(install);
+  }
 
-VueScrollTo$1.install = install;
+  VueScrollTo.install = install;
 
-return VueScrollTo$1;
+  return VueScrollTo;
 
 })));
 
 
 /***/ }),
-/* 101 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -4240,7 +4547,7 @@ var render = function() {
             },
             nativeOn: {
               click: function($event) {
-                _vm.showAllToggle()
+                return _vm.showAllToggle()
               }
             }
           }),
@@ -4304,7 +4611,7 @@ var render = function() {
                         attrs: { to: { path: "/portfolio/" + portfolio.slug } },
                         nativeOn: {
                           click: function($event) {
-                            _vm.toggle(portfolio.slug)
+                            return _vm.toggle(portfolio.slug)
                           }
                         }
                       },
@@ -4375,7 +4682,8 @@ var render = function() {
               ])
             ]
           )
-        })
+        }),
+        0
       )
     ],
     1
@@ -4387,7 +4695,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-580c1057", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-5f13625e", module.exports)
   }
 }
 

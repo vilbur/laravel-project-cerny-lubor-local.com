@@ -52,10 +52,10 @@
 			{
 				this.navIsActive = this.$route.name === 'home';
 			},
-
 		},
 		watch: {
 			'$route' (to, from) {
+				this.setNavHeight();
 				this.ifHomePage();
 			}
 		},

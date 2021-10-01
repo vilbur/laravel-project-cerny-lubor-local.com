@@ -21,7 +21,7 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-require __DIR__.'/../../../laravel-cerny-lubor.com/vendor/autoload.php';
+require __DIR__.'/../../../laravel-cernylubor.com/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ require __DIR__.'/../../../laravel-cerny-lubor.com/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../../../laravel-cerny-lubor.com/bootstrap/app.php';
+$app = require_once __DIR__.'/../../../laravel-cernylubor.com/bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------

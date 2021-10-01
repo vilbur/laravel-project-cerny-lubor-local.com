@@ -41,8 +41,9 @@ nav.navbar
 		&:hover {
 			color: $navbar-item-active-color;
 		}
+	
 	}
-
+ 
 	// fix burger menu items colors
 	.navbar-item.is-active{
 		color: $navbar-item-active-color;
