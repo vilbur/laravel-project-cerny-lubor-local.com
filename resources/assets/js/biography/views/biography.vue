@@ -15,8 +15,6 @@
 			</biography-header>
 
 
-			<!--<div class="hero-body bio-details">-->
-				<!--<div class="container">-->
 			<div class="columns">
 				<div class="column has-text-centered
 							is-11-mobile is-offset-1-mobile has-text-left-mobile
@@ -39,9 +37,6 @@
 				</div>
 			</div>
 
-				<!--</div>-->
-			<!--</div>-->
-
 		</div>
 
 	</div>
@@ -51,8 +46,8 @@
 
 <script>
 
-	import biographyHeader from '../components/biography-header.vue'
-	import biographyDetail from '../components/biography-detail.vue'
+	import biographyHeader from '../components/biography-header.vue';
+	import biographyDetail from '../components/biography-detail.vue';
 
 	export default {
 

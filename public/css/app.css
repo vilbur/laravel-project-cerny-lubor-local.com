@@ -11683,7 +11683,7 @@ label.panel-block:hover {
 /* BULMA - components */
 
 .tabs {
-  background-color: #FFFFFF;
+  background-color: white;
   padding-bottom: 1em;
 }
 
@@ -18052,6 +18052,11 @@ label.panel-block:hover {
 
 /* LAYOUT */
 
+i body,
+html {
+  background-color: #161616;
+}
+
 [v-cloak] {
   display: none !important;
 }
@@ -19236,7 +19241,6 @@ footer .title {
 }
 
 .footer-homepage {
-  position: relative;
   z-index: +1;
   background-color: transparent;
   -webkit-transition: all .3s ease-in-out;
@@ -19430,22 +19434,31 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   /* optional, center the image */
-  border: 1px solid white;
+  border: 1px solid #262626;
+}
+
+#vilbur-skills {
+  color: #DBDBDB;
 }
 
 #vilbur-skills .hero {
   overflow: hidden;
 }
 
-#vilbur-skills .logo {
+#vilbur-skills .hero .column,
+#vilbur-skills .hero .subtitle {
+  color: #DBDBDB;
+}
+
+#vilbur-skills .hero .logo {
   height: 4em;
 }
 
-#vilbur-skills .logo img {
+#vilbur-skills .hero .logo img {
   max-height: 100%;
 }
 
-#vilbur-skills .item-title-wrapper {
+#vilbur-skills .hero .item-title-wrapper {
   border: 1px solid #347dc4;
   background-color: #5896D3;
   margin-bottom: 0;
@@ -19454,7 +19467,7 @@ body {
   padding-bottom: 0px;
 }
 
-#vilbur-skills .item-title-wrapper .item-title {
+#vilbur-skills .hero .item-title-wrapper .item-title {
   text-transform: uppercase;
   font-size: 2rem;
   position: absolute;
@@ -19463,11 +19476,11 @@ body {
   font-weight: bold;
 }
 
-#vilbur-skills .item-title-wrapper a.item-title:hover {
+#vilbur-skills .hero .item-title-wrapper a.item-title:hover {
   color: #F58A07;
 }
 
-#vilbur-skills .skill-details {
+#vilbur-skills .hero .skill-details {
   height: auto;
   min-height: 6rem;
   margin-bottom: 2rem;
@@ -19477,16 +19490,21 @@ body {
   overflow: hidden;
 }
 
-#vilbur-biography .logo {
+#vilbur-biography .hero .column,
+#vilbur-biography .hero .subtitle {
+  color: #DBDBDB;
+}
+
+#vilbur-biography .hero .logo {
   height: 4em;
 }
 
-#vilbur-biography .logo img {
+#vilbur-biography .hero .logo img {
   width: 6em;
   max-height: 100%;
 }
 
-#vilbur-biography .item-title-wrapper {
+#vilbur-biography .hero .item-title-wrapper {
   border: 1px solid #347dc4;
   background-color: #5896D3;
   margin-bottom: 0;
@@ -19495,7 +19513,7 @@ body {
   padding-bottom: 0px;
 }
 
-#vilbur-biography .item-title-wrapper .item-title {
+#vilbur-biography .hero .item-title-wrapper .item-title {
   text-transform: uppercase;
   font-size: 2rem;
   position: absolute;
@@ -19504,20 +19522,20 @@ body {
   font-weight: bold;
 }
 
-#vilbur-biography .item-title-wrapper a.item-title:hover {
+#vilbur-biography .hero .item-title-wrapper a.item-title:hover {
   color: #F58A07;
 }
 
-#vilbur-biography .bio-details:last-of-type {
+#vilbur-biography .hero .bio-details:last-of-type {
   height: auto;
   margin-bottom: 2rem;
 }
 
-#vilbur-biography .bio-details:last-of-type a {
+#vilbur-biography .hero .bio-details:last-of-type a {
   color: #5896D3;
 }
 
-#vilbur-biography .bio-details:last-of-type a:hover {
+#vilbur-biography .hero .bio-details:last-of-type a:hover {
   color: #F58A07;
 }
 

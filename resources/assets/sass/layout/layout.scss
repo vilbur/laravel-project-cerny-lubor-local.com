@@ -1,6 +1,7 @@
 i
-body{
+body, html{
 	//background-color: #EDF1F4;
+	background-color: $body-bg;
 }
 
 [v-cloak] {display: none !important}

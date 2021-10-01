@@ -3,14 +3,17 @@
 
 	margin-top:	6rem; 
 	
-	.portfolio {
+	.portfolio
+	{
 
-		.hero-body{
+		.hero-body
+		{
 			//padding-bottom:	0;
 			padding-top:	0;			
 		}
 
-		.portfolio-background{
+		.portfolio-background
+		{
 			height: 10rem;
 			border:	1px solid grey;
 			background-position: center center;
@@ -20,7 +23,8 @@
 			//border:	1px solid red;
 
 			.title,
-			.subtitle{
+			.subtitle
+			{
 
 				//opacity: 0;
 				position: absolute;
@@ -37,18 +41,21 @@
 		a:hover
 		,a.visible
 		{
-			.portfolio-background{
+			.portfolio-background
+		{
 				background-size: 150%;
 			}
 		}
-		a.visible .portfolio-background{
+		a.visible .portfolio-background
+		{
 			-webkit-filter: grayscale(100%);
 			height: 5rem;
 			margin-bottom: 3rem;
 		}
 	}
 
-	.portfolio-item{
+	.portfolio-item
+	{
 		height: auto; 
 		max-height: 80192px;
 		overflow: hidden;
@@ -56,7 +63,8 @@
 			color:	white;
 		}
 
-		.portfolio-item-about{
+		.portfolio-item-about
+		{
 			padding-top: 1em;
 			background-color: #6FA2D6;
 			text-align: right;
@@ -67,18 +75,18 @@
 			}
 		}
 
-		.columns{
+		.columns
+		{
 			padding: 3em 1em 0 1em;
 
-			.image{
+			.image
+			{
 				height:	20vh;
 				background-size:     cover;                      /* <------ */
 				background-repeat:   no-repeat;
 				background-position: center center;              /* optional, center the image */
-				border:	1px solid white;
+				border:	1px solid #262626;
 			}
 		}
 	}
-
-
 }
