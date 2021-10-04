@@ -10,21 +10,24 @@
 			</li>
 		</ul>
 		
+		<!--PORTFIOLO ITEMS MAIN LIST-->
 		<transition-group tag="ul" name="show">
 			<li v-for="portfolio in filteredPortfolios" class="portfolio hero" :id="'hero-'+portfolio.slug"  :portfolio="portfolio" :key="portfolio.id" >
-				<div class="hero-body">
+				<div class="hero-body px-0">
 					<div class="container">
-	
+						
+						<!--HEADER LINK-->
 						<router-link
 							:to="{ path: '/portfolio/' + portfolio.slug }"
 							:class="{ visible: isVisible(portfolio.slug) }"
 							@click.native="toggle(portfolio.slug)"
 						>
-							<div class="portfolio-background" :style="{ backgroundImage: 'url(' +  portfolio.image_url + ')' }">
+							<div class="portfolio-background" :style=" { backgroundImage: 'url(' +  portfolio.image_url + ')' } ">
 								<h2 class="title is-1 ">{{ portfolio.title }}</h2>
 							</div>
 						</router-link>
 						
+						<!-- OPENED ITEM -->
 						<div class="hero-foot">
 							<div class="container">
 								

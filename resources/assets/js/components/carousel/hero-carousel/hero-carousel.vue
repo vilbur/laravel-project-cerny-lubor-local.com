@@ -60,7 +60,7 @@
 				images:[
 					'/storage/portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-front.jpg',
 					'/storage/portfolio-files/games/take-on/space-needle-01.jpg',
-					//'/storage/portfolio-files/rendering/zemeklon/zemeklon.jpg',
+					'/storage/portfolio-files/rendering/zemeklon/zemeklon.jpg',
 				],
 				links:{
 					PORTFOLIO: '/#/portfolio',

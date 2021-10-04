@@ -6902,7 +6902,7 @@ a.dropdown-item.is-active,
 }
 
 .navbar {
-  background-color: #5896D3;
+  background-color: #4697DD;
   min-height: 3.25rem;
   position: relative;
 }
@@ -7638,7 +7638,7 @@ a.navbar-item.is-active,
 a.navbar-link:hover,
 a.navbar-link.is-active {
   background-color: white;
-  color: #5896D3;
+  color: #F58A07;
 }
 
 .navbar-item {
@@ -7732,7 +7732,7 @@ a.navbar-link.is-active {
   }
 
   .navbar-menu {
-    background-color: #5896D3;
+    background-color: #4697DD;
     -webkit-box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
             box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: 0.5rem 0;
@@ -8016,7 +8016,7 @@ a.navbar-link.is-active {
 
   a.navbar-item.is-active:not(:hover),
   a.navbar-link.is-active:not(:hover) {
-    background-color: #5896D3;
+    background-color: #4697DD;
   }
 
   .navbar-item.has-dropdown:hover .navbar-link,
@@ -8476,8 +8476,8 @@ label.panel-block:hover {
 }
 
 .tabs a:hover {
-  border-bottom-color: #5896D3;
-  color: #5896D3;
+  border-bottom-color: #F58A07;
+  color: #F58A07;
 }
 
 .tabs li {
@@ -11676,7 +11676,7 @@ label.panel-block:hover {
 }
 
 .footer {
-  background-color: #5896D3 !important;
+  background-color: #4697DD !important;
   padding: 3rem 1.5rem 6rem;
 }
 
@@ -18073,7 +18073,7 @@ html {
  */
 
 .navbar {
-  background-color: #5896D3;
+  background-color: #4697DD;
   min-height: 3.25rem;
   position: relative;
 }
@@ -18780,7 +18780,7 @@ a.navbar-item.is-active,
 .navbar-link:hover,
 .navbar-link.is-active {
   background-color: white;
-  color: #5896D3;
+  color: #F58A07;
 }
 
 .navbar-item {
@@ -19068,7 +19068,7 @@ a.navbar-item.is-active,
 
   a.navbar-item.is-active:not(:hover),
   .navbar-link.is-active:not(:hover) {
-    background-color: #5896D3;
+    background-color: #4697DD;
   }
 
   .navbar-item.has-dropdown:hover .navbar-link,
@@ -19123,7 +19123,7 @@ nav.navbar .navbar-burger:hover {
 
 nav.navbar .navbar-item.is-active {
   color: #F58A07;
-  background-color: #5896D3;
+  background-color: #4697DD;
 }
 
 /* center items horizontally */
@@ -19228,7 +19228,7 @@ footer {
 
 footer {
   padding: 2rem 1.5rem 3rem;
-  background-color: #5896D3;
+  background-color: #4697DD;
   color: white;
 }
 
@@ -19248,7 +19248,7 @@ footer .title {
 }
 
 .footer-homepage:hover {
-  background-color: #5896D3;
+  background-color: #4697DD;
 }
 
 /* EXTENDS */
@@ -19367,7 +19367,7 @@ body {
   margin-top: 6rem;
 }
 
-#vilbur-portfolio .portfolio .hero-body {
+#vilbur-portfolio .portfolio > .hero-body {
   padding-top: 0;
 }
 
@@ -19459,8 +19459,8 @@ body {
 }
 
 #vilbur-skills .hero .item-title-wrapper {
-  border: 1px solid #347dc4;
-  background-color: #5896D3;
+  border: 1px solid #257ecb;
+  background-color: #4697DD;
   margin-bottom: 0;
   height: 4rem;
   position: relative;
@@ -19505,8 +19505,8 @@ body {
 }
 
 #vilbur-biography .hero .item-title-wrapper {
-  border: 1px solid #347dc4;
-  background-color: #5896D3;
+  border: 1px solid #257ecb;
+  background-color: #4697DD;
   margin-bottom: 0;
   height: 4rem;
   position: relative;
@@ -19532,7 +19532,7 @@ body {
 }
 
 #vilbur-biography .hero .bio-details:last-of-type a {
-  color: #5896D3;
+  color: #F58A07;
 }
 
 #vilbur-biography .hero .bio-details:last-of-type a:hover {

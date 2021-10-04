@@ -49709,7 +49709,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	name: 'hero-carousel',
 	data: function data() {
 		return {
-			images: ['/storage/portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-front.jpg', '/storage/portfolio-files/games/take-on/space-needle-01.jpg'],
+			images: ['/storage/portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-front.jpg', '/storage/portfolio-files/games/take-on/space-needle-01.jpg', '/storage/portfolio-files/rendering/zemeklon/zemeklon.jpg'],
 			links: {
 				PORTFOLIO: '/#/portfolio',
 				BIO: '/#/bio',

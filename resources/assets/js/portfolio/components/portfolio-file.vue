@@ -3,9 +3,9 @@
 
 		<div v-for="(file, index) in files" class="column is-6-mobile is-4-desktop">
 			<div class="image"
-				:key="index_start + index"
-				@click="$emit('imageClicked', index_start + index)"
-				:style="{ backgroundImage: 'url(' + file.href + ')' }"
+				:key	= "index_start + index"
+				@click	= "$emit('imageClicked', index_start + index)"
+				:style	= "{ backgroundImage: 'url(' + file.href + ')' }"
 			></div>
 		</div>
 

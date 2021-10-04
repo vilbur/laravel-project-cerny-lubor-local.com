@@ -2555,6 +2555,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2786,7 +2789,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		'vue-gallery': __WEBPACK_IMPORTED_MODULE_1_vue_gallery___default.a
 
 	}
-
 });
 
 /***/ }),
@@ -3922,7 +3924,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "column is-8 portfolio-item-thumbs" },
+              { staticClass: "column is-12 portfolio-item-thumbs" },
               [
                 _c("portfolio-file", {
                   attrs: { portfolio_item_id: item.id },
@@ -4599,7 +4601,7 @@ var render = function() {
               attrs: { id: "hero-" + portfolio.slug, portfolio: portfolio }
             },
             [
-              _c("div", { staticClass: "hero-body" }, [
+              _c("div", { staticClass: "hero-body px-0" }, [
                 _c(
                   "div",
                   { staticClass: "container" },
