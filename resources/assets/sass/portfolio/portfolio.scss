@@ -1,6 +1,9 @@
 #vilbur-portfolio
 {
 
+	//$breakpoint: 640px;
+
+
 	margin-top:	6rem; 
 	
 	.portfolio
@@ -17,42 +20,68 @@
 		.portfolio-background
 		{
 			height: 10rem;
-			border:	1px solid grey;
-			background-position: center center;
-			background-size: 100%;
-			transition: all 600ms;
-			position: relative;
-			//border:	1px solid red;
+			//border:	1px solid white;
+			background-position:	center center;
+			background-size:	100%;
+			//background-size:	auto 100%;
+			transition:	all 600ms;
+			position:	relative;
+			border-bottom:	3px solid white;
 
 			.title,
 			.subtitle
 			{
-
-				//opacity: 0;
-				position: absolute;
-				bottom: -12px;
-				left: 5%;
+				//opacity:	0;
+				position:	absolute;
+				bottom:	-12px;
+				left:	5%;
 				//height:	100%;
 				color:white;
-				text-transform: uppercase;
+				text-transform:	uppercase;
 				font-size:	4em;
-				font-weight: bold;
+				font-weight:	bold;
+				//border:         1px solid red;
+
+
+				@include mobile{
+					bottom:	-10px;
+					font-size:	2.5em;
+				}
+				
 			}
-		}
+			
+			@include mobile{
+				background-size:	250%;
+			}
+			
+		} 
 
 		a:hover
 		,a.visible
 		{
 			.portfolio-background
-		{
-				background-size: 150%;
+			{
+				background-size:	150%;
+				@include mobile{
+					background-size:	350%;
+				}
 			}
 		}
 		a.visible .portfolio-background
 		{
-			-webkit-filter: grayscale(100%);
-			height: 5rem;
-			margin-bottom: 3rem;
+			-webkit-filter:	grayscale(100%);
+
+			height:	5rem;
+			margin-bottom:	3rem;
+			border-bottom:	3px solid $link-hover;
+
+			.title,
+			.subtitle
+			{
+				color:	$link-hover;
+				-webkit-filter:	grayscale(0) !important;
+			}
+			
 		}
 	}
 
@@ -68,7 +97,7 @@
 		.portfolio-item-about
 		{
 			padding-top: 1em;
-			background-color: #6FA2D6;
+			//background-color: #6FA2D6;
 			text-align: right;
 
 			.title
@@ -86,7 +115,7 @@
 				height:	20vh;
 				background-size:     cover;                      /* <------ */
 				background-repeat:   no-repeat;
-				background-position: center center;              /* optional, center the image */
+				background-position:	center center;              /* optional, center the image */
 				border:	1px solid #262626;
 			}
 		}

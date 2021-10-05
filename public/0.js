@@ -2558,6 +2558,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -4601,7 +4602,7 @@ var render = function() {
               attrs: { id: "hero-" + portfolio.slug, portfolio: portfolio }
             },
             [
-              _c("div", { staticClass: "hero-body px-0" }, [
+              _c("div", { staticClass: "hero-body" }, [
                 _c(
                   "div",
                   { staticClass: "container" },
@@ -4628,7 +4629,7 @@ var render = function() {
                             }
                           },
                           [
-                            _c("h2", { staticClass: "title is-1 " }, [
+                            _c("h3", { staticClass: "title is-2" }, [
                               _vm._v(_vm._s(portfolio.title))
                             ])
                           ]

@@ -13,7 +13,7 @@
 		<!--PORTFIOLO ITEMS MAIN LIST-->
 		<transition-group tag="ul" name="show">
 			<li v-for="portfolio in filteredPortfolios" class="portfolio hero" :id="'hero-'+portfolio.slug"  :portfolio="portfolio" :key="portfolio.id" >
-				<div class="hero-body px-0">
+				<div class="hero-body">
 					<div class="container">
 						
 						<!--HEADER LINK-->
@@ -22,8 +22,9 @@
 							:class="{ visible: isVisible(portfolio.slug) }"
 							@click.native="toggle(portfolio.slug)"
 						>
+							<!--IMAGE-->
 							<div class="portfolio-background" :style=" { backgroundImage: 'url(' +  portfolio.image_url + ')' } ">
-								<h2 class="title is-1 ">{{ portfolio.title }}</h2>
+								<h3 class="title is-2">{{ portfolio.title }}</h3>
 							</div>
 						</router-link>
 						
