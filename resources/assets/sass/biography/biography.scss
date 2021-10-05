@@ -1,9 +1,10 @@
 #vilbur-biography
 {
+	color: $text-color;
 
 	.hero
 	{
-		
+		//border:	1px solid red;
 		.column, .subtitle
 		{
 			color: $text-color;
@@ -11,22 +12,26 @@
 		
 		overflow: hidden;
 		
-		.logo
+		.logo 
 		{
 			height: 4em;
 			//margin: 0 auto;
+	
 			img
 			{
-				width: 6em;
+				//width: 6em;
 				//height: auto;
 				max-height: 100%;
+				//border:	1px solid green;
 			}
 		}
 		
 		.item-title-wrapper
 		{
-			border:	1px solid darken($brand-primary, 10%);
-			background-color: $brand-primary;
+			//border:	1px solid darken($brand-primary, 10%);
+			border-bottom:	1px solid white;
+
+			//background-color: $brand-primary;
 			margin-bottom: 0;
 			height:	4rem;
 			position: relative;
@@ -34,13 +39,18 @@
 	
 			.item-title
 			{
-				text-transform: uppercase;
-				font-size:	2rem;
 				position: absolute;
-				bottom: -12px;
+				bottom: 0px;
 				//left: 0px;
 				color: white;
+				font-size:	$font-size-title-mobile;
 				font-weight: bold;
+				text-transform: uppercase;
+				
+				@include mobile{
+					font-size:	1em;
+				}
+				
 			}
 	
 			a.item-title:hover
@@ -49,21 +59,12 @@
 			}
 		}
 		
-		.bio-details:last-of-type
+		.skill-details
 		{
+			//border:	1px solid red;
 			height: auto;
-			//min-height: 6rem;
+			min-height: 6rem;
 			margin-bottom: 2rem;
-			
-			a
-			{
-				color: $navbar-item-hover-color;			
-				
-				&:hover
-				{
-					color: $link-hover;
-				}
-			}
 		}
 	}
 }

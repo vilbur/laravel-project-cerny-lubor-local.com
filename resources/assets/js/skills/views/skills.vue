@@ -6,43 +6,46 @@
 			<ul class="category-nav">
 				<li><a :class="{'is-active': filtered==''}" @click.prevent="filtered=''">All</a></li>
 				<li v-for="category in categories" class="category-filter">
-					<a :class="{'is-active': filtered==category.slug}" @click.prevent="filtered=category.slug">{{ category.slug }}</a>
+					<a :class="{'is-active': filtered==category.slug}" @click.prevent="filtered=category.slug">{{ category.title }}</a>
 				</li>
 			</ul>
 			 
 		</div>
-
-		<transition-group tag="ul" name="show">
-			<li v-for="skill in filteredSkills" class="hero" :key="skill.id" >
-	
-				<skills-header>
-						<span slot="logo">
-							<img class="img-center-vcerticaly" v-bind:src="skill.image">
-						</span>
-						<span class="item-title" >{{ skill.title }}</span>
-				</skills-header>
-	
-				<div class="columns">
-					<div class="column has-text-centered
-								is-11-mobile is-offset-1-mobile has-text-left-mobile
-								is-3-tablet
-								is-2-desktop is-offset-1-desktop
-								is-offset-2-widescreen"
-					> 
-					</div>
-	
-					<div class="skill-details column border-OFF-b">
-						<div v-for="skill_detail in skill.skill_details">
-							<skills-detail>
-								<span slot="title">{{skill_detail.title?skill_detail.title+':' : ''}}</span>
-								{{skill_detail.summary }}
-							</skills-detail>
+		
+		
+		<div class="container">
+			<transition-group tag="ul" name="show">
+				<li v-for="skill in filteredSkills" class="hero" :key="skill.id" >
+		
+						<skills-header>
+								<span slot="logo">
+									<img class="img-center-vcerticaly" v-bind:src="skill.image">
+								</span>
+								<span class="item-title" >{{ skill.title }}</span>
+						</skills-header>
+			
+						<div class="columns">
+							<div class="column has-text-centered
+										is-11-mobile is-offset-1-mobile has-text-left-mobile
+										is-3-tablet
+										is-2-desktop is-offset-1-desktop
+										is-offset-2-widescreen"
+							> 
+							</div>
+			
+							<div class="skill-details column border-OFF-b">
+								<div v-for="skill_detail in skill.skill_details">
+									<skills-detail>
+										<span slot="title">{{skill_detail.title ? skill_detail.title+':' : ''}}</span>
+										{{skill_detail.summary }}
+									</skills-detail>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-	
-			</li>
-		</transition-group>
+						
+				</li>
+			</transition-group>
+		</div>
 
 	</div>
 </template>

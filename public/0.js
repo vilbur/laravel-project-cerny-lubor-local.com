@@ -2559,6 +2559,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -2614,7 +2616,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		},
 		scrollToItem: function scrollToItem(portfolio_slug) {
 			setTimeout(function () {
-				__WEBPACK_IMPORTED_MODULE_1_vue_scrollto___default.a.scrollTo("#hero-" + portfolio_slug, 500, { easing: 'ease-in', offset: -20 });
+				__WEBPACK_IMPORTED_MODULE_1_vue_scrollto___default.a.scrollTo("#hero-" + portfolio_slug, 500, { easing: 'ease-in', offset: -80 });
 			}, 500);
 		}
 	},
@@ -4629,8 +4631,10 @@ var render = function() {
                             }
                           },
                           [
-                            _c("h3", { staticClass: "title is-2" }, [
-                              _vm._v(_vm._s(portfolio.title))
+                            _c("div", { staticClass: "backdrop-filter-mask" }, [
+                              _c("h3", { staticClass: "title is-2" }, [
+                                _vm._v(_vm._s(portfolio.title))
+                              ])
                             ])
                           ]
                         )

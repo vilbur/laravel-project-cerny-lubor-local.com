@@ -48925,13 +48925,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'navbar',
 	data: function data() {
 		return {
 			navIsActive: false,
-			navHeight: '80px'
+			navHeight: '80px',
+			test_text: this.$route.name
 		};
 	},
 	mounted: function mounted() {
@@ -48983,15 +48991,32 @@ var render = function() {
       },
       [
         this.$route.name !== "home"
-          ? _c(
-              "div",
-              {
-                staticClass: "navbar-burger burger",
-                class: { "is-active": _vm.navIsActive },
-                on: { click: _vm.toggleMenu }
-              },
-              [_c("span"), _vm._v(" "), _c("span"), _vm._v(" "), _c("span")]
-            )
+          ? _c("div", { staticClass: "navbar-brand is-hidden-tablet" }, [
+              _vm.navIsActive != true
+                ? _c(
+                    "div",
+                    {
+                      staticClass: "navbar-item",
+                      attrs: { href: "/#/" + this.$route.name }
+                    },
+                    [
+                      _vm._v(
+                        "\n\t\t\t\t" + _vm._s(this.$route.name) + "\n\t\t\t"
+                      )
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "navbar-burger burger",
+                  class: { "is-active": _vm.navIsActive },
+                  on: { click: _vm.toggleMenu }
+                },
+                [_c("span"), _vm._v(" "), _c("span"), _vm._v(" "), _c("span")]
+              )
+            ])
           : _vm._e(),
         _vm._v(" "),
         _c(
@@ -49013,14 +49038,14 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "router-link",
-                  { staticClass: "navbar-item", attrs: { to: "/biography" } },
-                  [_vm._v("Bio")]
+                  { staticClass: "navbar-item", attrs: { to: "/skills" } },
+                  [_vm._v("Skills")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
-                  { staticClass: "navbar-item", attrs: { to: "/skills" } },
-                  [_vm._v("Skills")]
+                  { staticClass: "navbar-item", attrs: { to: "/biography" } },
+                  [_vm._v("Biography")]
                 ),
                 _vm._v(" "),
                 _c(

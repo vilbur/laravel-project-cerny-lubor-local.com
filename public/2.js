@@ -55,6 +55,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -160,7 +165,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -181,7 +185,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\tis-offset-2-widescreen"
+            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop"
         },
         [_vm._t("logo")],
         2
@@ -338,100 +342,106 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "vilbur-biography" } },
-    _vm._l(_vm.models, function(model, index) {
-      return _c(
-        "div",
-        { staticClass: "hero" },
-        [
-          _c("biography-header", [
-            _c("span", { attrs: { slot: "logo" }, slot: "logo" }, [
-              model.link
-                ? _c(
-                    "a",
-                    {
-                      staticClass: "bio-logo-link",
-                      attrs: { href: model.link, target: "_blank" }
-                    },
-                    [
+  return _c("div", { attrs: { id: "vilbur-biography" } }, [
+    _c(
+      "div",
+      { staticClass: "container" },
+      _vm._l(_vm.models, function(model, index) {
+        return _c(
+          "div",
+          { staticClass: "hero" },
+          [
+            _c("biography-header", [
+              _c("span", { attrs: { slot: "logo" }, slot: "logo" }, [
+                model.link
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "bio-logo-link",
+                        attrs: { href: model.link, target: "_blank" }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "img-center-vcerticaly",
+                          attrs: { src: model.image }
+                        })
+                      ]
+                    )
+                  : _c("span", [
                       _c("img", {
                         staticClass: "img-center-vcerticaly",
                         attrs: { src: model.image }
                       })
-                    ]
+                    ])
+              ]),
+              _vm._v(" "),
+              model.link
+                ? _c(
+                    "a",
+                    {
+                      staticClass: "item-title",
+                      attrs: { href: model.link, target: "_blank" }
+                    },
+                    [_vm._v(_vm._s(model.client))]
                   )
-                : _c("span", [
-                    _c("img", {
-                      staticClass: "img-center-vcerticaly",
-                      attrs: { src: model.image }
-                    })
+                : _c("span", { staticClass: "item-title" }, [
+                    _vm._v(_vm._s(model.client))
                   ])
             ]),
             _vm._v(" "),
-            model.link
-              ? _c(
-                  "a",
-                  {
-                    staticClass: "item-title",
-                    attrs: { href: model.link, target: "_blank" }
-                  },
-                  [_vm._v(_vm._s(model.client))]
-                )
-              : _c("span", { staticClass: "item-title" }, [
-                  _vm._v(_vm._s(model.client))
-                ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "columns" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "column has-text-centered\n\t\t\t\t\t\tis-11-mobile is-offset-1-mobile has-text-left-mobile\n\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\t\t\tis-offset-2-widescreen"
-              },
-              [
-                _c("span", { staticClass: "subtitle" }, [
-                  _vm._v(_vm._s(model.since_until))
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "column" },
-              [
-                _c("biography-detail", [
-                  _c("span", { attrs: { slot: "title" }, slot: "title" }, [
-                    _vm._v("Job title:")
+            _c("div", { staticClass: "columns" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "column has-text-centered\n\t\t\t\t\t\t\tis-11-mobile is-offset-1-mobile has-text-left-mobile\n\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\t\t\t\tis-offset-2-widescreen"
+                },
+                [
+                  _c("span", { staticClass: "subtitle" }, [
+                    _vm._v(_vm._s(model.since_until))
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "column" },
+                [
+                  _c("biography-detail", [
+                    _c("span", { attrs: { slot: "title" }, slot: "title" }, [
+                      _vm._v("Job title:")
+                    ]),
+                    _vm._v(
+                      "\n\t\t\t\t\t\t" +
+                        _vm._s(model.job_title) +
+                        "\n\t\t\t\t\t"
+                    )
                   ]),
-                  _vm._v(
-                    "\n\t\t\t\t\t" + _vm._s(model.job_title) + "\n\t\t\t\t"
-                  )
-                ]),
-                _vm._v(" "),
-                model.project !== ""
-                  ? _c("biography-detail", [
-                      _c("span", { attrs: { slot: "title" }, slot: "title" }, [
-                        _vm._v("Project:")
-                      ]),
-                      _vm._v(" "),
-                      _c("span", {
-                        domProps: { innerHTML: _vm._s(model.project) }
-                      })
-                    ])
-                  : _vm._e()
-              ],
-              1
-            )
-          ])
-        ],
-        1
-      )
-    }),
-    0
-  )
+                  _vm._v(" "),
+                  model.project !== ""
+                    ? _c("biography-detail", [
+                        _c(
+                          "span",
+                          { attrs: { slot: "title" }, slot: "title" },
+                          [_vm._v("Project:")]
+                        ),
+                        _vm._v(" "),
+                        _c("span", {
+                          domProps: { innerHTML: _vm._s(model.project) }
+                        })
+                      ])
+                    : _vm._e()
+                ],
+                1
+              )
+            ])
+          ],
+          1
+        )
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

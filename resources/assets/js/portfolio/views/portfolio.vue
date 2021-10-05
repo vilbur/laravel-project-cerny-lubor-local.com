@@ -16,16 +16,18 @@
 				<div class="hero-body">
 					<div class="container">
 						
-						<!--HEADER LINK-->
+						<!-- ITEM HEADER LINK-->
 						<router-link
 							:to="{ path: '/portfolio/' + portfolio.slug }"
 							:class="{ visible: isVisible(portfolio.slug) }"
 							@click.native="toggle(portfolio.slug)"
 						>
 							<!--IMAGE-->
-							<div class="portfolio-background" :style=" { backgroundImage: 'url(' +  portfolio.image_url + ')' } ">
-								<h3 class="title is-2">{{ portfolio.title }}</h3>
-							</div>
+							<div class="portfolio-background" :style="{ backgroundImage: 'url(' +  portfolio.image_url + ')' } ">
+								<div class="backdrop-filter-mask">
+									<h3 class="title is-2">{{ portfolio.title }}</h3>
+								</div>
+							</div> 
 						</router-link>
 						
 						<!-- OPENED ITEM -->
@@ -138,7 +140,7 @@
 			},
 			scrollToItem(portfolio_slug){
 				setTimeout( function(){
-					VueScrollTo.scrollTo( "#hero-"+portfolio_slug, 500, { easing: 'ease-in', offset: -20});
+					VueScrollTo.scrollTo( "#hero-"+portfolio_slug, 500, { easing: 'ease-in', offset: -80 });
 				}, 500);
 			}
 		},

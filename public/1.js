@@ -117,6 +117,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -244,7 +247,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -265,7 +267,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\tis-offset-2-widescreen"
+            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop"
         },
         [_vm._t("logo")],
         2
@@ -427,137 +429,139 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "vilbur-skills" } },
-    [
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "sticky",
-              rawName: "v-sticky",
-              value: { stickyTop: 52, zIndex: 9 },
-              expression: "{ stickyTop: 52, zIndex:9 }"
-            }
-          ],
-          staticClass: "tabs is-centered"
-        },
-        [
-          _c(
-            "ul",
-            { staticClass: "category-nav" },
-            [
-              _c("li", [
+  return _c("div", { attrs: { id: "vilbur-skills" } }, [
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "sticky",
+            rawName: "v-sticky",
+            value: { stickyTop: 52, zIndex: 9 },
+            expression: "{ stickyTop: 52, zIndex:9 }"
+          }
+        ],
+        staticClass: "tabs is-centered"
+      },
+      [
+        _c(
+          "ul",
+          { staticClass: "category-nav" },
+          [
+            _c("li", [
+              _c(
+                "a",
+                {
+                  class: { "is-active": _vm.filtered == "" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.filtered = ""
+                    }
+                  }
+                },
+                [_vm._v("All")]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.categories, function(category) {
+              return _c("li", { staticClass: "category-filter" }, [
                 _c(
                   "a",
                   {
-                    class: { "is-active": _vm.filtered == "" },
+                    class: { "is-active": _vm.filtered == category.slug },
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        _vm.filtered = ""
+                        _vm.filtered = category.slug
                       }
                     }
                   },
-                  [_vm._v("All")]
-                )
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.categories, function(category) {
-                return _c("li", { staticClass: "category-filter" }, [
-                  _c(
-                    "a",
-                    {
-                      class: { "is-active": _vm.filtered == category.slug },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          _vm.filtered = category.slug
-                        }
-                      }
-                    },
-                    [_vm._v(_vm._s(category.slug))]
-                  )
-                ])
-              })
-            ],
-            2
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "transition-group",
-        { attrs: { tag: "ul", name: "show" } },
-        _vm._l(_vm.filteredSkills, function(skill) {
-          return _c(
-            "li",
-            { key: skill.id, staticClass: "hero" },
-            [
-              _c("skills-header", [
-                _c("span", { attrs: { slot: "logo" }, slot: "logo" }, [
-                  _c("img", {
-                    staticClass: "img-center-vcerticaly",
-                    attrs: { src: skill.image }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "item-title" }, [
-                  _vm._v(_vm._s(skill.title))
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "columns" }, [
-                _c("div", {
-                  staticClass:
-                    "column has-text-centered\n\t\t\t\t\t\t\tis-11-mobile is-offset-1-mobile has-text-left-mobile\n\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\t\t\t\tis-offset-2-widescreen"
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "skill-details column border-OFF-b" },
-                  _vm._l(skill.skill_details, function(skill_detail) {
-                    return _c(
-                      "div",
-                      [
-                        _c("skills-detail", [
-                          _c(
-                            "span",
-                            { attrs: { slot: "title" }, slot: "title" },
-                            [
-                              _vm._v(
-                                _vm._s(
-                                  skill_detail.title
-                                    ? skill_detail.title + ":"
-                                    : ""
-                                )
-                              )
-                            ]
-                          ),
-                          _vm._v(
-                            "\n\t\t\t\t\t\t\t" +
-                              _vm._s(skill_detail.summary) +
-                              "\n\t\t\t\t\t\t"
-                          )
-                        ])
-                      ],
-                      1
-                    )
-                  }),
-                  0
+                  [_vm._v(_vm._s(category.title))]
                 )
               ])
-            ],
-            1
-          )
-        }),
-        0
-      )
-    ],
-    1
-  )
+            })
+          ],
+          2
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _c(
+          "transition-group",
+          { attrs: { tag: "ul", name: "show" } },
+          _vm._l(_vm.filteredSkills, function(skill) {
+            return _c(
+              "li",
+              { key: skill.id, staticClass: "hero" },
+              [
+                _c("skills-header", [
+                  _c("span", { attrs: { slot: "logo" }, slot: "logo" }, [
+                    _c("img", {
+                      staticClass: "img-center-vcerticaly",
+                      attrs: { src: skill.image }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "item-title" }, [
+                    _vm._v(_vm._s(skill.title))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "columns" }, [
+                  _c("div", {
+                    staticClass:
+                      "column has-text-centered\n\t\t\t\t\t\t\t\t\tis-11-mobile is-offset-1-mobile has-text-left-mobile\n\t\t\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\t\t\t\t\t\tis-offset-2-widescreen"
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "skill-details column border-OFF-b" },
+                    _vm._l(skill.skill_details, function(skill_detail) {
+                      return _c(
+                        "div",
+                        [
+                          _c("skills-detail", [
+                            _c(
+                              "span",
+                              { attrs: { slot: "title" }, slot: "title" },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    skill_detail.title
+                                      ? skill_detail.title + ":"
+                                      : ""
+                                  )
+                                )
+                              ]
+                            ),
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\t\t\t" +
+                                _vm._s(skill_detail.summary) +
+                                "\n\t\t\t\t\t\t\t\t"
+                            )
+                          ])
+                        ],
+                        1
+                      )
+                    }),
+                    0
+                  )
+                ])
+              ],
+              1
+            )
+          }),
+          0
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
