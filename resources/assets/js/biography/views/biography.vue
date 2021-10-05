@@ -7,9 +7,9 @@
 				<biography-header>
 						<span slot="logo">
 							<!--logo link-->
-							<a class="bio-logo-link" :href="model.link " target="_blank" v-if="model.link" ><img class="img-center-vcerticaly" :src="model.image"></a>
+							<a class="bio-logo-link " :href="model.link " target="_blank" v-if="model.link" ><img class="Ximg-center-vcerticaly" :src="model.image"></a>
 							<!--only logo-->
-							<span v-else><img class="img-center-vcerticaly" :src="model.image"></span>
+							<span v-else><img class="Ximg-center-vcerticaly" :src="model.image"></span>
 						</span>
 	
 						<a class="item-title" :href="model.link" target="_blank" v-if="model.link" >{{ model.client }}</a>
@@ -17,25 +17,25 @@
 				</biography-header>
 	
 	
-				<div class="columns">
-					<div class="column has-text-centered
-								is-11-mobile is-offset-1-mobile has-text-left-mobile
+				<div class="bio-details columns is-mobile is-multiline">
+					<div class="column bio-detail has-text-centered
+								is-3-mobile
 								is-3-tablet
 								is-2-desktop is-offset-1-desktop
 								is-offset-2-widescreen"
 					>
-						<span class="subtitle">{{ model.since_until }}</span>
+						<span class="">{{ model.since_until }}</span>
 					</div>
 	
-					<div class="column">
-						<biography-detail>
-							<span slot="title">Job title:</span>
+					<div class="column bio-detail">
+						<!--<biography-detail>-->
+							
 							{{ model.job_title }}
-						</biography-detail>
-						<biography-detail v-if="model.project!==''">
-							<span slot="title">Project:</span>
-							<span v-html="model.project"></span>
-						</biography-detail>
+						<!--</biography-detail>-->
+						<!--<biography-detail v-if="model.project!==''">-->
+							<!--<span slot="title">Project:</span>-->
+							<!--<span v-html="model.project"></span>-->
+						<!--</biography-detail>-->
 					</div>
 				</div>
 	

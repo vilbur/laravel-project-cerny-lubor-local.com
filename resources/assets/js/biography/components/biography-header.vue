@@ -4,7 +4,8 @@
 		<div class="column logo has-text-centered
 					is-3-mobile
 					is-3-tablet
-					is-2-desktop"
+					is-2-desktop
+					is-offset-1-widescreen"
 		>
 			<slot name="logo" ></slot>
 		</div>

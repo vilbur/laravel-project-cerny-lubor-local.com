@@ -26656,6 +26656,7 @@ body {
 }
 
 #vilbur-skills .hero .skill-details {
+  border: 1px solid red;
   height: auto;
   min-height: 6rem;
   margin-bottom: 2rem;
@@ -26666,19 +26667,17 @@ body {
 }
 
 #vilbur-biography .hero {
+  margin-bottom: 3rem;
   overflow: hidden;
 }
 
-#vilbur-biography .hero .column,
-#vilbur-biography .hero .subtitle {
-  color: #DBDBDB;
-}
-
 #vilbur-biography .hero .logo {
-  height: 4em;
+  height: 4rem;
+  max-height: 100%;
 }
 
 #vilbur-biography .hero .logo img {
+  height: 4rem;
   max-height: 100%;
 }
 
@@ -26709,9 +26708,9 @@ body {
   color: #F58A07;
 }
 
-#vilbur-biography .hero .skill-details {
-  height: auto;
-  min-height: 6rem;
-  margin-bottom: 2rem;
+#vilbur-biography .hero .bio-details .bio-detail {
+  color: #DBDBDB;
+  font-size: 0.8rem;
+  padding-top: 0;
 }
 

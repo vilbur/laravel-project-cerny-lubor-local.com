@@ -165,6 +165,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -185,7 +186,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop"
+            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop\n\t\t\t\tis-offset-1-widescreen"
         },
         [_vm._t("logo")],
         2
@@ -285,6 +286,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -297,31 +300,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "columns is-mobile is-multiline bio-details" },
-    [
-      _c(
-        "strong",
-        {
-          staticClass:
-            "column is-4-mobile is-3-tablet is-2-desktop has-text-right-mobile has-text-left"
-        },
-        [_vm._t("title")],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "column is-8-mobile is-9-tablet is-10-desktop has-text-left"
-        },
-        [_vm._t("default")],
-        2
-      )
-    ]
-  )
+  return _c("div", {}, [_vm._t("default")], 2)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -357,19 +336,19 @@ var render = function() {
                   ? _c(
                       "a",
                       {
-                        staticClass: "bio-logo-link",
+                        staticClass: "bio-logo-link ",
                         attrs: { href: model.link, target: "_blank" }
                       },
                       [
                         _c("img", {
-                          staticClass: "img-center-vcerticaly",
+                          staticClass: "Ximg-center-vcerticaly",
                           attrs: { src: model.image }
                         })
                       ]
                     )
                   : _c("span", [
                       _c("img", {
-                        staticClass: "img-center-vcerticaly",
+                        staticClass: "Ximg-center-vcerticaly",
                         attrs: { src: model.image }
                       })
                     ])
@@ -389,52 +368,28 @@ var render = function() {
                   ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "columns" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "column has-text-centered\n\t\t\t\t\t\t\tis-11-mobile is-offset-1-mobile has-text-left-mobile\n\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\t\t\t\tis-offset-2-widescreen"
-                },
-                [
-                  _c("span", { staticClass: "subtitle" }, [
-                    _vm._v(_vm._s(model.since_until))
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "column" },
-                [
-                  _c("biography-detail", [
-                    _c("span", { attrs: { slot: "title" }, slot: "title" }, [
-                      _vm._v("Job title:")
-                    ]),
-                    _vm._v(
-                      "\n\t\t\t\t\t\t" +
-                        _vm._s(model.job_title) +
-                        "\n\t\t\t\t\t"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  model.project !== ""
-                    ? _c("biography-detail", [
-                        _c(
-                          "span",
-                          { attrs: { slot: "title" }, slot: "title" },
-                          [_vm._v("Project:")]
-                        ),
-                        _vm._v(" "),
-                        _c("span", {
-                          domProps: { innerHTML: _vm._s(model.project) }
-                        })
-                      ])
-                    : _vm._e()
-                ],
-                1
-              )
-            ])
+            _c(
+              "div",
+              { staticClass: "bio-details columns is-mobile is-multiline" },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "column bio-detail has-text-centered\n\t\t\t\t\t\t\tis-3-mobile\n\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\t\t\t\tis-offset-2-widescreen"
+                  },
+                  [_c("span", {}, [_vm._v(_vm._s(model.since_until))])]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "column bio-detail" }, [
+                  _vm._v(
+                    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t" +
+                      _vm._s(model.job_title) +
+                      "\n\t\t\t\t\t"
+                  )
+                ])
+              ]
+            )
           ],
           1
         )
