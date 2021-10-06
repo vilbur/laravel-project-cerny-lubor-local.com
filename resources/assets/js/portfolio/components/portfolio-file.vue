@@ -1,7 +1,7 @@
 <template>
-	<div class="portfolio-file columns is-mobile is-centered is-multiline" >
+	<div class="portfolio-file " >
 
-		<div v-for="(file, index) in files" class="column is-6-mobile is-4-desktop">
+		<div v-for="(file, index) in files" class="is-4">
 			<div class="image"
 				:key	= "index_start + index"
 				@click	= "$emit('imageClicked', index_start + index)"

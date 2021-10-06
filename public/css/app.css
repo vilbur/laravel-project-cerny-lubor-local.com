@@ -26579,6 +26579,7 @@ body {
   height: auto;
   max-height: 80192px;
   overflow: hidden;
+  padding: 3em 1em 0 1em;
 }
 
 #vilbur-portfolio .portfolio-item * {
@@ -26593,11 +26594,7 @@ body {
   border-bottom: 1px solid white;
 }
 
-#vilbur-portfolio .portfolio-item .columns {
-  padding: 3em 1em 0 1em;
-}
-
-#vilbur-portfolio .portfolio-item .columns .image {
+#vilbur-portfolio .portfolio-item .image {
   height: 20vh;
   background-size: cover;
   /* <------ */

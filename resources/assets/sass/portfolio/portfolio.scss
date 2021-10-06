@@ -3,9 +3,8 @@
 
 	//$breakpoint: 640px;
 
+	margin-top:	6rem;
 
-	margin-top:	6rem; 
-	
 	.portfolio
 	{
 		>.hero-body
@@ -13,11 +12,10 @@
 			padding-top:	0;
 			//padding-left:	0;
 			//padding-right:	0;
-			
+
 			@include mobile{
 				padding-bottom:	1rem;
 			}
-			
 		}
 
 		a .portfolio-background
@@ -31,19 +29,17 @@
 			position:	relative;
 			border-bottom:	3px solid white;
 
-			
 			@include mobile{
 				height: 5rem;
 				background-size:	120%;
 			}
-			
-			
+
 			.backdrop-filter-mask
 			{
 				height:	100%;
 				backdrop-filter: none;
 			}
-			
+
 			.title,
 			.subtitle
 			{
@@ -57,16 +53,14 @@
 				font-size:	$font-size-title;
 				font-weight:	bold;
 
-
 				@include mobile{
 					bottom:	-8px;
 					font-size:	$font-size-title-mobile;
 				}
-				
+
 			}
 
-			
-		} 
+		}
 
 		a:hover
 		,a.visible
@@ -83,13 +77,11 @@
 		{
 			height:	4rem;
 			border-bottom:	3px solid $link-hover;
-			
+
 			@include tablet{
 				margin-bottom:	3rem;	
 			}
-			
-			
-			
+
 			.backdrop-filter-mask
 			{
 				backdrop-filter:	grayscale(100%);
@@ -99,7 +91,7 @@
 			{
 				color:	$link-hover;
 			}
-			
+
 		} 
 	}
 
@@ -129,8 +121,8 @@
 			}
 		}
 
-		.columns
-		{
+		//.columns
+		//{
 			padding: 3em 1em 0 1em;
 
 			.image
@@ -141,6 +133,6 @@
 				background-position:	center center;              /* optional, center the image */
 				border:	1px solid #262626;
 			}
-		}
+		//}
 	}
 }

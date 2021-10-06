@@ -37,10 +37,10 @@
 								<transition name="show">
 									<keep-alive>
 										<portfolio-item
-											:portfolio_slug="portfolio.slug"											
-											:portfolio_description="portfolio.description"
-											v-if="isVisible(portfolio.slug)"
-											v-show="isVisible(portfolio.slug)"
+											v-if	= "isVisible(portfolio.slug)"
+											v-show	= "isVisible(portfolio.slug)"
+											:portfolio_slug	= "portfolio.slug"											
+											:portfolio_description	= "portfolio.description"
 										></portfolio-item> 
 									</keep-alive>
 								</transition>

@@ -2730,6 +2730,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -2909,11 +2911,9 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "portfolio-file columns is-mobile is-centered is-multiline"
-    },
+    { staticClass: "portfolio-file " },
     _vm._l(_vm.files, function(file, index) {
-      return _c("div", { staticClass: "column is-6-mobile is-4-desktop" }, [
+      return _c("div", { staticClass: "is-4" }, [
         _c("div", {
           key: _vm.index_start + index,
           staticClass: "image",
@@ -3901,45 +3901,43 @@ var render = function() {
       }),
       _vm._v(" "),
       _vm._l(_vm.portfolioItems, function(item) {
-        return _c("div", { staticClass: "column is-12" }, [
-          _c("div", { staticClass: "portfolio-item columns" }, [
-            _vm.hasText(item)
-              ? _c("div", { staticClass: "portfolio-item-about column is-4" }, [
-                  item.title
-                    ? _c("h3", { staticClass: "title is-3" }, [
-                        _vm._v(_vm._s(item.title))
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  item.summary
-                    ? _c("h4", { staticClass: "subtitle is-4" }, [
-                        _vm._v(_vm._s(item.summary))
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  item.description
-                    ? _c("div", {
-                        domProps: { innerHTML: _vm._s(item.description) }
-                      })
-                    : _vm._e()
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "column is-12 portfolio-item-thumbs" },
-              [
-                _c("portfolio-file", {
-                  attrs: { portfolio_item_id: item.id },
-                  on: {
-                    imagesPrepared: _vm.addGalleryImages,
-                    imageClicked: _vm.openGallery
-                  }
-                })
-              ],
-              1
-            )
-          ])
+        return _c("div", { staticClass: "portfolio-item columns is-12" }, [
+          _c(
+            "div",
+            { staticClass: "column portfolio-item-thumbs" },
+            [
+              _c("portfolio-file", {
+                attrs: { portfolio_item_id: item.id },
+                on: {
+                  imagesPrepared: _vm.addGalleryImages,
+                  imageClicked: _vm.openGallery
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm.hasText(item)
+            ? _c("div", { staticClass: "portfolio-item-about column is-4" }, [
+                item.title
+                  ? _c("h3", { staticClass: "title is-3" }, [
+                      _vm._v(_vm._s(item.title))
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                item.summary
+                  ? _c("h4", { staticClass: "subtitle is-4" }, [
+                      _vm._v(_vm._s(item.summary))
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                item.description
+                  ? _c("div", {
+                      domProps: { innerHTML: _vm._s(item.description) }
+                    })
+                  : _vm._e()
+              ])
+            : _vm._e()
         ])
       })
     ],
