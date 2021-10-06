@@ -11,7 +11,7 @@
 					 :options	="this.gallery_options">
 		</vue-gallery>
 
-		<div v-for="item in portfolioItems" class="portfolio-item columns is-12" >
+		<div v-for="item in portfolioItems" class="portfolio-item columns reverse-columns is-12" >
 			<!--<div class="portfolio-item columns">-->
 				
 

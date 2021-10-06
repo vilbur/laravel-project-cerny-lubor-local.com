@@ -60,9 +60,9 @@
 
 
 <script>
-	import skillsHeader from '../components/skills-header';
-	import skillsDetail from '../components/skills-detail';
-	import VueSticky from 'vue-sticky' // Es6 module
+	import skillsHeader	from '../components/skills-header';
+	import skillsDetail	from '../components/skills-detail';
+	import VueSticky	from 'vue-sticky' // Es6 module
 
 	export default {
 		props: ['category'],
@@ -73,13 +73,16 @@
 				filtered:	'',			
 			};
 		},
+		
 		created(){
 			axios.get('/db/category-skills').then( response => this.categories = response.data );
 			axios.get('/db/skills').then( response => this.skills = response.data );
 		},
+		
 		methods:{
 
 		},
+		
 		computed: {
 			filteredSkills() {
 				var self = this;
@@ -88,6 +91,7 @@
 				});
 			}
 		},
+		
 		watch: {
 			filtered(){}
 		},
@@ -97,6 +101,7 @@
 			'skills-detail':skillsDetail,
 
 		},
+		
 		directives: {
 		  'sticky': VueSticky,
 		},

@@ -2,14 +2,34 @@
 	<div id="vilbur-portfolio">
 		
 		<!--TEMPORARY DISABLED-->
-		<ul class="tabs is-centered is-fixed-top" v-show="false" >
-			<router-link to="/portfolio/all" tag="li" @click.native="showAllToggle()" v-html="visible.length !== portfolios.length ? 'Expand all' : 'Collapse all'" ></router-link>
-			<li><a @click.prevent="filtered=''">All</a></li>
-			<li v-for="category in categories">
-				<a @click.prevent="filtered=category.slug">{{ category.slug }}</a>
-			</li>
-		</ul>
-		
+		<!--<ul class="tabs is-centered is-fixed-top" v-show="true" >-->
+			<!--<router-link to="/portfolio/all" tag="li" @click.native="showAllToggle()" v-html="visible.length !== portfolios.length ? 'Expand all' : 'Collapse all'" ></router-link>-->
+			<!--<li><a @click.prevent="filtered=''">All</a></li>-->
+			<!--<li v-for="category in categories">-->
+				<!--<a @click.prevent="filtered=category.slug">{{ category.slug }}</a>-->
+			<!--</li>-->
+		<!--</ul>-->
+
+	
+
+		<div v-sticky="{ stickyTop: 52, zIndex:9 }" class="tabs is-centered">
+			<ul class="category-nav">
+				
+				<!-- EXPAND ALL TAB -->
+				<li class="category-filter">
+					<router-link to="/portfolio/all" @click.native="showAllToggle()" v-html="visible.length !== portfolios.length ? 'Show all' : 'Close all'" ></router-link>
+				</li>
+				
+				<!-- CATEGORY TABS -->
+				<li v-for="category in categories" class="category-filter">
+					<a :class="{'is-active': filtered==category.slug}" @click.prevent="filtered=category.slug">{{ category.title }}</a>
+				</li>
+				
+			</ul>
+		</div>
+			
+			
+			
 		<!--PORTFIOLO ITEMS MAIN LIST-->
 		<transition-group tag="ul" name="show">
 			<li v-for="portfolio in filteredPortfolios" class="portfolio hero" :id="'hero-'+portfolio.slug"  :portfolio="portfolio" :key="portfolio.id" >
@@ -73,8 +93,9 @@
 
 
 <script>
-	import portfolioItem from '../components/portfolio-item';
-	import VueScrollTo from 'vue-scrollto';
+	import portfolioItem	from '../components/portfolio-item';
+	import VueScrollTo	from 'vue-scrollto';
+	import VueSticky	from 'vue-sticky' // Es6 module
 
 	export default {
 
@@ -87,6 +108,7 @@
 				test:	'',							
 			}; 
 		},
+		
 		created()
 		{
 			axios.get('/db/category-portfolio').then( response => this.categories = response.data );
@@ -95,6 +117,7 @@
 				this.showInit( this.$route.params.portfolio_slug, response.data );
 			});			
 		},
+		
 		methods:
 		{
 			showInit(portfolio_slug, portfolios)
@@ -144,6 +167,7 @@
 				}, 500);
 			}
 		},
+		
 		computed:
 		{
 			filteredPortfolios() {
@@ -153,13 +177,22 @@
 				});
 			}
 		},
+		
 		watch:
 		{
 		  filtered(){}
 		},
+		
 		components:
 		{
 			'portfolio-item':	portfolioItem,
+		},
+		
+		directives: {
+		  'sticky': VueSticky,
 		}
+		
+		
+		
 	};
 </script>

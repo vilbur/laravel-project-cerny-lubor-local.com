@@ -139,7 +139,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		});
 	},
 
+
 	methods: {},
+
 	computed: {
 		filteredSkills: function filteredSkills() {
 			var self = this;
@@ -148,6 +150,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			});
 		}
 	},
+
 	watch: {
 		filtered: function filtered() {}
 	},
@@ -157,6 +160,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		'skills-detail': __WEBPACK_IMPORTED_MODULE_1__components_skills_detail___default.a
 
 	},
+
 	directives: {
 		'sticky': __WEBPACK_IMPORTED_MODULE_2_vue_sticky___default.a
 	}

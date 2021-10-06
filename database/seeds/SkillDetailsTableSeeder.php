@@ -22,10 +22,10 @@ class SkillDetailsTableSeeder extends Seeder
                 'id' => 1,
                 'skill_id' => 1,
                 'title' => 'Game CG',
-                'summary' => 'Next-Gen CG - highpoly to lowpoly baking wotrkflow',
+                'summary' => 'Next-Gen CG',
                 'description' => NULL,
                 'created_at' => '2018-02-15 03:39:00',
-                'updated_at' => '2018-04-18 08:43:04',
+                'updated_at' => '2018-04-18 09:03:03',
             ),
             1 => 
             array (
@@ -42,10 +42,10 @@ class SkillDetailsTableSeeder extends Seeder
                 'id' => 3,
                 'skill_id' => 1,
                 'title' => 'Maxscript',
-                'summary' => 'Tools, exporters etc.',
+                'summary' => 'Tools, exporters',
                 'description' => NULL,
-                'created_at' => '2018-02-15 03:41:44',
-                'updated_at' => '2018-02-15 03:41:44',
+                'created_at' => '2018-02-15 03:41:00',
+                'updated_at' => '2018-04-18 09:04:13',
             ),
             3 => 
             array (
@@ -92,7 +92,7 @@ class SkillDetailsTableSeeder extends Seeder
                 'id' => 8,
                 'skill_id' => 5,
                 'title' => 'Frameworks',
-                'summary' => 'plain JavaScript, VueJS, jQuery',
+                'summary' => 'VueJS, jQuery',
                 'description' => NULL,
                 'created_at' => '2018-02-15 11:44:00',
                 'updated_at' => '2018-04-18 08:12:01',

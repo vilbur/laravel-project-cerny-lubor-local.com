@@ -20,8 +20,8 @@ class CategoryPortfoliosTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'slug' => '3d',
-                'title' => '3D',
+                'slug' => 'high_poly',
+                'title' => 'High-Poly',
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-14 20:29:04',
@@ -30,8 +30,8 @@ class CategoryPortfoliosTableSeeder extends Seeder
             1 => 
             array (
                 'id' => 2,
-                'slug' => 'webdesign',
-                'title' => 'webdesign',
+                'slug' => 'low_poly',
+                'title' => 'Low-Poly',
                 'summary' => NULL,
                 'description' => NULL,
                 'created_at' => '2018-02-14 20:29:04',

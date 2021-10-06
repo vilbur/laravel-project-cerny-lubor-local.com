@@ -29,7 +29,7 @@ class CategorySkillsTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'slug' => 'webdesign',
-                'title' => 'WEBDESIGN',
+                'title' => 'Webdesign',
                 'created_at' => '2018-02-14 20:29:04',
                 'updated_at' => '2018-02-14 20:31:35',
             ),
@@ -37,7 +37,7 @@ class CategorySkillsTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'slug' => 'others',
-                'title' => 'OTHERS',
+                'title' => 'Others',
                 'created_at' => '2018-02-15 02:06:01',
                 'updated_at' => '2018-02-15 02:06:18',
             ),

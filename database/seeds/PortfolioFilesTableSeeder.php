@@ -517,7 +517,7 @@ class PortfolioFilesTableSeeder extends Seeder
                 'portfolio_item_id' => 13,
                 'image' => 'portfolio-files/rendering/zemeklon/zemeklon.jpg',
                 'url' => NULL,
-                'title' => 'Clone of Earth made by crazy scientist in laboratory',
+                'title' => 'Clone of Earth',
                 'author' => NULL,
                 'summary' => NULL,
                 'description' => 'Rendered for fun in 2009',

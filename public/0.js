@@ -2487,6 +2487,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_portfolio_item___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_portfolio_item__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_scrollto__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_scrollto___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_scrollto__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_sticky__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_sticky___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_sticky__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2564,6 +2586,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+ // Es6 module
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
@@ -2586,6 +2609,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			_this.showInit(_this.$route.params.portfolio_slug, response.data);
 		});
 	},
+
 
 	methods: {
 		showInit: function showInit(portfolio_slug, portfolios) {
@@ -2620,6 +2644,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}, 500);
 		}
 	},
+
 	computed: {
 		filteredPortfolios: function filteredPortfolios() {
 			var self = this;
@@ -2628,12 +2653,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			});
 		}
 	},
+
 	watch: {
 		filtered: function filtered() {}
 	},
+
 	components: {
 		'portfolio-item': __WEBPACK_IMPORTED_MODULE_0__components_portfolio_item___default.a
+	},
+
+	directives: {
+		'sticky': __WEBPACK_IMPORTED_MODULE_2_vue_sticky___default.a
 	}
+
 });
 
 /***/ }),
@@ -3901,44 +3933,48 @@ var render = function() {
       }),
       _vm._v(" "),
       _vm._l(_vm.portfolioItems, function(item) {
-        return _c("div", { staticClass: "portfolio-item columns is-12" }, [
-          _c(
-            "div",
-            { staticClass: "column portfolio-item-thumbs" },
-            [
-              _c("portfolio-file", {
-                attrs: { portfolio_item_id: item.id },
-                on: {
-                  imagesPrepared: _vm.addGalleryImages,
-                  imageClicked: _vm.openGallery
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm.hasText(item)
-            ? _c("div", { staticClass: "portfolio-item-about column is-4" }, [
-                item.title
-                  ? _c("h3", { staticClass: "title is-3" }, [
-                      _vm._v(_vm._s(item.title))
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                item.summary
-                  ? _c("h4", { staticClass: "subtitle is-4" }, [
-                      _vm._v(_vm._s(item.summary))
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                item.description
-                  ? _c("div", {
-                      domProps: { innerHTML: _vm._s(item.description) }
-                    })
-                  : _vm._e()
-              ])
-            : _vm._e()
-        ])
+        return _c(
+          "div",
+          { staticClass: "portfolio-item columns reverse-columns is-12" },
+          [
+            _c(
+              "div",
+              { staticClass: "column portfolio-item-thumbs" },
+              [
+                _c("portfolio-file", {
+                  attrs: { portfolio_item_id: item.id },
+                  on: {
+                    imagesPrepared: _vm.addGalleryImages,
+                    imageClicked: _vm.openGallery
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm.hasText(item)
+              ? _c("div", { staticClass: "portfolio-item-about column is-4" }, [
+                  item.title
+                    ? _c("h3", { staticClass: "title is-3" }, [
+                        _vm._v(_vm._s(item.title))
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  item.summary
+                    ? _c("h4", { staticClass: "subtitle is-4" }, [
+                        _vm._v(_vm._s(item.summary))
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  item.description
+                    ? _c("div", {
+                        domProps: { innerHTML: _vm._s(item.description) }
+                      })
+                    : _vm._e()
+                ])
+              : _vm._e()
+          ]
+        )
       })
     ],
     2
@@ -4526,68 +4562,67 @@ var render = function() {
     { attrs: { id: "vilbur-portfolio" } },
     [
       _c(
-        "ul",
+        "div",
         {
           directives: [
             {
-              name: "show",
-              rawName: "v-show",
-              value: false,
-              expression: "false"
+              name: "sticky",
+              rawName: "v-sticky",
+              value: { stickyTop: 52, zIndex: 9 },
+              expression: "{ stickyTop: 52, zIndex:9 }"
             }
           ],
-          staticClass: "tabs is-centered is-fixed-top"
+          staticClass: "tabs is-centered"
         },
         [
-          _c("router-link", {
-            attrs: { to: "/portfolio/all", tag: "li" },
-            domProps: {
-              innerHTML: _vm._s(
-                _vm.visible.length !== _vm.portfolios.length
-                  ? "Expand all"
-                  : "Collapse all"
-              )
-            },
-            nativeOn: {
-              click: function($event) {
-                return _vm.showAllToggle()
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("li", [
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.filtered = ""
-                  }
-                }
-              },
-              [_vm._v("All")]
-            )
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.categories, function(category) {
-            return _c("li", [
+          _c(
+            "ul",
+            { staticClass: "category-nav" },
+            [
               _c(
-                "a",
-                {
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.filtered = category.slug
+                "li",
+                { staticClass: "category-filter" },
+                [
+                  _c("router-link", {
+                    attrs: { to: "/portfolio/all" },
+                    domProps: {
+                      innerHTML: _vm._s(
+                        _vm.visible.length !== _vm.portfolios.length
+                          ? "Show all"
+                          : "Close all"
+                      )
+                    },
+                    nativeOn: {
+                      click: function($event) {
+                        return _vm.showAllToggle()
+                      }
                     }
-                  }
-                },
-                [_vm._v(_vm._s(category.slug))]
-              )
-            ])
-          })
-        ],
-        2
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.categories, function(category) {
+                return _c("li", { staticClass: "category-filter" }, [
+                  _c(
+                    "a",
+                    {
+                      class: { "is-active": _vm.filtered == category.slug },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.filtered = category.slug
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(category.title))]
+                  )
+                ])
+              })
+            ],
+            2
+          )
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -4703,6 +4738,21 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-5f13625e", module.exports)
   }
 }
+
+/***/ }),
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.VueSticky=e():t.VueSticky=e()}(window,function(){return function(t){var e={};function n(i){if(e[i])return e[i].exports;var o=e[i]={i:i,l:!1,exports:{}};return t[i].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:i})},n.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=0)}([function(t,e,n){"use strict";n.r(e);var i,o,r=arguments,s=function(t){var e=t.value||{};return{stickyTop:e.stickyTop||0,zIndex:e.zIndex||1e3,disabled:e.disabled}},u=function(){window.removeEventListener("scroll",i)},c=function(){window.addEventListener("scroll",i)},d={},p={};e.default={bind:function(t,e){d=s(e),p=function(t){return{zIndex:t.style.zIndex}}(t);var n=d.disabled,u=d.stickyTop,f=d.zIndex;if(!n){var l=t.style;l.position="-webkit-sticky",l.position="sticky";var a=t.firstElementChild.style;(o=~l.position.indexOf("sticky"))?(l.top=u+"px",l.zIndex=f):(l.position="",a.cssText="left: 0; right: 0; top: "+u+"px; z-index: "+f+"; "+a.cssText);var x=!1;i=function(t,e){var n,i,o,s,u;function c(){t.apply(s,u),i=n}return void 0===e&&(e=100),function(){if(s=void 0,u=r,n=+new Date,o&&(clearTimeout(o),o=null),i){var t=e-(n-i);t<0?c():o=setTimeout(function(){c()},t)}else c()}}(function(){t.getBoundingClientRect().top<=u?o||x||(l.height||(l.height=t.offsetHeight+"px"),a&&(a.position="fixed"),x=!0):!o&&x&&(a.position="static",x=!1)}),c()}},unbind:u,update:function(t,e){var n=(d=s(e)).stickyTop,i=d.zIndex,r=t.firstElementChild.style;o?(t.style.top=n+"px",t.style.zIndex=i):(r.top=n+"px",r.zIndex=i),d.disabled?o?t.style.position="":(r.position="",r.top="",r.zIndex=p.zIndex,u()):o?(t.style.position="-webkit-sticky",t.style.position="sticky"):c()}}}])});
 
 /***/ })
 ]));
