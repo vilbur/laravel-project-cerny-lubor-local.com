@@ -3968,6 +3968,7 @@ var render = function() {
                   _vm._v(" "),
                   item.description
                     ? _c("div", {
+                        staticClass: "description",
                         domProps: { innerHTML: _vm._s(item.description) }
                       })
                     : _vm._e()
@@ -4581,14 +4582,14 @@ var render = function() {
             [
               _c(
                 "li",
-                { staticClass: "category-filter" },
+                { staticClass: "category-filter expand-all" },
                 [
                   _c("router-link", {
                     attrs: { to: "/portfolio/all" },
                     domProps: {
                       innerHTML: _vm._s(
                         _vm.visible.length !== _vm.portfolios.length
-                          ? "Show all"
+                          ? "Expand all"
                           : "Close all"
                       )
                     },

@@ -48938,7 +48938,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	data: function data() {
 		return {
 			navIsActive: false,
-			navHeight: '80px',
+			navHeight: '52px',
 			test_text: this.$route.name
 		};
 	},

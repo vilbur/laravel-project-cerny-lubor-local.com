@@ -27,7 +27,7 @@
 				<div class="portfolio-item-about column is-4" v-if="hasText(item)" >
 					<h3 v-if	="item.title"	class	="title is-3">{{ item.title }}</h3>
 					<h4 v-if	="item.summary"	class	="subtitle is-4">{{ item.summary }}</h4>
-					<div v-if	="item.description"	v-html	="item.description"></div>
+					<div v-if	="item.description"	class	="description" v-html	="item.description"></div>
 				</div>
 				
 			<!--</div>-->

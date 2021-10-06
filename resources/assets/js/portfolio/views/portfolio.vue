@@ -16,8 +16,8 @@
 			<ul class="category-nav">
 				
 				<!-- EXPAND ALL TAB -->
-				<li class="category-filter">
-					<router-link to="/portfolio/all" @click.native="showAllToggle()" v-html="visible.length !== portfolios.length ? 'Show all' : 'Close all'" ></router-link>
+				<li class="category-filter expand-all">
+					<router-link to="/portfolio/all" @click.native="showAllToggle()" v-html="visible.length !== portfolios.length ? 'Expand all' : 'Close all'" ></router-link>
 				</li>
 				
 				<!-- CATEGORY TABS -->

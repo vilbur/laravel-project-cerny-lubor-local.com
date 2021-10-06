@@ -35,7 +35,7 @@
 		data () {
 			return {
 				navIsActive: false,
-				navHeight:	'80px',
+				navHeight:	'52px',
 				test_text: this.$route.name,
 			};
 		},

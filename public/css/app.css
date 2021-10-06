@@ -8669,7 +8669,7 @@ label.panel-block:hover {
   border-bottom-color: #dbdbdb;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  color: #4a4a4a;
+  color: #161616;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14625,16 +14625,18 @@ a.has-text-danger-dark:focus {
 
 .tabs {
   background-color: white;
+  padding-top: 1em;
   padding-bottom: 1em;
 }
 
 .tabs ul {
   /* BORDER TOP */
-  border-top-color: #dbdbdb !important;
-  border-top-style: solid;
-  border-top-width: 1px;
   /* BORDER BOTTOM */
   border-bottom-style: none;
+}
+
+.tabs li a {
+  color: #161616;
 }
 
 @media screen and (min-width: 769px) {
@@ -26507,18 +26509,9 @@ body {
 
 /* PACKAGES */
 
-#vilbur-portfolio {
-  margin-top: 6rem;
-}
-
 #vilbur-portfolio .portfolio > .hero-body {
   padding-top: 0;
-}
-
-@media screen and (max-width: 768px) {
-  #vilbur-portfolio .portfolio > .hero-body {
-    padding-bottom: 1rem;
-  }
+  padding-bottom: 3rem;
 }
 
 #vilbur-portfolio .portfolio a .portfolio-background {
@@ -26593,7 +26586,7 @@ body {
   height: auto;
   max-height: 80192px;
   overflow: hidden;
-  padding: 3em 1em 0 1em;
+  padding: 0.5em 1em 3em 1em;
 }
 
 #vilbur-portfolio .portfolio-item * {
@@ -26608,6 +26601,22 @@ body {
   border-bottom: 1px solid white;
 }
 
+@media screen and (max-width: 768px) {
+  #vilbur-portfolio .portfolio-item .portfolio-item-about .title {
+    font-size: 1.7em;
+  }
+}
+
+#vilbur-portfolio .portfolio-item .portfolio-item-about .subtitle {
+  margin-bottom: 0.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  #vilbur-portfolio .portfolio-item .portfolio-item-about .subtitle {
+    font-size: 1.2em;
+  }
+}
+
 #vilbur-portfolio .portfolio-item .image {
   height: 20vh;
   background-size: cover;
@@ -26616,6 +26625,10 @@ body {
   background-position: center center;
   /* optional, center the image */
   border: 1px solid #262626;
+}
+
+#vilbur-portfolio .expand-all a.is-active {
+  color: #161616;
 }
 
 #vilbur-skills {

@@ -1,18 +1,22 @@
 .tabs
 {
 	background-color:	white;
+	padding-top:	1em;
 	padding-bottom:	1em;
 
 	ul{
 		/* BORDER TOP */
-		border-top-color:	$tabs-border-bottom-color !important;
-		border-top-style:	solid;
-		border-top-width:	$tabs-border-bottom-width;
+		//border-top-color:	$tabs-border-bottom-color !important;
+		//border-top-style:	solid;
+		//border-top-width:	$tabs-border-bottom-width;
 		
 		/* BORDER BOTTOM */
 		border-bottom-style:	none;
 	}
-
+	
+	li a {
+		color:$tabs-link-color
+	}
 	
 	@media screen and (min-width: $tablet)
 	{
