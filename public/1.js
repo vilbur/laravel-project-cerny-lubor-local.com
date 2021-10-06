@@ -114,12 +114,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -243,10 +237,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -267,7 +257,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop"
+            "column logo has-text-centered\n\t\t\t\tis-3-mobile  is-offset-1-mobile\n\t\t\t\tis-1-tablet  is-offset-2-tablet\n\t\t\t\t\n\t\t\t\t"
         },
         [_vm._t("logo")],
         2
@@ -275,10 +265,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        {
-          staticClass:
-            "column item-title-wrapper\n\t\t\t\tis-9-mobile\n\t\t\t\tis-9-tablet\n\t\t\t\tis-9-desktop\n\t\t\t\tis-8-widescreen"
-        },
+        { staticClass: "column item-title-wrapper" },
         [_vm._t("default")],
         2
       )
@@ -364,6 +351,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
@@ -385,7 +380,7 @@ var render = function() {
         "strong",
         {
           staticClass:
-            "column is-4-mobile is-4-tablet is-3-desktop has-text-right-mobile has-text-left border-OFF-g"
+            "column has-text-right\n\t\tis-4-mobile\n\t\tis-3-tablet\n\t\tis-2-desktop \t\t\n\t\tis-offset-1-desktop \t\t\n\t\n\t"
         },
         [_vm._t("title")],
         2
@@ -393,10 +388,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        {
-          staticClass:
-            "column is-8-mobile is-8-tablet is-9-desktop has-text-left border-OFF"
-        },
+        { staticClass: "column has-text-left\n\t\n\t" },
         [_vm._t("default")],
         2
       )
@@ -502,7 +494,7 @@ var render = function() {
                 _c("skills-header", [
                   _c("span", { attrs: { slot: "logo" }, slot: "logo" }, [
                     _c("img", {
-                      staticClass: "img-center-vcerticaly",
+                      staticClass: "Ximg-center-vcerticaly",
                       attrs: { src: skill.image }
                     })
                   ]),
@@ -513,11 +505,6 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "columns" }, [
-                  _c("div", {
-                    staticClass:
-                      "column has-text-centered\n\t\t\t\t\t\t\t\t\tis-11-mobile is-offset-1-mobile has-text-left-mobile\n\t\t\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\t\t\t\t\t\tis-offset-2-widescreen"
-                  }),
-                  _vm._v(" "),
                   _c(
                     "div",
                     { staticClass: "skill-details column border-OFF-b" },

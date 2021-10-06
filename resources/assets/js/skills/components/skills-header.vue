@@ -2,19 +2,15 @@
 	<div class="header-columns columns is-mobile is-multiline">
 
 		<div class="column logo has-text-centered
-					is-3-mobile
-					is-3-tablet
-					is-2-desktop"
+					is-3-mobile  is-offset-1-mobile
+					is-1-tablet  is-offset-2-tablet
+					
+					"
 		>
 			<slot name="logo" ></slot>
 		</div>
 
-		<div class="column item-title-wrapper
-					is-9-mobile
-					is-9-tablet
-					is-9-desktop
-					is-8-widescreen"
-		>
+		<div class="column item-title-wrapper">
 			<slot></slot>
 		</div>
 

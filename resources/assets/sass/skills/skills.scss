@@ -4,6 +4,12 @@
 
 	.hero
 	{
+
+		.column
+		{
+			//border:	1px solid orange;
+		}
+		
 		//border:	1px solid red;
 		.column, .subtitle
 		{
@@ -15,15 +21,16 @@
 		.logo 
 		{
 			height: 4em;
-			//margin: 0 auto;
+			max-height: 100%;
 	
 			img
 			{
 				//width: 6em;
 				//height: auto;
+				height: 4rem;
 				max-height: 100%;
 				//border:	1px solid green;
-			}
+			} 
 		}
 		
 		.item-title-wrapper
@@ -36,7 +43,7 @@
 			height:	4rem;
 			position: relative;
 			padding-bottom: 0px;
-	
+
 			.item-title
 			{
 				position: absolute;
@@ -61,10 +68,18 @@
 		
 		.skill-details
 		{
-			border:	1px solid red;
+			//border:	1px solid red;
 			height: auto;
 			min-height: 6rem;
 			margin-bottom: 2rem;
+			
+			.column
+			{
+				//border:	1px solid green;
+				padding:	0.3rem;
+			}
+			
+			
 		}
 	}
 }

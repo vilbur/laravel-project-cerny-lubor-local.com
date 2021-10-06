@@ -21,9 +21,8 @@
 					<div class="column bio-detail has-text-centered
 								is-3-mobile
 								is-3-tablet
-								is-2-desktop is-offset-1-desktop
-								is-offset-2-widescreen"
-					>
+								is-2-desktop
+								is-offset-1-widescreen">
 						<span class="">{{ model.since_until }}</span>
 					</div>
 	

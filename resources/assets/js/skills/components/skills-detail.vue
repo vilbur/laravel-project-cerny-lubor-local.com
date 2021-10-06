@@ -1,11 +1,19 @@
 <template>
 	<div class="columns is-mobile is-multiline bio-details">
 
-		<strong class="column is-4-mobile is-4-tablet is-3-desktop has-text-right-mobile has-text-left border-OFF-g">
+		<strong class="column has-text-right
+			is-4-mobile
+			is-3-tablet
+			is-2-desktop 		
+			is-offset-1-desktop 		
+		
+		">
 			<slot name="title"></slot>
 		</strong>
 
-		<div class="column is-8-mobile is-8-tablet is-9-desktop has-text-left border-OFF">
+		<div class="column has-text-left
+		
+		">
 			<slot></slot>
 		</div>
 

@@ -26622,9 +26622,11 @@ body {
 
 #vilbur-skills .hero .logo {
   height: 4em;
+  max-height: 100%;
 }
 
 #vilbur-skills .hero .logo img {
+  height: 4rem;
   max-height: 100%;
 }
 
@@ -26656,10 +26658,13 @@ body {
 }
 
 #vilbur-skills .hero .skill-details {
-  border: 1px solid red;
   height: auto;
   min-height: 6rem;
   margin-bottom: 2rem;
+}
+
+#vilbur-skills .hero .skill-details .column {
+  padding: 0.3rem;
 }
 
 #vilbur-biography {

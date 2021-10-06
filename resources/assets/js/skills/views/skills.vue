@@ -19,19 +19,13 @@
 		
 						<skills-header>
 								<span slot="logo">
-									<img class="img-center-vcerticaly" v-bind:src="skill.image">
+									<img class="Ximg-center-vcerticaly" v-bind:src="skill.image">
 								</span>
 								<span class="item-title" >{{ skill.title }}</span>
 						</skills-header>
 			
 						<div class="columns">
-							<div class="column has-text-centered
-										is-11-mobile is-offset-1-mobile has-text-left-mobile
-										is-3-tablet
-										is-2-desktop is-offset-1-desktop
-										is-offset-2-widescreen"
-							> 
-							</div>
+
 			
 							<div class="skill-details column border-OFF-b">
 								<div v-for="skill_detail in skill.skill_details">

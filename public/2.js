@@ -59,7 +59,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -165,7 +164,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -186,7 +184,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop\n\t\t\t\tis-offset-1-widescreen"
+            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop"
         },
         [_vm._t("logo")],
         2
@@ -376,7 +374,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "column bio-detail has-text-centered\n\t\t\t\t\t\t\tis-3-mobile\n\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\tis-2-desktop is-offset-1-desktop\n\t\t\t\t\t\t\tis-offset-2-widescreen"
+                      "column bio-detail has-text-centered\n\t\t\t\t\t\t\tis-3-mobile\n\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\tis-2-desktop\n\t\t\t\t\t\t\tis-offset-1-widescreen"
                   },
                   [_c("span", {}, [_vm._v(_vm._s(model.since_until))])]
                 ),
