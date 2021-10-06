@@ -7,31 +7,34 @@
 
 					<div class="columns level has-text-centered">
 
-						<div class="column is-4 border-OFF">
-							<!--<div class="container has-text-centered has-text-left-tablet border-OFF">-->
+						<div class="column is-4">
+							<!--<div class="container has-text-centered has-text-left-tablet">-->
 
-								<span class="title is-4 has-text-centered border-OFF">
+								<span class="title is-4 has-text-centered">
 									{{ company.name }}
 								</span><br>
-								<span class="title is-4 has-text-centered border-OFF">
+								<span class="title is-4 has-text-centered">
 									3D Artist
 								</span>
 
 							<!--</div>-->
 						</div>
 
-						<div class="column is-4 border-OFF">
-							<div class="container has-text-centered has-text-left-tablet border-OFF">
+						<div class="column is-4">
+							<div class="container has-text-centered has-text-left-tablet">
 								<a :href="'mailto:'+company.email_1" target="_blank">
 									<span class="icon is-large"><i class="fa fa-envelope fa-2x"></i></span>
 										{{ company.email }}
 								</a><br>
-								<span class="icon is-large"><i class="fa fa-phone fa-2x"></i></span>+420 {{ company.tel }}
+								<!--<span class="icon is-large"><i class="fa fa-phone fa-2x"></i></span>+420 {{ company.tel }}-->
+								<span class="icon is-large"><i class="fa fa-phone fa-2x"></i></span><a :href="'tel:+420'+company.tel">+420 {{ company.tel }}</a>
+								
+								
 							</div>
 						</div>
 
-						<div class="column is-4 border-OFF ">
-							<div class="container has-text-centered has-text-left-tablet border-OFF">
+						<div class="column is-4">
+							<div class="container has-text-centered has-text-left-tablet">
 								<a href="https://github.com/vilbur" target="_blank">
 									<span class="icon is-large"><i class="fa fa-github fa-2x"></i></span>
 										GitHub

@@ -9,10 +9,11 @@
 			padding-top:	0;
 			//padding-left:	0;
 			//padding-right:	0;
+			padding-bottom:	3rem;
 
-			//@include mobile{
-				padding-bottom:	3rem;
-			//}
+			@include mobile{
+				padding-bottom:	1rem;
+			}
 		}
 
 		a .portfolio-background
@@ -97,9 +98,9 @@
 		height: auto; 
 		max-height: 80192px;
 		overflow: hidden;
+		
+		margin:0;
 		padding: 0.5em 1em 3em 1em;
-		//padding-bottom:	8rem;
-
 		
 		*{
 			color:	white;
@@ -131,10 +132,6 @@
 				
 			}
 		}
-
-		//.columns
-		//{
-
 			.image
 			{
 				height:	20vh;
@@ -143,14 +140,10 @@
 				background-position:	center center;              /* optional, center the image */
 				border:	1px solid #262626;
 			}
-		//}
 	}
-	
 	
 	.expand-all a.is-active{
-		color:$tabs-link-color
-		
+		color:$tabs-link-color;
 	}
-	
-	
+
 }

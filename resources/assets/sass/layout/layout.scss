@@ -13,6 +13,17 @@ body, html{
 }
 
 
+.header-image
+{
+	@include mobile{
+		min-width: 300%;
+		margin-left: -150%;
+			
+	}
+
+	
+}
+
 
 
 

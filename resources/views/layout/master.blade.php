@@ -22,7 +22,7 @@
 				<navbar></navbar>
 					
 				<div v-if="$root.$route.name==='biography' || $root.$route.name==='skills'" class="hero">
-					<img class="" src="/storage/headings/heading-bio.jpg" ></img>
+					<img class="header-image" src="/storage/headings/heading-bio.jpg" ></img>
 				</div>
 					
 				<router-component v-if="! $root.loading"></router-component>

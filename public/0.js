@@ -4569,8 +4569,8 @@ var render = function() {
             {
               name: "sticky",
               rawName: "v-sticky",
-              value: { stickyTop: 52, zIndex: 9 },
-              expression: "{ stickyTop: 52, zIndex:9 }"
+              value: { stickyTop: 64, zIndex: 9 },
+              expression: "{ stickyTop: 64, zIndex:9 }"
             }
           ],
           staticClass: "tabs is-centered"

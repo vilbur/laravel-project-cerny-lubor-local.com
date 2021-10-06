@@ -49399,6 +49399,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'footer-component',
@@ -49450,12 +49453,10 @@ var render = function() {
             _c("div", { staticClass: "container" }, [
               _c("div", { staticClass: "content" }, [
                 _c("div", { staticClass: "columns level has-text-centered" }, [
-                  _c("div", { staticClass: "column is-4 border-OFF" }, [
+                  _c("div", { staticClass: "column is-4" }, [
                     _c(
                       "span",
-                      {
-                        staticClass: "title is-4 has-text-centered border-OFF"
-                      },
+                      { staticClass: "title is-4 has-text-centered" },
                       [
                         _vm._v(
                           "\n\t\t\t\t\t\t\t\t" +
@@ -49468,19 +49469,17 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "span",
-                      {
-                        staticClass: "title is-4 has-text-centered border-OFF"
-                      },
+                      { staticClass: "title is-4 has-text-centered" },
                       [_vm._v("\n\t\t\t\t\t\t\t\t3D Artist\n\t\t\t\t\t\t\t")]
                     )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "column is-4 border-OFF" }, [
+                  _c("div", { staticClass: "column is-4" }, [
                     _c(
                       "div",
                       {
                         staticClass:
-                          "container has-text-centered has-text-left-tablet border-OFF"
+                          "container has-text-centered has-text-left-tablet"
                       },
                       [
                         _c(
@@ -49507,19 +49506,21 @@ var render = function() {
                         _c("span", { staticClass: "icon is-large" }, [
                           _c("i", { staticClass: "fa fa-phone fa-2x" })
                         ]),
-                        _vm._v(
-                          "+420 " + _vm._s(_vm.company.tel) + "\n\t\t\t\t\t\t"
+                        _c(
+                          "a",
+                          { attrs: { href: "tel:+420" + _vm.company.tel } },
+                          [_vm._v("+420 " + _vm._s(_vm.company.tel))]
                         )
                       ]
                     )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "column is-4 border-OFF " }, [
+                  _c("div", { staticClass: "column is-4" }, [
                     _c(
                       "div",
                       {
                         staticClass:
-                          "container has-text-centered has-text-left-tablet border-OFF"
+                          "container has-text-centered has-text-left-tablet"
                       },
                       [
                         _c(

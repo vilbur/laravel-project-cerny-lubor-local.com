@@ -12,7 +12,7 @@
 
 	
 
-		<div v-sticky="{ stickyTop: 52, zIndex:9 }" class="tabs is-centered">
+		<div v-sticky="{ stickyTop: 64, zIndex:9 }" class="tabs is-centered">
 			<ul class="category-nav">
 				
 				<!-- EXPAND ALL TAB -->

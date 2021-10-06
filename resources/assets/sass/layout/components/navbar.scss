@@ -10,6 +10,9 @@
  */
 nav.navbar
 {
+	min-height: 4rem;
+	
+	
     font-weight: bold;
 	text-transform: uppercase;
 
@@ -19,7 +22,10 @@ nav.navbar
 	transition: all .5s ease-out;
     transition-property: font-size, margin-top, background-color;
 
-	.navbar-item{
+	.navbar-item
+	{
+		font-size: 1.5em;
+		
 		transition: all .5s ease-out;
 		justify-content: center;
 		//width: 10em;
@@ -31,12 +37,14 @@ nav.navbar
 	}
 
 	/* BURGER MENU */
-	.navbar-menu.is-active{
+	.navbar-menu.is-active
+	{
 		padding-top: 0px;
 		//border:	1px solid green;
 	}
 
-	.navbar-burger{
+	.navbar-burger
+	{
 		color: $navbar-item-color;
 		&:hover {
 			color: $navbar-item-active-color;
@@ -54,7 +62,8 @@ nav.navbar
 }
 
 /* center items horizontally */
-nav.navbar .navbar-start {
+nav.navbar .navbar-start
+{
 	margin: 0 auto;
 }
 
