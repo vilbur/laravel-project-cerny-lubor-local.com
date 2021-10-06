@@ -49399,9 +49399,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'footer-component',
@@ -49735,7 +49732,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	name: 'hero-carousel',
 	data: function data() {
 		return {
-			images: ['/storage/portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-front.jpg', '/storage/portfolio-files/games/take-on/space-needle-01.jpg', '/storage/portfolio-files/rendering/zemeklon/zemeklon.jpg'],
+			images: ['/storage/portfolio-files/rendering/alfa-romeo/alfa-romeo-c8-spider-front.jpg', '/storage/portfolio-files/rendering/zemeklon/zemeklon.jpg', '/storage/portfolio-files/games/take-on/space-needle-01.jpg'],
 			links: {
 				PORTFOLIO: '/#/portfolio',
 				BIO: '/#/bio',
@@ -49743,8 +49740,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				CONTACT: '/#/contact'
 			},
 
-			//active: this.getActive()
-			active: 1
+			active: this.getActive()
+			//active: 1
 		};
 	},
 

@@ -77,10 +77,7 @@ class PortfolioItemsTableSeeder extends Seeder
                 'title' => 'Mafia II',
                 'summary' => '2K Czech',
                 'description' => '<p>Flat of main character.</p>
-<p><strong>This flat and car was my lucky opportunity to have my own piece in game.</strong></p>
-<p>Because of Mafia II was long term project,</p>
-<p>and most of environments has been upgraded multiple times.</p>
-<p>&nbsp;</p>',
+',
                 'created_at' => '2018-02-27 12:08:00',
                 'updated_at' => '2018-03-02 23:52:04',
             ),
@@ -90,7 +87,7 @@ class PortfolioItemsTableSeeder extends Seeder
                 'portfolio_id' => 3,
                 'title' => 'Mafia II - Environments',
                 'summary' => 'Improving of graphics',
-                'description' => '<p>Textures, materials &amp; lighting have to be improved, while game has been evolving through development.</p>',
+                'description' => '<p>My job was to improve textures, materials and lighting.</p>',
                 'created_at' => '2018-02-28 18:34:00',
                 'updated_at' => '2018-04-17 14:38:24',
             ),
@@ -112,9 +109,8 @@ class PortfolioItemsTableSeeder extends Seeder
                 'portfolio_id' => 3,
                 'title' => 'DayZ',
                 'summary' => 'Bohemia Interactive',
-                'description' => '<p>Models of ship and apartment building with fully accessible interiors.</p>
-<p>These models consists of thousands objects.</p>
-<p>I had&nbsp;to wrote&nbsp;<strong>custom 3dsMax to engine&nbsp;exporter</strong>, for export of these complex models.</p>',
+                'description' => '<p>Model of ship and apartment buildings with accessible interiors.</p>
+<p>I have been forced to write custom exporter, to get these models to engine, because of their complexity.</p>',
                 'created_at' => '2018-02-27 12:07:00',
                 'updated_at' => '2018-04-19 08:04:20',
             ),
@@ -124,10 +120,10 @@ class PortfolioItemsTableSeeder extends Seeder
                 'portfolio_id' => 4,
                 'title' => 'Models of characeters',
                 'summary' => NULL,
-                'description' => '<p><strong>16 rigged models</strong> of characters</p>
-<p><strong>160 poses</strong> for 3D print</p>
-<p><strong>2 months</strong>&nbsp;<strong>deadline&nbsp;</strong>-&nbsp;really deadly</p>
-<p>... it was very interesting task</p>',
+                'description' => '<p><strong>16 rigged models</strong> of characters.</p>
+<p><strong>160 poses</strong> for 3D print.</p>
+<p>Done in 2 months.</p>
+<p>...Really deadly deadline.</p>',
                 'created_at' => '2018-02-27 12:08:00',
                 'updated_at' => '2018-04-19 08:29:40',
             ),

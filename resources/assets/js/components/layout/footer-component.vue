@@ -26,10 +26,7 @@
 									<span class="icon is-large"><i class="fa fa-envelope fa-2x"></i></span>
 										{{ company.email }}
 								</a><br>
-								<!--<span class="icon is-large"><i class="fa fa-phone fa-2x"></i></span>+420 {{ company.tel }}-->
 								<span class="icon is-large"><i class="fa fa-phone fa-2x"></i></span><a :href="'tel:+420'+company.tel">+420 {{ company.tel }}</a>
-								
-								
 							</div>
 						</div>
 

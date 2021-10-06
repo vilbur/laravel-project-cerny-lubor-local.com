@@ -26279,13 +26279,13 @@ nav.navbar .navbar-start {
 
 nav.navbar-hero-carousel {
   z-index: +1;
-  margin-top: 20vh !important;
+  margin-top: 10vh !important;
   background-color: transparent;
   margin: 0 auto;
 }
 
 nav.navbar-hero-carousel a {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 nav.navbar-hero-carousel .navbar-menu {
@@ -26385,10 +26385,7 @@ footer .title {
   background-color: transparent;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-}
-
-.footer-homepage:hover {
-  background-color: #4697DD;
+  padding-bottom: 50vh;
 }
 
 /* EXTENDS */
