@@ -25209,8 +25209,21 @@ html {
   }
 }
 
-.content {
+.content-container .content {
   padding: calc( 4rem / 2) calc( 4rem / 8);
+}
+
+.content-container,
+.content-container span {
+  color: #DBDBDB;
+}
+
+.content-container ul:not(.category-nav) {
+  margin: 0;
+}
+
+.content-container ul:not(.category-nav) li {
+  padding-bottom: calc( 4rem/2);
 }
 
 .logo {
@@ -25234,7 +25247,6 @@ html {
 .item-title-wrapper .item-title {
   position: absolute;
   bottom: 0px;
-  color: white;
   font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
@@ -25250,13 +25262,7 @@ html {
   color: #F58A07;
 }
 
-.details {
-  border: 5px solid red;
-}
-
 .details .detail {
-  border: 1px solid green;
-  color: #DBDBDB;
   font-size: 0.8rem;
   padding-top: 0;
 }
@@ -26573,18 +26579,19 @@ body {
 
 /* PACKAGES */
 
-#vilbur-portfolio .portfolio > .hero-body {
-  padding-top: 0;
-  padding-bottom: 3rem;
-}
-
 @media screen and (max-width: 768px) {
-  #vilbur-portfolio .portfolio > .hero-body {
-    padding-bottom: 1rem;
+  #vilbur-portfolio .portfolio.hero {
+    padding-bottom: calc( 4rem/4);
   }
 }
 
-#vilbur-portfolio .portfolio a .portfolio-background {
+#vilbur-portfolio .portfolio.hero > .hero-body {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+#vilbur-portfolio .portfolio.hero a .portfolio-background {
   height: 10rem;
   background-position: center center;
   background-size: 100%;
@@ -26595,20 +26602,20 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  #vilbur-portfolio .portfolio a .portfolio-background {
+  #vilbur-portfolio .portfolio.hero a .portfolio-background {
     height: 5rem;
     background-size: 120%;
   }
 }
 
-#vilbur-portfolio .portfolio a .portfolio-background .backdrop-filter-mask {
+#vilbur-portfolio .portfolio.hero a .portfolio-background .backdrop-filter-mask {
   height: 100%;
   -webkit-backdrop-filter: none;
           backdrop-filter: none;
 }
 
-#vilbur-portfolio .portfolio a .portfolio-background .title,
-#vilbur-portfolio .portfolio a .portfolio-background .subtitle {
+#vilbur-portfolio .portfolio.hero a .portfolio-background .title,
+#vilbur-portfolio .portfolio.hero a .portfolio-background .subtitle {
   position: absolute;
   bottom: -12px;
   left: 5%;
@@ -26619,36 +26626,36 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  #vilbur-portfolio .portfolio a .portfolio-background .title,
-  #vilbur-portfolio .portfolio a .portfolio-background .subtitle {
+  #vilbur-portfolio .portfolio.hero a .portfolio-background .title,
+  #vilbur-portfolio .portfolio.hero a .portfolio-background .subtitle {
     bottom: -8px;
     font-size: 2em;
   }
 }
 
-#vilbur-portfolio .portfolio a:hover .portfolio-background,
-#vilbur-portfolio .portfolio a.visible .portfolio-background {
+#vilbur-portfolio .portfolio.hero a:hover .portfolio-background,
+#vilbur-portfolio .portfolio.hero a.visible .portfolio-background {
   background-size: 150%;
 }
 
-#vilbur-portfolio .portfolio a.visible .portfolio-background {
+#vilbur-portfolio .portfolio.hero a.visible .portfolio-background {
   height: 4rem;
   border-bottom: 3px solid #F58A07;
 }
 
 @media screen and (min-width: 769px), print {
-  #vilbur-portfolio .portfolio a.visible .portfolio-background {
+  #vilbur-portfolio .portfolio.hero a.visible .portfolio-background {
     margin-bottom: 3rem;
   }
 }
 
-#vilbur-portfolio .portfolio a.visible .portfolio-background .backdrop-filter-mask {
+#vilbur-portfolio .portfolio.hero a.visible .portfolio-background .backdrop-filter-mask {
   -webkit-backdrop-filter: grayscale(100%);
           backdrop-filter: grayscale(100%);
 }
 
-#vilbur-portfolio .portfolio a.visible .portfolio-background .title,
-#vilbur-portfolio .portfolio a.visible .portfolio-background .subtitle {
+#vilbur-portfolio .portfolio.hero a.visible .portfolio-background .title,
+#vilbur-portfolio .portfolio.hero a.visible .portfolio-background .subtitle {
   color: #F58A07;
 }
 
@@ -26700,22 +26707,5 @@ body {
 
 #vilbur-portfolio .expand-all a.is-active {
   color: #161616;
-}
-
-#vilbur-skills {
-  color: #DBDBDB;
-}
-
-#vilbur-skills .content > ul {
-  margin: 0;
-}
-
-#vilbur-skills .hero .column,
-#vilbur-skills .hero .subtitle {
-  color: #DBDBDB;
-}
-
-#vilbur-biography {
-  color: #DBDBDB;
 }
 

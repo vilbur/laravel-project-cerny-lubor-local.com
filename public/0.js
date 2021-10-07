@@ -4566,7 +4566,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "vilbur-portfolio" } },
+    { staticClass: "content-container", attrs: { id: "vilbur-portfolio" } },
     [
       _c(
         "div",

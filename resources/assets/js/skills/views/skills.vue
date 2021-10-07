@@ -1,5 +1,5 @@
 <template>
-	<div id="vilbur-skills">
+	<div id="vilbur-skills" class="content-container">
 
 		<div v-sticky="{ stickyTop: 64, zIndex:9 }" class="tabs is-centered">
 	
@@ -12,23 +12,25 @@
 			 
 		</div>
 		
-		
-		<div class="container content">
-			<transition-group tag="ul" name="show">
+
+		<div class="content">
+			
+			<!--<transition-group tag="ul" name="show">-->
+			<ul>
 				
 				
-				<li v-for="skill in filteredSkills" class="hero" :key="skill.id" >
+				<li v-for="skill in filteredSkills" class="hero">
 					
 					<skills-header>
 							<span slot="logo">
-								<img class="Ximg-center-vcerticaly" v-bind:src="skill.image">
+								<img v-bind:src="skill.image">
 							</span>
 							<span class="item-title" >{{ skill.title }}</span>
 					</skills-header>
 					
 					
 					<div class="columns">
-						<div class="details column border-OFF-b">
+						<div class="details column">
 							
 							<div v-for="skill_detail in skill.skill_details">
 								<skills-detail>
@@ -43,7 +45,7 @@
 				</li>
 				
 				
-			</transition-group>
+			</ul>
 		</div>
 
 	</div>

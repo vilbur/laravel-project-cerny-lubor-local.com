@@ -119,6 +119,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -411,82 +413,78 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "vilbur-skills" } }, [
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "sticky",
-            rawName: "v-sticky",
-            value: { stickyTop: 64, zIndex: 9 },
-            expression: "{ stickyTop: 64, zIndex:9 }"
-          }
-        ],
-        staticClass: "tabs is-centered"
-      },
-      [
-        _c(
-          "ul",
-          { staticClass: "category-nav" },
-          [
-            _c("li", [
-              _c(
-                "a",
-                {
-                  class: { "is-active": _vm.filtered == "" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.filtered = ""
-                    }
-                  }
-                },
-                [_vm._v("All")]
-              )
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.categories, function(category) {
-              return _c("li", { staticClass: "category-filter" }, [
+  return _c(
+    "div",
+    { staticClass: "content-container", attrs: { id: "vilbur-skills" } },
+    [
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "sticky",
+              rawName: "v-sticky",
+              value: { stickyTop: 64, zIndex: 9 },
+              expression: "{ stickyTop: 64, zIndex:9 }"
+            }
+          ],
+          staticClass: "tabs is-centered"
+        },
+        [
+          _c(
+            "ul",
+            { staticClass: "category-nav" },
+            [
+              _c("li", [
                 _c(
                   "a",
                   {
-                    class: { "is-active": _vm.filtered == category.slug },
+                    class: { "is-active": _vm.filtered == "" },
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        _vm.filtered = category.slug
+                        _vm.filtered = ""
                       }
                     }
                   },
-                  [_vm._v(_vm._s(category.title))]
+                  [_vm._v("All")]
                 )
-              ])
-            })
-          ],
-          2
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "container content" },
-      [
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.categories, function(category) {
+                return _c("li", { staticClass: "category-filter" }, [
+                  _c(
+                    "a",
+                    {
+                      class: { "is-active": _vm.filtered == category.slug },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.filtered = category.slug
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(category.title))]
+                  )
+                ])
+              })
+            ],
+            2
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
         _c(
-          "transition-group",
-          { attrs: { tag: "ul", name: "show" } },
+          "ul",
           _vm._l(_vm.filteredSkills, function(skill) {
             return _c(
               "li",
-              { key: skill.id, staticClass: "hero" },
+              { staticClass: "hero" },
               [
                 _c("skills-header", [
                   _c("span", { attrs: { slot: "logo" }, slot: "logo" }, [
-                    _c("img", {
-                      staticClass: "Ximg-center-vcerticaly",
-                      attrs: { src: skill.image }
-                    })
+                    _c("img", { attrs: { src: skill.image } })
                   ]),
                   _vm._v(" "),
                   _c("span", { staticClass: "item-title" }, [
@@ -497,7 +495,7 @@ var render = function() {
                 _c("div", { staticClass: "columns" }, [
                   _c(
                     "div",
-                    { staticClass: "details column border-OFF-b" },
+                    { staticClass: "details column" },
                     _vm._l(skill.skill_details, function(skill_detail) {
                       return _c(
                         "div",
@@ -535,10 +533,9 @@ var render = function() {
           }),
           0
         )
-      ],
-      1
-    )
-  ])
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

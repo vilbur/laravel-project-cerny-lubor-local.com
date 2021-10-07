@@ -60,6 +60,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -323,72 +327,73 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "content", attrs: { id: "vilbur-biography" } },
+    { staticClass: "content-container", attrs: { id: "vilbur-biography" } },
     [
-      _c(
-        "div",
-        { staticClass: "container" },
-        _vm._l(_vm.models, function(model, index) {
-          return _c(
-            "div",
-            { staticClass: "hero" },
-            [
-              _c("biography-header", [
-                _c("span", { attrs: { slot: "logo" }, slot: "logo" }, [
+      _c("div", { staticClass: "content" }, [
+        _c(
+          "ul",
+          _vm._l(_vm.models, function(model) {
+            return _c(
+              "li",
+              { staticClass: "hero" },
+              [
+                _c("biography-header", [
+                  _c("span", { attrs: { slot: "logo" }, slot: "logo" }, [
+                    model.link
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "bio-logo-link ",
+                            attrs: { href: model.link, target: "_blank" }
+                          },
+                          [_c("img", { attrs: { src: model.image } })]
+                        )
+                      : _c("span", [_c("img", { attrs: { src: model.image } })])
+                  ]),
+                  _vm._v(" "),
                   model.link
                     ? _c(
                         "a",
                         {
-                          staticClass: "bio-logo-link ",
+                          staticClass: "item-title",
                           attrs: { href: model.link, target: "_blank" }
                         },
-                        [_c("img", { attrs: { src: model.image } })]
+                        [_vm._v(_vm._s(model.client))]
                       )
-                    : _c("span", [_c("img", { attrs: { src: model.image } })])
+                    : _c("span", { staticClass: "item-title" }, [
+                        _vm._v(_vm._s(model.client))
+                      ])
                 ]),
                 _vm._v(" "),
-                model.link
-                  ? _c(
-                      "a",
+                _c(
+                  "div",
+                  { staticClass: "details columns is-mobile is-multiline" },
+                  [
+                    _c(
+                      "div",
                       {
-                        staticClass: "item-title",
-                        attrs: { href: model.link, target: "_blank" }
+                        staticClass:
+                          "column detail has-text-centered\n\t\t\t\t\t\t\t\tis-3-mobile\n\t\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\t\tis-2-desktop"
                       },
-                      [_vm._v(_vm._s(model.client))]
-                    )
-                  : _c("span", { staticClass: "item-title" }, [
-                      _vm._v(_vm._s(model.client))
+                      [_c("span", {}, [_vm._v(_vm._s(model.since_until))])]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "column detail" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t" +
+                          _vm._s(model.job_title) +
+                          "\n\t\t\t\t\t\t"
+                      )
                     ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "details columns is-mobile is-multiline" },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "column bio-detail has-text-centered\n\t\t\t\t\t\t\tis-3-mobile\n\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\tis-2-desktop"
-                    },
-                    [_c("span", {}, [_vm._v(_vm._s(model.since_until))])]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "column detail" }, [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\n\t\t\t\t\t\t" +
-                        _vm._s(model.job_title) +
-                        "\n\t\t\t\t\t"
-                    )
-                  ])
-                ]
-              )
-            ],
-            1
-          )
-        }),
-        0
-      )
+                  ]
+                )
+              ],
+              1
+            )
+          }),
+          0
+        )
+      ])
     ]
   )
 }

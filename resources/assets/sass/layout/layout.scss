@@ -1,4 +1,4 @@
-i
+	i
 body, html{
 	//background-color: #EDF1F4;
 	background-color: $body-bg;
@@ -23,11 +23,35 @@ body, html{
 }
 
 
-.content
+.content-container
 {
+
+	.content
+	{
+		//border:3px solid orange;
+		padding: calc( #{$navbar-height} / 2) calc( #{$navbar-height} / 8);
+	}
+
+
+	
+	&, span
+	{
+		color: $text-color;
+	}
+	
+	
 	//padding-top: $navbar-height;
-	padding: calc( #{$navbar-height} / 2) calc( #{$navbar-height} / 8);
 	//border:	1px solid red;
+	ul:not(.category-nav)
+	{
+		margin:	0;
+		li
+		{
+			//border:	1px solid green;
+			padding-bottom:	calc( #{$navbar-height}/2) 
+		}
+	}
+	
 }
 
 
@@ -60,7 +84,7 @@ body, html{
 		position: absolute;
 		bottom: 0px;
 		//left: 0px;
-		color: white;
+		//color: white;
 		font-size:	$font-size-title-mobile;
 		font-weight: bold;
 		text-transform: uppercase;
@@ -79,15 +103,15 @@ body, html{
 
 .details
 {
-	border:	5px solid red;
+	//border:	5px solid red;
 ////	height: auto;
 //	min-height: 6rem;
 	//margin-bottom: 0.5rem;
 	.detail
 	{
-		border:	1px solid green;
-		color: $text-color;
+		//border:	1px solid green;
+		//color: $text-color;
 		font-size: 0.8rem;
-			padding-top: 0; 
+		padding-top: 0; 
 	}		
 }

@@ -2,18 +2,20 @@
 {
 
 	//$breakpoint: 640px;
-	.portfolio
+	.portfolio.hero
 	{
+		//border:	1px solid green;
+
+		@include mobile{
+			padding-bottom:	calc( #{$navbar-height}/4);
+		}
+		
 		>.hero-body
 		{
-			padding-top:	0;
-			//padding-left:	0;
-			//padding-right:	0;
-			padding-bottom:	3rem;
+			padding:	0;
+			margin:	0;
+			padding-bottom:	0;
 
-			@include mobile{
-				padding-bottom:	1rem;
-			}
 		}
 
 		a .portfolio-background

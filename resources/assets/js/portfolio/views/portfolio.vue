@@ -1,5 +1,5 @@
 <template>
-	<div id="vilbur-portfolio" >
+	<div id="vilbur-portfolio" class="content-container" >
 		
 		<!--TEMPORARY DISABLED-->
 		<!--<ul class="tabs is-centered is-fixed-top" v-show="true" >-->
