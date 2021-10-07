@@ -114,6 +114,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -240,7 +245,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -261,7 +265,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "column logo has-text-centered\n\t\t\t\tis-3-mobile  is-offset-1-mobile\n\t\t\t\tis-1-tablet  is-offset-2-tablet\n\t\t\t\t\n\t\t\t\t"
+            "column logo has-text-centered\n\t\t\t\tis-3-mobile\n\t\t\t\tis-3-tablet\n\t\t\t\tis-2-desktop"
         },
         [_vm._t("logo")],
         2
@@ -361,8 +365,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
@@ -376,28 +378,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "columns is-mobile is-multiline bio-details" },
-    [
-      _c(
-        "strong",
-        {
-          staticClass:
-            "column has-text-right\n\t\tis-4-mobile\n\t\tis-3-tablet\n\t\tis-2-desktop \t\t\n\t\tis-offset-1-desktop \t\t\n\t\n\t"
-        },
-        [_vm._t("title")],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "column has-text-left\n\t\n\t" },
-        [_vm._t("default")],
-        2
-      )
-    ]
-  )
+  return _c("div", { staticClass: "detail columns is-mobile is-multiline" }, [
+    _c(
+      "strong",
+      {
+        staticClass:
+          "column has-text-right\n\t\tis-4-mobile\n\t\tis-3-tablet\n\t\tis-2-desktop \t\t\n\t\tis-offset-1-desktop"
+      },
+      [_vm._t("title")],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "column has-text-left" }, [_vm._t("default")], 2)
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -504,7 +497,7 @@ var render = function() {
                 _c("div", { staticClass: "columns" }, [
                   _c(
                     "div",
-                    { staticClass: "skill-details column border-OFF-b" },
+                    { staticClass: "details column border-OFF-b" },
                     _vm._l(skill.skill_details, function(skill_detail) {
                       return _c(
                         "div",
@@ -524,9 +517,9 @@ var render = function() {
                               ]
                             ),
                             _vm._v(
-                              "\n\t\t\t\t\t\t\t\t\t" +
+                              "\n\t\t\t\t\t\t\t\t" +
                                 _vm._s(skill_detail.summary) +
-                                "\n\t\t\t\t\t\t\t\t"
+                                "\n\t\t\t\t\t\t\t"
                             )
                           ])
                         ],

@@ -25210,7 +25210,55 @@ html {
 }
 
 .content {
-  padding-top: 4rem;
+  padding: calc( 4rem / 2) calc( 4rem / 8);
+}
+
+.logo {
+  height: 4rem;
+  max-height: 100%;
+}
+
+.logo img {
+  height: 4rem;
+  max-height: 100%;
+}
+
+.item-title-wrapper {
+  border-bottom: 1px solid white;
+  margin-bottom: 0;
+  height: 4rem;
+  position: relative;
+  padding-bottom: 0px;
+}
+
+.item-title-wrapper .item-title {
+  position: absolute;
+  bottom: 0px;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .item-title-wrapper .item-title {
+    font-size: 1em;
+  }
+}
+
+.item-title-wrapper a.item-title:hover {
+  color: #F58A07;
+}
+
+.details {
+  border: 5px solid red;
+}
+
+.details .detail {
+  border: 1px solid green;
+  color: #DBDBDB;
+  font-size: 0.8rem;
+  padding-top: 0;
 }
 
 /* mannualy import https://github.com/jgthms/bulma/blob/master/sass/components/navbar.sass
@@ -26658,8 +26706,8 @@ body {
   color: #DBDBDB;
 }
 
-#vilbur-skills .hero {
-  overflow: hidden;
+#vilbur-skills .content > ul {
+  margin: 0;
 }
 
 #vilbur-skills .hero .column,
@@ -26667,102 +26715,7 @@ body {
   color: #DBDBDB;
 }
 
-#vilbur-skills .hero .logo {
-  height: 4em;
-  max-height: 100%;
-}
-
-#vilbur-skills .hero .logo img {
-  height: 4rem;
-  max-height: 100%;
-}
-
-#vilbur-skills .hero .item-title-wrapper {
-  border-bottom: 1px solid white;
-  margin-bottom: 0;
-  height: 4rem;
-  position: relative;
-  padding-bottom: 0px;
-}
-
-#vilbur-skills .hero .item-title-wrapper .item-title {
-  position: absolute;
-  bottom: 0px;
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-@media screen and (max-width: 768px) {
-  #vilbur-skills .hero .item-title-wrapper .item-title {
-    font-size: 1em;
-  }
-}
-
-#vilbur-skills .hero .item-title-wrapper a.item-title:hover {
-  color: #F58A07;
-}
-
-#vilbur-skills .hero .skill-details {
-  height: auto;
-  min-height: 6rem;
-  margin-bottom: 2rem;
-}
-
-#vilbur-skills .hero .skill-details .column {
-  padding: 0.3rem;
-}
-
 #vilbur-biography {
   color: #DBDBDB;
-}
-
-#vilbur-biography .hero {
-  margin-bottom: 3rem;
-  overflow: hidden;
-}
-
-#vilbur-biography .hero .logo {
-  height: 4rem;
-  max-height: 100%;
-}
-
-#vilbur-biography .hero .logo img {
-  height: 4rem;
-  max-height: 100%;
-}
-
-#vilbur-biography .hero .item-title-wrapper {
-  border-bottom: 1px solid white;
-  margin-bottom: 0;
-  height: 4rem;
-  position: relative;
-  padding-bottom: 0px;
-}
-
-#vilbur-biography .hero .item-title-wrapper .item-title {
-  position: absolute;
-  bottom: 0px;
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-@media screen and (max-width: 768px) {
-  #vilbur-biography .hero .item-title-wrapper .item-title {
-    font-size: 1em;
-  }
-}
-
-#vilbur-biography .hero .item-title-wrapper a.item-title:hover {
-  color: #F58A07;
-}
-
-#vilbur-biography .hero .bio-details .bio-detail {
-  color: #DBDBDB;
-  font-size: 0.8rem;
-  padding-top: 0;
 }
 

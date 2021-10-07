@@ -2,6 +2,12 @@
 {
 	color: $text-color;
 
+	.content>ul
+	{
+		margin: 0;		
+	}
+	
+	
 	.hero
 	{		
 		.column
@@ -15,70 +21,11 @@
 			color: $text-color;
 		}
 		
-		overflow: hidden;
+		//overflow: hidden;
 		
-		.logo 
-		{
-			height: 4em;
-			max-height: 100%;
-	
-			img
-			{
-				//width: 6em;
-				//height: auto;
-				height: 4rem;
-				max-height: 100%;
-				//border:	1px solid green;
-			} 
-		}
-		
-		.item-title-wrapper
-		{
-			//border:	1px solid darken($brand-primary, 10%);
-			border-bottom:	1px solid white;
 
-			//background-color: $brand-primary;
-			margin-bottom: 0;
-			height:	4rem;
-			position: relative;
-			padding-bottom: 0px;
-
-			.item-title
-			{
-				position: absolute;
-				bottom: 0px;
-				//left: 0px;
-				color: white;
-				font-size:	$font-size-title-mobile;
-				font-weight: bold;
-				text-transform: uppercase;
-				
-				@include mobile{
-					font-size:	1em;
-				}
-				
-			}
-	
-			a.item-title:hover
-			{
-				color: $link-hover;
-			}
-		}
 		
-		.skill-details
-		{
-			//border:	1px solid red;
-			height: auto;
-			min-height: 6rem;
-			margin-bottom: 2rem;
-			
-			.column
-			{
-				//border:	1px solid green;
-				padding:	0.3rem;
-			}
-			
-			
-		}
+
+
 	}
 }

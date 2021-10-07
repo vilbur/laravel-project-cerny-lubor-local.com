@@ -59,6 +59,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -141,6 +142,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -340,19 +342,9 @@ var render = function() {
                           staticClass: "bio-logo-link ",
                           attrs: { href: model.link, target: "_blank" }
                         },
-                        [
-                          _c("img", {
-                            staticClass: "Ximg-center-vcerticaly",
-                            attrs: { src: model.image }
-                          })
-                        ]
+                        [_c("img", { attrs: { src: model.image } })]
                       )
-                    : _c("span", [
-                        _c("img", {
-                          staticClass: "Ximg-center-vcerticaly",
-                          attrs: { src: model.image }
-                        })
-                      ])
+                    : _c("span", [_c("img", { attrs: { src: model.image } })])
                 ]),
                 _vm._v(" "),
                 model.link
@@ -371,18 +363,18 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "bio-details columns is-mobile is-multiline" },
+                { staticClass: "details columns is-mobile is-multiline" },
                 [
                   _c(
                     "div",
                     {
                       staticClass:
-                        "column bio-detail has-text-centered\n\t\t\t\t\t\t\tis-3-mobile\n\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\tis-2-desktop\n\t\t\t\t\t\t\tis-offset-1-widescreen"
+                        "column bio-detail has-text-centered\n\t\t\t\t\t\t\tis-3-mobile\n\t\t\t\t\t\t\tis-3-tablet\n\t\t\t\t\t\t\tis-2-desktop"
                     },
                     [_c("span", {}, [_vm._v(_vm._s(model.since_until))])]
                   ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "column bio-detail" }, [
+                  _c("div", { staticClass: "column detail" }, [
                     _vm._v(
                       "\n\t\t\t\t\t\t\n\t\t\t\t\t\t" +
                         _vm._s(model.job_title) +

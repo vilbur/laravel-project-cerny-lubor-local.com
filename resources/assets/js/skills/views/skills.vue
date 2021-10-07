@@ -15,29 +15,34 @@
 		
 		<div class="container content">
 			<transition-group tag="ul" name="show">
+				
+				
 				<li v-for="skill in filteredSkills" class="hero" :key="skill.id" >
-		
-						<skills-header>
-								<span slot="logo">
-									<img class="Ximg-center-vcerticaly" v-bind:src="skill.image">
-								</span>
-								<span class="item-title" >{{ skill.title }}</span>
-						</skills-header>
-			
-						<div class="columns">
-
-			
-							<div class="skill-details column border-OFF-b">
-								<div v-for="skill_detail in skill.skill_details">
-									<skills-detail>
-										<span slot="title">{{skill_detail.title ? skill_detail.title+':' : ''}}</span>
-										{{skill_detail.summary }}
-									</skills-detail>
-								</div>
+					
+					<skills-header>
+							<span slot="logo">
+								<img class="Ximg-center-vcerticaly" v-bind:src="skill.image">
+							</span>
+							<span class="item-title" >{{ skill.title }}</span>
+					</skills-header>
+					
+					
+					<div class="columns">
+						<div class="details column border-OFF-b">
+							
+							<div v-for="skill_detail in skill.skill_details">
+								<skills-detail>
+									<span slot="title">{{skill_detail.title ? skill_detail.title+':' : ''}}</span>
+									{{skill_detail.summary }}
+								</skills-detail>
 							</div>
+							
 						</div>
+					</div>
 						
 				</li>
+				
+				
 			</transition-group>
 		</div>
 

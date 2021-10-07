@@ -25,7 +25,69 @@ body, html{
 
 .content
 {
-	padding-top: $navbar-height;
+	//padding-top: $navbar-height;
+	padding: calc( #{$navbar-height} / 2) calc( #{$navbar-height} / 8);
+	//border:	1px solid red;
 }
 
 
+
+.logo 
+{
+	height: 4rem;
+	max-height: 100%;
+
+	img
+	{
+		height: 4rem;
+		max-height: 100%;
+	}
+}
+
+.item-title-wrapper
+{
+	//border:	1px solid darken($brand-primary, 10%);
+	border-bottom:	1px solid white;
+
+	//background-color: $brand-primary;
+	margin-bottom: 0;
+	height:	4rem;
+	position: relative;
+	padding-bottom: 0px;
+
+	.item-title
+	{
+		position: absolute;
+		bottom: 0px;
+		//left: 0px;
+		color: white;
+		font-size:	$font-size-title-mobile;
+		font-weight: bold;
+		text-transform: uppercase;
+		
+		@include mobile{
+			font-size:	1em;
+		}
+		
+	}
+
+	a.item-title:hover
+	{
+		color: $link-hover;
+	}
+}
+
+.details
+{
+	border:	5px solid red;
+////	height: auto;
+//	min-height: 6rem;
+	//margin-bottom: 0.5rem;
+	.detail
+	{
+		border:	1px solid green;
+		color: $text-color;
+		font-size: 0.8rem;
+			padding-top: 0; 
+	}		
+}
