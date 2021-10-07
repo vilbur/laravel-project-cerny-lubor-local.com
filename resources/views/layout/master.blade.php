@@ -17,7 +17,7 @@
 
     <body>
 		<div id="app"> 
-			<div id="content">
+			<div id="content" class="push-footer-bottom">
 
 				<navbar></navbar>
 					

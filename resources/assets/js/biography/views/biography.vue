@@ -1,5 +1,5 @@
 <template>
-	<div id="vilbur-biography">
+	<div id="vilbur-biography" class="content">
 		
 		<div class="container">
 			<div v-for="(model, index) in models" class="hero"  >

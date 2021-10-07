@@ -40,7 +40,7 @@
 					<a href="/#/contact" class="column">CONTACT</a>
 				</div>
 			</div> 
-		</div>-->
+		</div>--> 
  
 	</section>
 

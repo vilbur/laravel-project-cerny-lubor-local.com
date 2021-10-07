@@ -49448,116 +49448,106 @@ var render = function() {
           { class: { "footer-homepage": this.$route.name === "home" } },
           [
             _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "content" }, [
-                _c("div", { staticClass: "columns level has-text-centered" }, [
-                  _c("div", { staticClass: "column is-4" }, [
-                    _c(
-                      "span",
-                      { staticClass: "title is-4 has-text-centered" },
-                      [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t\t\t" +
-                            _vm._s(_vm.company.name) +
-                            "\n\t\t\t\t\t\t\t"
-                        )
-                      ]
-                    ),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "title is-4 has-text-centered" },
-                      [_vm._v("\n\t\t\t\t\t\t\t\t3D Artist\n\t\t\t\t\t\t\t")]
+              _c("div", { staticClass: "columns level has-text-centered" }, [
+                _c("div", { staticClass: "column is-4" }, [
+                  _c("span", { staticClass: "title is-4 has-text-centered" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t\t" +
+                        _vm._s(_vm.company.name) +
+                        "\n\t\t\t\t\t\t\t"
                     )
                   ]),
+                  _c("br"),
                   _vm._v(" "),
-                  _c("div", { staticClass: "column is-4" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "container has-text-centered has-text-left-tablet"
-                      },
-                      [
-                        _c(
-                          "a",
-                          {
-                            attrs: {
-                              href: "mailto:" + _vm.company.email_1,
-                              target: "_blank"
-                            }
-                          },
-                          [
-                            _c("span", { staticClass: "icon is-large" }, [
-                              _c("i", { staticClass: "fa fa-envelope fa-2x" })
-                            ]),
-                            _vm._v(
-                              "\n\t\t\t\t\t\t\t\t\t" +
-                                _vm._s(_vm.company.email) +
-                                "\n\t\t\t\t\t\t\t"
-                            )
-                          ]
-                        ),
-                        _c("br"),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "icon is-large" }, [
-                          _c("i", { staticClass: "fa fa-phone fa-2x" })
-                        ]),
-                        _c(
-                          "a",
-                          { attrs: { href: "tel:+420" + _vm.company.tel } },
-                          [_vm._v("+420 " + _vm._s(_vm.company.tel))]
-                        )
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "column is-4" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "container has-text-centered has-text-left-tablet"
-                      },
-                      [
-                        _c(
-                          "a",
-                          {
-                            attrs: {
-                              href: "https://github.com/vilbur",
-                              target: "_blank"
-                            }
-                          },
-                          [
-                            _c("span", { staticClass: "icon is-large" }, [
-                              _c("i", { staticClass: "fa fa-github fa-2x" })
-                            ]),
-                            _vm._v("\n\t\t\t\t\t\t\t\t\tGitHub\n\t\t\t\t\t\t\t")
-                          ]
-                        ),
-                        _c("br"),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            attrs: {
-                              href:
-                                "https://www.youtube.com/channel/UCmA5Pwgkt56C9gc3DWs-3og",
-                              target: "_blank"
-                            }
-                          },
-                          [
-                            _c("span", { staticClass: "icon is-large" }, [
-                              _c("i", { staticClass: "fa fa-youtube fa-2x" })
-                            ]),
-                            _vm._v(
-                              "\n\t\t\t\t\t\t\t\t\tYouTube\n\t\t\t\t\t\t\t"
-                            )
-                          ]
-                        )
-                      ]
-                    )
+                  _c("span", { staticClass: "title is-4 has-text-centered" }, [
+                    _vm._v("\n\t\t\t\t\t\t\t\t3D Artist\n\t\t\t\t\t\t\t")
                   ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "column is-4" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "container has-text-centered has-text-left-tablet"
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "mailto:" + _vm.company.email_1,
+                            target: "_blank"
+                          }
+                        },
+                        [
+                          _c("span", { staticClass: "icon is-large" }, [
+                            _c("i", { staticClass: "fa fa-envelope fa-2x" })
+                          ]),
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\t" +
+                              _vm._s(_vm.company.email) +
+                              "\n\t\t\t\t\t\t\t"
+                          )
+                        ]
+                      ),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "icon is-large" }, [
+                        _c("i", { staticClass: "fa fa-phone fa-2x" })
+                      ]),
+                      _c(
+                        "a",
+                        { attrs: { href: "tel:+420" + _vm.company.tel } },
+                        [_vm._v("+420 " + _vm._s(_vm.company.tel))]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "column is-4" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "container has-text-centered has-text-left-tablet"
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "https://github.com/vilbur",
+                            target: "_blank"
+                          }
+                        },
+                        [
+                          _c("span", { staticClass: "icon is-large" }, [
+                            _c("i", { staticClass: "fa fa-github fa-2x" })
+                          ]),
+                          _vm._v("\n\t\t\t\t\t\t\t\t\tGitHub\n\t\t\t\t\t\t\t")
+                        ]
+                      ),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href:
+                              "https://www.youtube.com/channel/UCmA5Pwgkt56C9gc3DWs-3og",
+                            target: "_blank"
+                          }
+                        },
+                        [
+                          _c("span", { staticClass: "icon is-large" }, [
+                            _c("i", { staticClass: "fa fa-youtube fa-2x" })
+                          ]),
+                          _vm._v("\n\t\t\t\t\t\t\t\t\tYouTube\n\t\t\t\t\t\t\t")
+                        ]
+                      )
+                    ]
+                  )
                 ])
               ])
             ])

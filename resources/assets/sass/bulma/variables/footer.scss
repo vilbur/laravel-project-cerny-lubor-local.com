@@ -1,2 +1,2 @@
-$footer-height: 256px;
+$footer-height: calc(#{$navbar-height}*3);
 $footer-background-color: $brand-primary !important;

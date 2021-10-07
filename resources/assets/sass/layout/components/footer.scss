@@ -1,6 +1,5 @@
 /* Footer height
  */
-$footer-height:	10rem;
 $footer-height-tablet:	22em;
 /* ---------------------------------------
  * PUSH FOOTER BOTTOM
@@ -8,7 +7,7 @@ $footer-height-tablet:	22em;
  * Layout for push footer on bottom
  *
  *	<div id="app"> 
- *		<div id="content">
+ *		<div class="push-footer-bottom">
  *	
  *		</div>
  *		<footer-component v-if="! $root.loading"></footer-component>
@@ -16,33 +15,39 @@ $footer-height-tablet:	22em;
  *	
  * -----------------------------------------
 */
-body {
+body
+{
  	margin: 0;
  	padding: 0;
  	height: 100%;
 }
-#app {
+#app
+{
     min-height: 100%;
 	position: relative;
 }
-#content {
+.push-footer-bottom
+{
     padding-bottom: $footer-height; /* ATTENTION! padding-bottom should be equal to the footer height (this keeps the footer from overlapping the content) */
+	
 	@media screen and (max-width: $tablet)
 	{
 		padding-bottom: $footer-height-tablet;
 	}
 }
 
-footer{
-    position: absolute;
-    width: 100%;
-	clear: both;
-    bottom: 0;
-	padding: 0;
-    margin: 0;
-	
-    height: $footer-height;
-	
+footer
+{
+    height:	$footer-height;
+    width:	100%;
+    position:	absolute;
+
+	clear:	both;
+	bottom:	0;
+	padding:	0;
+	margin:	0;
+
+
 	@media screen and (max-width: $tablet)
 	{
 		height: $footer-height-tablet;
@@ -57,27 +62,29 @@ footer{
 
 footer
 {
-    padding: 2rem 1.5rem 3rem;
+    padding-top: calc(#{$navbar-height}/2);
 
 	background-color: $brand-primary;
 	color:	white;
-	
-	.container{
+	.container
+	{
 		overflow: hidden;
 	}
 	
-	.title{
+	.title
+	{
 		color:	white;
 	}
 
 }
  
-.footer-homepage{
+.footer-homepage
+{
     //position: relative;
-	z-index: +1;
+	z-index:	+1;
 	background-color:	transparent;
-	transition: all .3s ease-in-out;
-    padding-bottom: 50vh;
+	transition:	all .3s ease-in-out;
+	padding-bottom:	50vh;
 
 	&:hover
 	{

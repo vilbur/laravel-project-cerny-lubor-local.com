@@ -3,7 +3,7 @@
 		<footer v-if="shown" :class="{'footer-homepage': this.$route.name==='home'}" >
 
 			<div class="container">
-				<div class="content">
+				<!--<div class="content">-->
 
 					<div class="columns level has-text-centered">
 
@@ -45,7 +45,7 @@
 
 					</div>
 
-				</div>
+				<!--</div>-->
 			</div>
 
 		</footer>

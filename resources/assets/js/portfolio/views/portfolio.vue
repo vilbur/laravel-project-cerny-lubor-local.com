@@ -1,5 +1,5 @@
 <template>
-	<div id="vilbur-portfolio">
+	<div id="vilbur-portfolio" >
 		
 		<!--TEMPORARY DISABLED-->
 		<!--<ul class="tabs is-centered is-fixed-top" v-show="true" >-->
@@ -31,7 +31,7 @@
 			
 			
 		<!--PORTFIOLO ITEMS MAIN LIST-->
-		<transition-group tag="ul" name="show">
+		<transition-group class="content"  tag="ul" name="show">
 			<li v-for="portfolio in filteredPortfolios" class="portfolio hero" :id="'hero-'+portfolio.slug"  :portfolio="portfolio" :key="portfolio.id" >
 				<div class="hero-body">
 					<div class="container">
@@ -45,7 +45,7 @@
 							<!--IMAGE-->
 							<div class="portfolio-background" :style="{ backgroundImage: 'url(' +  portfolio.image_url + ')' } ">
 								<div class="backdrop-filter-mask">
-									<h3 class="title is-2">{{ portfolio.title }}</h3>
+									<span class="title is-2">{{ portfolio.title }}</span>
 								</div>
 							</div> 
 						</router-link>

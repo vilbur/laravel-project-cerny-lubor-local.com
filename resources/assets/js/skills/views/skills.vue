@@ -13,7 +13,7 @@
 		</div>
 		
 		
-		<div class="container">
+		<div class="container content">
 			<transition-group tag="ul" name="show">
 				<li v-for="skill in filteredSkills" class="hero" :key="skill.id" >
 		

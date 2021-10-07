@@ -1,9 +1,15 @@
 .tabs
 {
 	background-color:	white;
+	
 	padding-top:	0.5em;
 	padding-bottom:	0.5em;
-
+	
+	&:not(:last-child) // this complex selector is needed to overwrite defaults
+	{
+		margin-bottom:	0;
+	}
+	
 	ul{
 		/* BORDER TOP */
 		//border-top-color:	$tabs-border-bottom-color !important;
